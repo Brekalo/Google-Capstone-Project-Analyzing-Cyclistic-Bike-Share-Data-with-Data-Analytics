@@ -74,7 +74,7 @@ https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Shar
 <p align="center">
   <img src="[your_relative_path_here](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png
 )" width="350" title="hover text">
-  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+  <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" alt="accessibility text">
 </p>
 
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
