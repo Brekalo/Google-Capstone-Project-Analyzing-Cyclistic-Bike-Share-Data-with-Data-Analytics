@@ -82,6 +82,7 @@ The dataset is structured into 13 distinct columns, or variables, which include:
 |  11 | The end station's latitude:             | `end_lat`            | Numeric   |
 |  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
 |  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
+   
 </div>
 
 While the dataset did not come with an accompanying metadata file, the variables are intuitively named and can be understood without additional context.
@@ -147,6 +148,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 | `library(hms)`        | Designed for easy handling and formatting of time data, complementing the `lubridate` package.  |
 | `library(purrr)`      | Enhances functional programming in R, offering tools for iterating over data and simplifying complex operations with lists and vectors. It is particularly useful for executing the same function across multiple elements or datasets and working with list-columns in data frames.
 | `library(data.table)` | Offers high-performance data manipulation and analysis, suitable for large datasets. Also, it's highly efficient for exporting data frames to various formats. |
+   
 </div>
 
 ## Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
