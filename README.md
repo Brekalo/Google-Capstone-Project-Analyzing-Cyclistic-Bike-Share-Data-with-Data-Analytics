@@ -12,7 +12,6 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 
 
 > **Table of Contents:**
-<br>
 > * INTRODUCTION
 > * Project Overview and Context 
 > * ASK
