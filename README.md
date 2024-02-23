@@ -56,15 +56,12 @@ To **achieve** this **objective**, the future marketing program will address the
 
 For this case study, we utilize data from Divvy, a real bike share company operating in Chicago, as a proxy for the fictional company Cyclistic.<br>
 These datasets are publicly available through Motivate International Inc. [under a specified license](https://divvybikes.com/data-license-agreement) and can be accessed for [download here](https://divvy-tripdata.s3.amazonaws.com/index.html).<br>
-The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.<br>
+The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.
+<br>
 <div>
    <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="400" align="left">
 </div>
 <div style="clear: both;"></div>
-
-<p align="center">
-  <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="350" title="hover text">
-</p>
 
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
 
