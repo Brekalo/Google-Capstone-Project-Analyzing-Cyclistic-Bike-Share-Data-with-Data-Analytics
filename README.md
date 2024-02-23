@@ -148,9 +148,9 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 
 ### Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
 <div>
-   <img src="img_details/tidyverse.png" width="700" align="center">
+   <img src="img_details/tidyverse.png" width="800" align="center">
 </div>
-
+<br>
 ```
 # Load necessary libraries
 library(purrr)   # For map_df()
@@ -169,8 +169,9 @@ all_rides_df_clean <- map_df(all_cleaned_files, read_csv)
 write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 
 ```
+
 <div>
-   <img src="img_details/specificationa.png" width="750" align="center">
+   <img src="img_details/specificationa.png" width="800" align="center">
 </div>
 <br>
 **An essential step in data analysis is ensuring the data's cleanliness and readiness for further analysis. The following procedures are applied to the `all_rides_df_clean.csv` data frame, each accompanied by a screenshot for visual reference:**
@@ -179,7 +180,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Obtain an overview of the data frame, including the total number of rows, columns, and cells.
 <details>
 <div>
-   <img src="img_details/overview_of_all_rides_df_clean.png" width="350" align="center">
+   <img src="img_details/overview_of_all_rides_df_clean.png" width="450" align="center">
 </div>
 </details>
 
@@ -187,7 +188,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Use the `head()` function to display the first few rows of the data frame, providing an initial glimpse into the dataset.
 <details>
 <div>
-   <img src="img_details/previewing_data.png" width="750" align="center">
+   <img src="img_details/previewing_data.png" width="850" align="center">
 </div>
 </details>
 
@@ -195,7 +196,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Examine the data structure and its characteristics, including data types of each column.
 <details>
 <div>
-   <img src="img_details/data_structure.png" width="750" align="center">
+   <img src="img_details/data_structure.png" width="850" align="center">
 </div>
 </details>
 
@@ -203,7 +204,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Apply the `summary()` function to summarize each column, aiding in the identification of unusual or outlier values.
 <details>
 <div>
-   <img src="img_details/identifying_outliers.png" width="750" align="center">
+   <img src="img_details/identifying_outliers.png" width="850" align="center">
 </div>
 </details>
 
@@ -211,7 +212,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Check the entire data frame for any missing values to ensure data completeness.
 <details>
 <div>
-   <img src="img_details/missing_values.png" width="350" align="center">
+   <img src="img_details/missing_values.png" width="450" align="center">
 </div>
 </details>
 
@@ -219,7 +220,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Investigate missing values by each column to pinpoint areas requiring data imputation or removal.
 <details>
 <div>
-   <img src="img_details/column_wise_missing _values.png" width="350" align="center">
+   <img src="img_details/column_wise_missing _values.png" width="450" align="center">
 </div>
 </details>
 
@@ -227,9 +228,10 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Verify the presence of duplicate rows within the data frame to maintain data integrity.
 <details>
 <div>
-   <img src="img_details/duplicate_rows.png" width="350" align="left">
+   <img src="img_details/duplicate_rows.png" width="450" align="left">
 </div>
 </details>
+<br>
 By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.
 
 ## :white_large_square: ANALYZE & SHARE
