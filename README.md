@@ -153,7 +153,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 
 ```
 
-#Load necessary libraries
+# Load necessary libraries
 library(purrr)   # For map_df()
 library(readr)   # For read_csv()
 
