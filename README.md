@@ -30,7 +30,7 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Strategic Recommendations for Action
 
 ## :white_large_square: INTRODUCTION
-Cyclistic, founded in 2016, operates a vast fleet of over 16,500 bicycles covering 190 square miles in Chicago. The bikes, strategically located across 800 stations in the city, cater to urban riders with diverse heights and abilities, boasting a design focused on comfort and stability. Users can unlock bikes at any station and return them to any other station at their convenience.
+**Cyclistic**, founded in 2016, operates a vast fleet of over 16,500 bicycles covering 190 square miles in Chicago. The bikes, strategically located across 800 stations in the city, cater to urban riders with diverse heights and abilities, boasting a design focused on comfort and stability. Users can unlock bikes at any station and return them to any other station at their convenience.
 
 Initially, Cyclistic's marketing aimed at raising general awareness and appealing to a diverse audience with various pricing plans: single-ride passes, full-day passes, and annual memberships. Casual riders are those opting for short-term passes, whereas annual memberships are purchased by Cyclistic members.
 
@@ -50,3 +50,47 @@ To **achieve** this **objective**, the future marketing program will address the
 **Key Stakeholders:**
 - Lily Moreno: Director of the marketing team and my supervisor.
 - Cyclistic executive team.
+
+## :white_large_square: PREPARE
+#### Data Collection and Sources:
+
+For this case study, we utilize data from Divvy, a real bike share company operating in Chicago, as a proxy for the fictional company Cyclistic.<br>
+These datasets are publicly available through Motivate International Inc. [under a specified license](https://divvybikes.com/data-license-agreement) and can be accessed for [download here](https://divvy-tripdata.s3.amazonaws.com/index.html).<br>
+The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.<br>
+<br>
+<div>
+   <img src="attachment:ba4a6908-91a0-45ba-ba1e-73f544903a1d.png" width="400" align="left">
+</div>
+
+<div style="clear: both;"></div>
+
+In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
+
+The dataset is structured into 13 distinct columns, or variables, which include:
+<div style="float:left;">
+    
+| No. | Description                            | Column Name      | Type        |
+|----:|:----------------------------------------|:------------------|:-------------|
+|   1 | Unique identifier for each trip:   | `ride_id`        | String        |
+|   2 | Type of bicycle:                     | `rideable_type`  | String        |
+|   3 | Start timestamp of the ride:              | `started_at`     | Date & Time |
+|   4 | End timestamp of the ride:             | `ended_at`       | Date & Time |
+|   5 | Name of the starting station:     | `start_station_name` | String   |
+|   6 | Identifier for the starting station:            | `start_station_id`   | String   |
+|   7 | Name of the ending station:        | `end_station_name`   | String   |
+|   8 | Identifier for the ending station:            | `end_station_id`     | String   |
+|   9 | The latitude of the starting station: | `start_lat`          | Numeric|
+|  10 | The longitude of starting station:    | `start_lng`          | Numeric|
+|  11 | The end station's latitude:           | `end_lat`            | Numeric|
+|  12 | The longitude of the end station:     | `end_lng`            | Numeric|
+|  13 | Indicates whether the rider is a casual or a member:         | `member_casual`      | String   |
+
+</div>
+
+While the dataset did not come with an accompanying metadata file, the variables are intuitively named and can be understood without additional context.
+
+The data categorizes riders into two main groups: 
+- Casual riders, who typically utilize single rides or day passes 
+- Cyclistic members, who are characterized by their annual memberships
+
+This categorization is pivotal for understanding different usage patterns and guiding business strategies.
