@@ -166,6 +166,7 @@ all_rides_df_clean <- map_df(all_cleaned_files, read_csv)
 
 #Save the aggregated data to a CSV file without row names
 write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
+
 ```
 <br>
 <div>
