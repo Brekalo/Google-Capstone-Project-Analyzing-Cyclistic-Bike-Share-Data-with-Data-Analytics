@@ -59,7 +59,7 @@ These datasets are publicly available through Motivate International Inc. [under
 The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.<br>
 <br>
 <div>
-   <img src="attachment:ba4a6908-91a0-45ba-ba1e-73f544903a1d.png" width="400" align="left">
+   <img src="[attachment:ba4a6908-91a0-45ba-ba1e-73f544903a1d.png](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png)" width="400" align="left">
 </div>
 
 <div style="clear: both;"></div>
