@@ -60,7 +60,7 @@ The data is released monthly and is characterized by being anonymized, reliable,
 <br>
 
 
-![Alt text of the image]([https://github.com/username/repository/blob/master/img/octocat.png](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png))
+![Alt text of the image](img_divvy/Screenshot 2024-01-04 at 12.17.27.png)
 
 https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png
 
