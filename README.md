@@ -152,21 +152,20 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 </div>
 
 ```
-
 # Load necessary libraries
 library(purrr)   # For map_df()
 library(readr)   # For read_csv()
 
-#Creating a single dataframe 'all_rides_df_clean.csv' from twelve cleaned CSV files ('YYYY_MM_df_update_clean.csv')
+# Creating a single dataframe 'all_rides_df_clean.csv' from twelve cleaned CSV files ('YYYY_MM_df_update_clean.csv')
 
-#Merging all cleaned files
-#List all files matching the pattern of cleaned CSV files
+# Merging all cleaned files
+# List all files matching the pattern of cleaned CSV files
 all_cleaned_files <- list.files(pattern = "^[0-9]{4}_[0-9]{2}_df_update_clean\\.csv$", full.names = TRUE)
 
-#Use map_df to read each file and combine them into one dataframe
+# Use map_df to read each file and combine them into one dataframe
 all_rides_df_clean <- map_df(all_cleaned_files, read_csv)
 
-#Save the aggregated data to a CSV file without row names
+# Save the aggregated data to a CSV file without row names
 write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 
 ```
