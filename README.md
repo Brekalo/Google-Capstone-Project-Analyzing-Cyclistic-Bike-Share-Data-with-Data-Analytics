@@ -174,13 +174,14 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
    <img src="img_details/specificationa.png" width="800" align="center">
 </div>
 <br>
+
 **An essential step in data analysis is ensuring the data's cleanliness and readiness for further analysis. The following procedures are applied to the `all_rides_df_clean.csv` data frame, each accompanied by a screenshot for visual reference:**
 
 1. **Overview of `all_rides_df_clean.csv`**:
 - Obtain an overview of the data frame, including the total number of rows, columns, and cells.
 <details>
 <div>
-   <img src="img_details/overview_of_all_rides_df_clean.png" width="450" align="center">
+   <img src="img_details/overview_of_all_rides_df_clean.png" width="500" align="center">
 </div>
 </details>
 
@@ -220,7 +221,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Investigate missing values by each column to pinpoint areas requiring data imputation or removal.
 <details>
 <div>
-   <img src="img_details/column_wise_missing _values.png" width="450" align="center">
+   <img src="img_details/column_wise_missing _values.png" width="400" align="center">
 </div>
 </details>
 
@@ -232,6 +233,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 </div>
 </details>
 <br>
+
 By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.
 
 ## :white_large_square: ANALYZE & SHARE
