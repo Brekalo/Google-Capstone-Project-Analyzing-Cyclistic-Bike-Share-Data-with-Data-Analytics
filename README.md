@@ -98,13 +98,13 @@ This categorization is pivotal for understanding different usage patterns and gu
 </div>
 <br>
 
-- **Single Ride**: \\$3.30 for up to 30 minutes, with a \\$0.15 per minute overage charge.
-- **Daily Pass**: \\$15 for 24-hour access with unlimited classic bike rides up to 3 hours each; overage cost is \\$0.15 per minute for rides over 3 hours.
-- **E-Bike Single Ride**: \\$3.30 with an additional \\$0.20 per minute while in use.
-- **Annual Membership**: \\$9 monthly for unlimited 45-minute rides; rides exceeding this duration incur a \\$0.16 per minute overage fee.
-- **Lost/Stolen Bike Fee**: A penalty of \\$1200.
-- **Cycling for Everyone (C4E)**: A program for eligible residents offering a \\$5 annual membership with specific rates and credits for e-bike use.
-- **Miscellaneous Fees**: E-bikes can be parked at public racks within the service area for \\$1, with a \\$25 fine for parking violations or if parked outside the service area.
+- **Single Ride**: \$3.30 for up to 30 minutes, with a \$0.15 per minute overage charge.
+- **Daily Pass**: \$15 for 24-hour access with unlimited classic bike rides up to 3 hours each; overage cost is \$0.15 per minute for rides over 3 hours.
+- **E-Bike Single Ride**: \$3.30 with an additional \$0.20 per minute while in use.
+- **Annual Membership**: \$9 monthly for unlimited 45-minute rides; rides exceeding this duration incur a \$0.16 per minute overage fee.
+- **Lost/Stolen Bike Fee**: A penalty of \$1200.
+- **Cycling for Everyone (C4E)**: A program for eligible residents offering a \$5 annual membership with specific rates and credits for e-bike use.
+- **Miscellaneous Fees**: E-bikes can be parked at public racks within the service area for \$1, with a \$25 fine for parking violations or if parked outside the service area.
 
 #### Tools Utilized for Defining Objectives and Analysis:
 - Excel: Employed for the initial data cleaning and review process.
