@@ -13,9 +13,9 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 
 > **Table of Contents:**
 <br>
-> INTRODUCTION
-> Project Overview and Context 
-> ASK
+> * INTRODUCTION
+> * Project Overview and Context 
+> * ASK
 > * Business Goals and Objectives 
 > * Defining the Analytical Task 
 > * Identifying Key Stakeholders 
