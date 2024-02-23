@@ -47,7 +47,7 @@ To **achieve** this **objective**, the future marketing program will address the
 > 2. Why would casual riders buy Cyclistic annual memberships?
 > 3. How can Cyclistic leverage digital media to encourage casual riders to transition into annual members?
 
-$\color{magenta}{\text{PREVERI v recommendation ce so res vsa ta tri vprasanja}}$<br>
+## $\color{magenta}{\text{PREVERI v recommendation ce so res vsa ta tri vprasanja}}$<br>
 **Assigned Task:**<br>
 As a member of the marketing team, I am tasked with analyzing the differences between annual members and casual riders, focusing on their usage patterns of Cyclistic bikes.
 
