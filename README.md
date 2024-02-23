@@ -1,7 +1,7 @@
 <sub>*Data analysis code and documentation for Cyclistic's bike share data is contained in this repository.
 There are several phases to the project, from data analysis to data visualization to recommendations, and this README summarizes each phase.*</sub>
 
-<style>h1{color:#272f33; :</style>
+<style>h1{color:#272f33;}</style>
 
 # Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
 <h1>Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</h1>
