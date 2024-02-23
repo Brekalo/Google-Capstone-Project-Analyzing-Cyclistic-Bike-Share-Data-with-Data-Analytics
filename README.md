@@ -65,7 +65,7 @@ The data is released monthly and is characterized by being anonymized, reliable,
 https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png
 
 <div>
-   <img src="[attachment:ba4a6908-91a0-45ba-ba1e-73f544903a1d.png](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png)" width="400" align="left">
+   <img src="attachment:img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="400" align="left">
 </div>
 
 <div style="clear: both;"></div>
@@ -75,21 +75,21 @@ In this study, we have analyzed historical travel data from 12 separate CSV file
 The dataset is structured into 13 distinct columns, or variables, which include:
 <div style="float:left;">
     
-| No. | Description                            | Column Name      | Type        |
+| No. | Description                            | Column Name      | Type           |
 |----:|:----------------------------------------|:------------------|:-------------|
-|   1 | Unique identifier for each trip:   | `ride_id`        | String        |
-|   2 | Type of bicycle:                     | `rideable_type`  | String        |
-|   3 | Start timestamp of the ride:              | `started_at`     | Date & Time |
-|   4 | End timestamp of the ride:             | `ended_at`       | Date & Time |
-|   5 | Name of the starting station:     | `start_station_name` | String   |
-|   6 | Identifier for the starting station:            | `start_station_id`   | String   |
-|   7 | Name of the ending station:        | `end_station_name`   | String   |
-|   8 | Identifier for the ending station:            | `end_station_id`     | String   |
-|   9 | The latitude of the starting station: | `start_lat`          | Numeric|
-|  10 | The longitude of starting station:    | `start_lng`          | Numeric|
-|  11 | The end station's latitude:           | `end_lat`            | Numeric|
-|  12 | The longitude of the end station:     | `end_lng`            | Numeric|
-|  13 | Indicates whether the rider is a casual or a member:         | `member_casual`      | String   |
+|   1 | Unique identifier for each trip:        | `ride_id`         | String       |
+|   2 | Type of bicycle:                        | `rideable_type`   | String       |
+|   3 | Start timestamp of the ride:            | `started_at`      | Date & Time  |
+|   4 | End timestamp of the ride:              | `ended_at`        | Date & Time  |
+|   5 | Name of the starting station:           | `start_station_name` | String    |
+|   6 | Identifier for the starting station:    | `start_station_id`   | String    |
+|   7 | Name of the ending station:             | `end_station_name`   | String    |
+|   8 | Identifier for the ending station:      | `end_station_id`     | String    |
+|   9 | The latitude of the starting station:   | `start_lat`          | Numeric   |
+|  10 | The longitude of starting station:      | `start_lng`          | Numeric   |
+|  11 | The end station's latitude:             | `end_lat`            | Numeric   |
+|  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
+|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
 
 </div>
 
