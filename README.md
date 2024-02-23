@@ -4,6 +4,9 @@ There are several phases to the project, from data analysis to data visualizatio
 # :black_large_square: Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
 ## :white_large_square: Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
 ### :grey_large_square: Case Study: How Does a Bike-Share Navigate Speedy Success?
+# <span style="color:#272f33">Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</span>
+## <span style="color:#adbac0">Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</span>
+### <span style="color:#272f33">Case Study: How Does a Bike-Share Navigate Speedy Success?</span>
 
 
 
