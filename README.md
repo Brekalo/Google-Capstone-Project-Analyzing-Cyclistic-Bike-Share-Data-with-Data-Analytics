@@ -8,15 +8,6 @@ There are several phases to the project, from data analysis to data visualizatio
 
 
 
-<style>
-H1{color:#272f33 !important;}
-H2{color:#adbac0 !important;}
-H3{color:#272f33 !important;}
-H5{color:#adbac0 !important;}
-</style>
-
-# Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
-<h1>Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</h1>
 <h1 style="color: #272f33;">Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</h1>
 <font color="#adbac0">Case Study: How Does a Bike-Share Navigate Speedy Success?</font><br>
 <font style="color: #272f33;">by Vesna Marija Brekalo</font><br>
