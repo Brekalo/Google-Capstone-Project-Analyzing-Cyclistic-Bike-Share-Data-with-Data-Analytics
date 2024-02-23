@@ -91,7 +91,7 @@ The data categorizes riders into two main groups:
 
 This categorization is pivotal for understanding different usage patterns and guiding business strategies.
 
-### Divvy [Pricing](https://divvybikes.com/pricing) Summary:
+#### Divvy [Pricing](https://divvybikes.com/pricing) Summary:
 
 <div>
    <img src="img_divvy/divvy_plans.jpg" width="600" align="center">
@@ -106,7 +106,7 @@ This categorization is pivotal for understanding different usage patterns and gu
 - **Cycling for Everyone (C4E)**: A program for eligible residents offering a \\$5 annual membership with specific rates and credits for e-bike use.
 - **Miscellaneous Fees**: E-bikes can be parked at public racks within the service area for \\$1, with a \\$25 fine for parking violations or if parked outside the service area.
 
-### Tools Utilized for Defining Objectives and Analysis:
+#### Tools Utilized for Defining Objectives and Analysis:
 - Excel: Employed for the initial data cleaning and review process.
 - RStudio Desktop: Used for in-depth data analysis and scripting in R.
 - Tableau: Leveraged for creating interactive and informative data visualizations.
@@ -130,7 +130,7 @@ The data preparation phase was crucial for ensuring the integrity of the subsequ
 
 The comprehensive analysis revealed that **5.2533%** of the dataset was incomplete, with **3.5113%** necessitating removal to ensure analytical accuracy.
 
-### Setting up the programming environment
+#### Setting up the programming environment
 
 Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded:
 
@@ -146,10 +146,10 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 | `library(purrr)`      | Enhances functional programming in R, offering tools for iterating over data and simplifying complex operations with lists and vectors. It is particularly useful for executing the same function across multiple elements or datasets and working with list-columns in data frames.  |
 | `library(data.table)` | Offers high-performance data manipulation and analysis, suitable for large datasets. Also, it's highly efficient for exporting data frames to various formats. |
 
-## Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
+### Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
 
 ## :white_large_square: ANALYZE & SHARE
 
 ## :white_large_square: ACT
 
-### It is not yet finished, the rest will be added soon :)
+#### It is not yet finished, the rest will be added soon :)
