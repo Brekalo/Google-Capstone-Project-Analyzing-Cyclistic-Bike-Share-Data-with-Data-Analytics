@@ -148,8 +148,14 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 
 ### Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
 <div>
-   <img src="img_details/tidyverse.png.png" width="900" align="center">
+   <img src="img_details/tidyverse.png" width="900" align="center">
 </div>
+
+<br>
+<div>
+   <img src="img_details/specificationa.png" width="900" align="center">
+</div>
+<br>
 
 ## :white_large_square: ANALYZE & SHARE
 
