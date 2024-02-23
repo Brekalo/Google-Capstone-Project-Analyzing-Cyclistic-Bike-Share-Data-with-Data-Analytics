@@ -72,7 +72,8 @@ https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Shar
 <div style="clear: both;"></div>
 
 <p align="center">
-  <img src="your_relative_path_here" width="350" title="hover text">
+  <img src="[your_relative_path_here](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/img_divvy/Screenshot%202024-01-04%20at%2012.17.27.png
+)" width="350" title="hover text">
   <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
 </p>
 
