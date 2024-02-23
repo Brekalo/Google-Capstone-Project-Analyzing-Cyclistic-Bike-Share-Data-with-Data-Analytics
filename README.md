@@ -38,6 +38,8 @@ Financial analysis indicates annual members generate more profit than casual rid
 
 Maximizing annual memberships is key to Cyclistic's future success, prompting Moreno's team to analyze historical trip data to uncover trends. As their recommendations necessitate executive approval, they must provide compelling data insights and professional visualizations.
 
+<font color="#adbac0">ASK</font>
+# $\color{magenta}{\text{ASK}}$<br>
 ## :white_large_square: ASK
 **Business Objective:**<br>
 Develop effective marketing strategies to convert casual riders into annual members. <br>
@@ -46,11 +48,6 @@ To **achieve** this **objective**, the future marketing program will address the
 > 1. How do annual members and casual riders use Cyclistic bikes differently?
 > 2. Why would casual riders buy Cyclistic annual memberships?
 > 3. How can Cyclistic leverage digital media to encourage casual riders to transition into annual members?
-
-## $\color{magenta}{\text{PREVERI v recommendation ce so res vsa ta tri vprasanja}}$<br>
-**Assigned Task:**<br>
-As a member of the marketing team, I am tasked with analyzing the differences between annual members and casual riders, focusing on their usage patterns of Cyclistic bikes.
-
 
 **Key Stakeholders:**
 - Lily Moreno: Director of the marketing team and my supervisor.
