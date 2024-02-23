@@ -134,20 +134,17 @@ The comprehensive analysis revealed that **5.2533%** of the dataset was incomple
 
 Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded:
 
-<div style="float:left;"> 
 | Load Packages         | Description     |
-|:-----------------------|:--------------------------------------------------------------------------------|
-| `library(tidyverse)`  | A collection of R packages that provide versatile tools for data manipulation, visualization, and analysis.
+|:-----------------------|:-------------------------------------------------------------------------------------------------------------------|
+| `library(tidyverse)`  | A collection of R packages that provide versatile tools for data manipulation, visualization, and analysis.         |
 | `library(dplyr)`      | Specialized in data manipulation, providing a set of functions for efficiently modifying and analyzing data frames. |
 | `library(tidyr)`      | Focuses on transforming data to a tidy format, making it more suitable for analysis.    |
 | `library(readr)`      | Optimized for reading data from various file types, facilitating easy data import.      |
 | `library(tibble)`     | Enhances data frames, offering a user-friendly approach to data frame creation and manipulation. |
 | `library(lubridate)`  | Simplifies working with dates and times, providing functions that make it easier to parse, manipulate, and do calculations with date-time objects. |
 | `library(hms)`        | Designed for easy handling and formatting of time data, complementing the `lubridate` package.  |
-| `library(purrr)`      | Enhances functional programming in R, offering tools for iterating over data and simplifying complex operations with lists and vectors. It is particularly useful for executing the same function across multiple elements or datasets and working with list-columns in data frames.
+| `library(purrr)`      | Enhances functional programming in R, offering tools for iterating over data and simplifying complex operations with lists and vectors. It is particularly useful for executing the same function across multiple elements or datasets and working with list-columns in data frames.  |
 | `library(data.table)` | Offers high-performance data manipulation and analysis, suitable for large datasets. Also, it's highly efficient for exporting data frames to various formats. |
-   
-</div>
 
 ## Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
 
