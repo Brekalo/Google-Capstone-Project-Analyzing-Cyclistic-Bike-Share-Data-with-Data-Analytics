@@ -169,7 +169,6 @@ all_rides_df_clean <- map_df(all_cleaned_files, read_csv)
 write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 
 ```
-<br>
 <div>
    <img src="img_details/specificationa.png" width="700" align="center">
 </div>
