@@ -148,3 +148,9 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 | `library(data.table)` | Offers high-performance data manipulation and analysis, suitable for large datasets. Also, it's highly efficient for exporting data frames to various formats. |
 
 ## Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
+
+## :white_large_square: ANALYZE & SHARE
+
+## :white_large_square: ACT
+
+### It is not yet finished, the rest will be added soon :)
