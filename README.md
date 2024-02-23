@@ -38,8 +38,6 @@ Financial analysis indicates annual members generate more profit than casual rid
 
 Maximizing annual memberships is key to Cyclistic's future success, prompting Moreno's team to analyze historical trip data to uncover trends. As their recommendations necessitate executive approval, they must provide compelling data insights and professional visualizations.
 
-# <font color="#adbac0">ASK</font>
-# $\color{#adbac0}{\text{ASK}}$<br>
 ## :white_large_square: ASK
 **Business Objective:**<br>
 Develop effective marketing strategies to convert casual riders into annual members. <br>
