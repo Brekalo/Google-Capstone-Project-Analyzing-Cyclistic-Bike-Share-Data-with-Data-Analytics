@@ -249,7 +249,7 @@ At this phase of our study, we seek to explore the dynamics of bike usage among 
 
 Through this detailed analysis, we aim to provide insights into the differing behaviors and preferences between annual members and casual riders, contributing to targeted strategy development for Cyclistic.
 
-## Counts and Percentages of Bike Types Used
+### Counts and Percentages of Bike Types Used
 
 ## :white_large_square: ACT
 
