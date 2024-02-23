@@ -13,20 +13,20 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 > **Table of Contents:**<br>
 <br>
 > **INTRODUCTION** <br>
-    - Project Overview and Context <br>
+>    - Project Overview and Context <br>
 > **ASK** <br>
-    - Business Goals and Objectives <br>
-    - Defining the Analytical Task <br>
-    - Identifying Key Stakeholders <br>
+>    - Business Goals and Objectives <br>
+>    - Defining the Analytical Task <br>
+>    - Identifying Key Stakeholders <br>
 > **PREPARE** <br>
-    - Data Sourcing and Initial Exploration <br>
+>    - Data Sourcing and Initial Exploration <br>
 > **PROCESS** <br>
-    - Data Cleaning and Preprocessin <br>
+>    - Data Cleaning and Preprocessin <br>
 > **ANALYZE & SHARE** <br>
-    - Ride Volume Analysis <br>
-    - Average Ride Duration Insights <br>
-    - Bike Type Preferences <br>
-    - Temporal Usage Patterns <br>
-    - Station Popularity Metrics <br>
+>    - Ride Volume Analysis <br>
+>    - Average Ride Duration Insights <br>
+>    - Bike Type Preferences <br>
+>    - Temporal Usage Patterns <br>
+>    - Station Popularity Metrics <br>
 > **ACT** <br>
-    - Strategic Recommendations for Action
+>    - Strategic Recommendations for Action
