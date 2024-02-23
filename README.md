@@ -149,7 +149,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 ### Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
 <div>
    <img src="img_details/tidyverse.png" width="850" align="center">
-</div>
+</div><br>
 
 ```
 # Load necessary libraries
@@ -181,7 +181,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Obtain an overview of the data frame, including the total number of rows, columns, and cells.
 <details>
 <div>
-   <img src="img_details/overview_of_all_rides_df_clean.png" width="550" align="center">
+   <img src="img_details/overview_of_all_rides_df_clean.png" width="500" align="center">
 </div>
 </details>
 
@@ -213,7 +213,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Check the entire data frame for any missing values to ensure data completeness.
 <details>
 <div>
-   <img src="img_details/missing_values.png" width="480" align="center">
+   <img src="img_details/missing_values.png" width="500" align="center">
 </div>
 </details>
 
@@ -221,7 +221,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 - Investigate missing values by each column to pinpoint areas requiring data imputation or removal.
 <details>
 <div>
-   <img src="img_details/column_wise_missing _values.png" width="350" align="center">
+   <img src="img_details/column_wise_missing _values.png" width="380" align="center">
 </div>
 </details>
 
@@ -237,6 +237,19 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 *By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.*
 
 ## :white_large_square: ANALYZE & SHARE
+**Guiding Questions for Enhanced Data Analysis:**
+
+At this phase of our study, we seek to explore the dynamics of bike usage among Cyclistic's annual members versus casual riders. Our analysis will dissect the following key dimensions to uncover distinct patterns of utilization:
+
+- **Ride Volume**: Assessing the total number of rides undertaken by each group.
+- **Average Ride Duration**: Calculating the typical length of rides to identify usage intensity.
+- **Bike Type Preferences**: Evaluating the preference for different types of bikes between the two groups.
+- **Usage Patterns Over Time**: Analyzing how usage varies across different times of day, days of the week, months, and seasons.
+- **Popular Stations**: Identifying the most frequented stations to understand spatial preferences.
+
+Through this detailed analysis, we aim to provide insights into the differing behaviors and preferences between annual members and casual riders, contributing to targeted strategy development for Cyclistic.
+
+## Counts and Percentages of Bike Types Used
 
 ## :white_large_square: ACT
 
