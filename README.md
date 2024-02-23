@@ -61,7 +61,7 @@ The data is released monthly and is characterized by being anonymized, reliable,
 <div>
    <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="400" align="left">
 </div>
-<div style="clear: both;"></div>
+<br>
 
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
 
