@@ -59,7 +59,7 @@ These datasets are publicly available through Motivate International Inc. [under
 The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.
 <br>
 <div>
-   <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="400" align="left">
+   <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="400" align="center">
 </div>
 <br>
 
