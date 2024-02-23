@@ -3,10 +3,10 @@ There are several phases to the project, from data analysis to data visualizatio
 
 # Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
 **Case Study: How Does a Bike-Share Navigate Speedy Success?**
-*by Vesna Marija Brekalo*
+*by Vesna Marija Brekalo* <br>
 *February, 23 2024*
 
-# :white_large_square: FOREWORD
+## :white_large_square: FOREWORD
 I completed a case study on **Cyclistic** bike-share for my Google Data Analytics certification, inspired by my passion for cycling. This project, my first in analytics, explores the differences between casual and member riders following Google's framework: **Ask**, **Prepare**, **Process**, **Analyze**, **Share**, **Act**. Check out [my data visualizations here](https://www.linkedin.com/in/vesna-marija-brekalo).
 
 > **Table of Contents:**
