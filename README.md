@@ -1,7 +1,10 @@
 <sub>*Data analysis code and documentation for Cyclistic's bike share data is contained in this repository.
 There are several phases to the project, from data analysis to data visualization to recommendations, and this README summarizes each phase.*</sub>
 
+<style>h1{color:#272f33; :</style>
+
 # Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
+<h1>Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</h1>
 <h1 style="color: #272f33;">Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis</h1>
 <font color="#adbac0">Case Study: How Does a Bike-Share Navigate Speedy Success?</font><br>
 <font style="color: #272f33;">by Vesna Marija Brekalo</font><br>
@@ -29,4 +32,4 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Temporal Usage Patterns 
 >   * Station Popularity Metrics 
 > * **ACT**
-> * Strategic Recommendations for Action
+>   * Strategic Recommendations for Action
