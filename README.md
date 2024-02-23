@@ -150,7 +150,9 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 <div>
    <img src="img_details/tidyverse.png" width="700" align="center">
 </div>
+
 ```
+
 #Load necessary libraries
 library(purrr)   # For map_df()
 library(readr)   # For read_csv()
