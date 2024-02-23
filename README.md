@@ -52,7 +52,7 @@ To **achieve** this **objective**, the future marketing program will address the
 - Cyclistic executive team.
 
 ## :white_large_square: PREPARE
-#### Data Collection and Sources:
+### Data Collection and Sources:
 
 For this case study, we utilize data from Divvy, a real bike share company operating in Chicago, as a proxy for the fictional company Cyclistic.<br>
 These datasets are publicly available through Motivate International Inc. [under a specified license](https://divvybikes.com/data-license-agreement) and can be accessed for [download here](https://divvy-tripdata.s3.amazonaws.com/index.html).<br>
@@ -61,12 +61,12 @@ The data is released monthly and is characterized by being anonymized, reliable,
 <div>
    <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="400" align="center">
 </div>
+<br>
 
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
 
 The dataset is structured into 13 distinct columns, or variables, which include:
-<div style="float:left;">
-    
+<div style="float:left;"> 
 | No. | Description                            | Column Name      | Type           |
 |----:|:----------------------------------------|:------------------|:-------------|
 |   1 | Unique identifier for each trip:        | `ride_id`         | String       |
@@ -82,7 +82,6 @@ The dataset is structured into 13 distinct columns, or variables, which include:
 |  11 | The end station's latitude:             | `end_lat`            | Numeric   |
 |  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
 |  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
-
 </div>
 
 While the dataset did not come with an accompanying metadata file, the variables are intuitively named and can be understood without additional context.
@@ -98,6 +97,7 @@ This categorization is pivotal for understanding different usage patterns and gu
 <div>
    <img src="img_divvy/divvy_plans.jpg" width="600" align="center">
 </div>
+<br>
 
 - **Single Ride**: \\$3.30 for up to 30 minutes, with a \\$0.15 per minute overage charge.
 - **Daily Pass**: \\$15 for 24-hour access with unlimited classic bike rides up to 3 hours each; overage cost is \\$0.15 per minute for rides over 3 hours.
@@ -131,10 +131,11 @@ The data preparation phase was crucial for ensuring the integrity of the subsequ
 
 The comprehensive analysis revealed that **5.2533%** of the dataset was incomplete, with **3.5113%** necessitating removal to ensure analytical accuracy.
 
-## Setting up the programming environment
+### Setting up the programming environment
 
 Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded:
 
+<div style="float:left;"> 
 | Load Packages         | Description     |
 |:-----------------------|:--------------------------------------------------------------------------------|
 | `library(tidyverse)`  | A collection of R packages that provide versatile tools for data manipulation, visualization, and analysis.
@@ -146,6 +147,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 | `library(hms)`        | Designed for easy handling and formatting of time data, complementing the `lubridate` package.  |
 | `library(purrr)`      | Enhances functional programming in R, offering tools for iterating over data and simplifying complex operations with lists and vectors. It is particularly useful for executing the same function across multiple elements or datasets and working with list-columns in data frames.
 | `library(data.table)` | Offers high-performance data manipulation and analysis, suitable for large datasets. Also, it's highly efficient for exporting data frames to various formats. |
+</div>
 
 ## Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
 
