@@ -150,7 +150,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 <div>
    <img src="img_details/tidyverse.png" width="700" align="center">
 </div>
-<details>
+
 ```
 # Load necessary libraries
 library(purrr)   # For map_df()
@@ -169,7 +169,6 @@ all_rides_df_clean <- map_df(all_cleaned_files, read_csv)
 write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 
 ```
-</details>
 <div>
    <img src="img_details/specificationa.png" width="750" align="center">
 </div>
