@@ -10,23 +10,29 @@ There are several phases to the project, from data analysis to data visualizatio
 # <font color="#adbac0">FOREWORD</font>
 I completed a case study on **Cyclistic** bike-share for my Google Data Analytics certification, inspired by my passion for cycling. This project, my first in analytics, explores the differences between casual and member riders following Google's framework: **Ask**, **Prepare**, **Process**, **Analyze**, **Share**, **Act**. Check out [my data visualizations here](https://www.linkedin.com/in/vesna-marija-brekalo).
 
-> **Table of Contents:**<br>
+
+> **Table of Contents:**
+> * Project description
+> * Code description
+> * Usage
+
+> **Table of Contents:**
 <br>
-> **INTRODUCTION** <br>
-> Project Overview and Context <br>
-> **ASK** <br>
-> Business Goals and Objectives <br>
-> Defining the Analytical Task <br>
-> Identifying Key Stakeholders <br>
-> **PREPARE** <br>
-> Data Sourcing and Initial Exploration <br>
-> **PROCESS** <br>
-> Data Cleaning and Preprocessin <br>
-> **ANALYZE & SHARE** <br>
-> Ride Volume Analysis <br>
-> Average Ride Duration Insights <br>
-> Bike Type Preferences <br>
-> Temporal Usage Patterns <br>
-> Station Popularity Metrics <br>
-> **ACT** <br>
-> Strategic Recommendations for Action
+> **INTRODUCTION**
+> Project Overview and Context 
+> **ASK** 
+> * Business Goals and Objectives 
+> * Defining the Analytical Task 
+> * Identifying Key Stakeholders 
+> **PREPARE** 
+> * Data Sourcing and Initial Exploration 
+> **PROCESS** 
+> * Data Cleaning and Preprocessin 
+> **ANALYZE & SHARE** 
+> * Ride Volume Analysis 
+> * Average Ride Duration Insights 
+> * Bike Type Preferences 
+> * Temporal Usage Patterns 
+> * Station Popularity Metrics 
+> **ACT** 
+> * Strategic Recommendations for Action
