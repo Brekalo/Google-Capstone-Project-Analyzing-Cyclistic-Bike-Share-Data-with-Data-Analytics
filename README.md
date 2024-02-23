@@ -66,6 +66,7 @@ The data is released monthly and is characterized by being anonymized, reliable,
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
 
 The dataset is structured into 13 distinct columns, or variables, which include:
+
 <div style="float:left;"> 
 | No. | Description                            | Column Name      | Type           |
 |----:|:----------------------------------------|:------------------|:-------------|
