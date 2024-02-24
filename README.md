@@ -249,7 +249,35 @@ At this phase of our study, we seek to explore the dynamics of bike usage among 
 
 Through this detailed analysis, we aim to provide insights into the differing behaviors and preferences between annual members and casual riders, contributing to targeted strategy development for Cyclistic.
 
-### Counts and Percentages of Bike Types Used
+### Counts and Percentages of Bike Types Used <br>
+```
+# Calculate the number of rides by bike type
+ride_counts_by_rideable_type <- table(all_rides_df_clean$rideable_type)
+
+# Calculate the total number of rides
+total_rides <- sum(ride_counts_by_rideable_type)
+
+# Calculate the percentage share of each bike type
+ride_percentages_rideable_type <- (ride_counts_by_rideable_type / total_rides) * 100
+
+# Create a data frame to display the results
+rideable_type_usage <- data.frame(
+  Rideable_Type = names(ride_counts_by_rideable_type),
+  Ride_Count = as.vector(ride_counts_by_rideable_type),
+  Percentage = as.vector(ride_percentages_rideable_type)
+)
+```
+|  Bike Type |  Total Rides  | Percentage distribution  |
+|:----------------|---------------:|---------------:|
+|  classic_bike      | 2605010  | 47.55184 % | 
+|   docked_bike      |  79284   | 1.44725 %  |
+| electric_bike      |  2793959 | 51.00091 % |  
+
+<div>
+   <img src="/img_tableau/Number of bike types used.png" width="950" align="center">
+</div>
+
+The number of rides on electric bikes is the highest among the categories, with electric bikes accounting for 2,793,959 rides. Classic bikes are slightly less popular with 2,605,010 rides, while docked bikes have been used significantly less, with only 79,284 rides. This distribution highlights the growing trend towards electric and classic bikes for urban mobility solutions, possibly due to their convenience, ease of access, and efficiency compared to the more stationary docked bikes.
 
 ## :white_large_square: ACT
 
