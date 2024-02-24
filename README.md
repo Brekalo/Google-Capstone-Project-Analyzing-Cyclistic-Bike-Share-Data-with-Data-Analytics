@@ -16,7 +16,7 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Business Goals and Objectives 
 >   * Defining the Analytical Task 
 >   * Identifying Key Stakeholders 
-> * **PREPARE**
+> * [**PREPARE**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-prepare)
 >   * Data Sourcing and Initial Exploration 
 > * **PROCESS**
 >   * Data Cleaning and Preprocessin 
