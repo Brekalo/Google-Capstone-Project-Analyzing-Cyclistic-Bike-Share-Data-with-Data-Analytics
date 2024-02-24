@@ -68,6 +68,7 @@ In this study, we have analyzed historical travel data from 12 separate CSV file
 The dataset is structured into 13 distinct columns, or variables, which include:
 
 <sup>
+   
 | No. | Description                            | Column Name      | Type           |
 |----:|:----------------------------------------|:------------------|:-------------|
 |   1 | Unique identifier for each trip:        | `ride_id`         | String       |
