@@ -135,6 +135,7 @@ The comprehensive analysis revealed that **5.2533%** of the dataset was incomple
 Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded:
 
 <details>
+   
 | Load Packages         | Description     |
 |:-----------------------|:-------------------------------------------------------------------------------------------------------------------|
 | `library(tidyverse)`  | A collection of R packages that provide versatile tools for data manipulation, visualization, and analysis.         |
@@ -146,6 +147,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 | `library(hms)`        | Designed for easy handling and formatting of time data, complementing the `lubridate` package.  |
 | `library(purrr)`      | Enhances functional programming in R, offering tools for iterating over data and simplifying complex operations with lists and vectors. It is particularly useful for executing the same function across multiple elements or datasets and working with list-columns in data frames.  |
 | `library(data.table)` | Offers high-performance data manipulation and analysis, suitable for large datasets. Also, it's highly efficient for exporting data frames to various formats. |
+   
 </details>
 
 ### Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
@@ -368,6 +370,7 @@ The **unique** rideable types include electric bikes, classic bikes, docked bike
 On average, **members** take shorter rides at **12 minutes** and **29 seconds**, while **casual** riders tend to ride longer, averaging **21 minutes** and **53 seconds**, against an **overall** average ride length of **15 minutes** and **54 seconds** for the year.
 
 <details>
+   
 ```
 # Required library for time conversion
 library(lubridate)
@@ -409,6 +412,7 @@ average_ride_length_casual_formatted <- sprintf("%02d:%02d:%02d",
 cat("The average ride length for member riders:", average_ride_length_member_formatted, "\n")
 cat("The average ride length for casual riders:", average_ride_length_casual_formatted, "\n")
 ```
+
 </details>
 
 
