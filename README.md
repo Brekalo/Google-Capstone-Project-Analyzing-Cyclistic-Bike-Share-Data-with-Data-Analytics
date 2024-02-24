@@ -39,8 +39,8 @@ Financial analysis indicates annual members generate more profit than casual rid
 Maximizing annual memberships is key to Cyclistic's future success, prompting Moreno's team to analyze historical trip data to uncover trends. As their recommendations necessitate executive approval, they must provide compelling data insights and professional visualizations.
 
 ## :white_large_square: ASK
-**Business Objective:**<br>
-Develop effective marketing strategies to convert casual riders into annual members. <br>
+**Business Objective:**
+Develop effective marketing strategies to convert casual riders into annual members.
 
 To **achieve** this **objective**, the future marketing program will address the following three pivotal **questions**:
 > 1. How do annual members and casual riders use Cyclistic bikes differently?
@@ -52,11 +52,16 @@ To **achieve** this **objective**, the future marketing program will address the
 - Cyclistic executive team.
 
 ## :white_large_square: PREPARE
-### Data Collection and Sources:
+### Data Collection and Sources
 
-For this case study, we utilize data from Divvy, a real bike share company operating in Chicago, as a proxy for the fictional company Cyclistic.<br>
+For this case study, we utilize data from Divvy, a real bike share company operating in Chicago, as a proxy for the fictional company Cyclistic.
+
 These datasets are publicly available through Motivate International Inc. [under a specified license](https://divvybikes.com/data-license-agreement) and can be accessed for [download here](https://divvy-tripdata.s3.amazonaws.com/index.html).<br>
 The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.
+
+<details><summary>"Divvy-tripdata" bucket information</summary>
+   <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="750" align="center">
+</details>
 
 <details>
    <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="750" align="center">
