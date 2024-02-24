@@ -91,7 +91,7 @@ The data categorizes riders into two main groups:
 
 This categorization is pivotal for understanding different usage patterns and guiding business strategies.
 
-#### Divvy [Pricing](https://divvybikes.com/pricing) Summary:
+#### Divvy [Pricing](https://divvybikes.com/pricing) Summary
 
 <img src="img_divvy/divvy_plans.jpg" width="550" align="center">
 
@@ -103,7 +103,7 @@ This categorization is pivotal for understanding different usage patterns and gu
 - **Cycling for Everyone (C4E)**: A program for eligible residents offering a \$5 annual membership with specific rates and credits for e-bike use.
 - **Miscellaneous Fees**: E-bikes can be parked at public racks within the service area for \$1, with a \$25 fine for parking violations or if parked outside the service area.
 
-### Tools Utilized for Defining Objectives and Analysis:
+### Tools Utilized for Defining Objectives and Analysis
 - Excel: Employed for the initial data cleaning and review process.
 - RStudio Desktop: Used for in-depth data analysis and scripting in R.
 - Tableau: Leveraged for creating interactive and informative data visualizations.
@@ -468,8 +468,8 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 | 7 Saturday  |  844074   |  394780  |  449294   |    410519   |    17481    |    416074     |
 
 <img src="/img_tableau/Number of User Rides per Day of the Week.png" width="750" align="center">
-The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users. 
-<br>
+The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users. <br>
+
 <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
 Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users. 
 <br>
