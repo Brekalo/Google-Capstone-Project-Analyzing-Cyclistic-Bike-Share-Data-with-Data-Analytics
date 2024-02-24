@@ -471,6 +471,7 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users. <br>
 
 <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
+
 Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users. 
 <br>
 <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
