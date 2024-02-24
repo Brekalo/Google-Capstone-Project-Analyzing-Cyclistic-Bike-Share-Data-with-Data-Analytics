@@ -198,7 +198,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 5. **Missing Values in Data Frame**:
 - Check the entire data frame for any missing values to ensure data completeness.
 <details>
-   <img src="img_details/missing_values.png" width="480" align="center">
+   <img src="img_details/missing_values.png" width="470" align="center">
 </details>
 
 6. **Column-wise Missing Values**:
@@ -210,7 +210,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 7. **Duplicate Rows Check**:
 - Verify the presence of duplicate rows within the data frame to maintain data integrity.
 <details>
-   <img src="img_details/duplicate_rows.png" width="450" align="center">
+   <img src="img_details/duplicate_rows.png" width="460" align="center">
 </details>
 
 *By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.*
@@ -231,26 +231,26 @@ Through this detailed analysis, we aim to provide insights into the differing be
 ### Counts and Percentages of Bike Types Used
 <details>
    
-```
-# Calculate the number of rides by bike type
-ride_counts_by_rideable_type <- table(all_rides_df_clean$rideable_type)
-
-# Calculate the total number of rides
-total_rides <- sum(ride_counts_by_rideable_type)
-
-# Calculate the percentage share of each bike type
-ride_percentages_rideable_type <- (ride_counts_by_rideable_type / total_rides) * 100
-
-# Create a data frame to display the results
-rideable_type_usage <- data.frame(
-  Rideable_Type = names(ride_counts_by_rideable_type),
-  Ride_Count = as.vector(ride_counts_by_rideable_type),
-  Percentage = as.vector(ride_percentages_rideable_type)
-)
-
-# Display the results
-print(rideable_type_usage)
-```
+   ```
+   # Calculate the number of rides by bike type
+   ride_counts_by_rideable_type <- table(all_rides_df_clean$rideable_type)
+   
+   # Calculate the total number of rides
+   total_rides <- sum(ride_counts_by_rideable_type)
+   
+   # Calculate the percentage share of each bike type
+   ride_percentages_rideable_type <- (ride_counts_by_rideable_type / total_rides) * 100
+   
+   # Create a data frame to display the results
+   rideable_type_usage <- data.frame(
+     Rideable_Type = names(ride_counts_by_rideable_type),
+     Ride_Count = as.vector(ride_counts_by_rideable_type),
+     Percentage = as.vector(ride_percentages_rideable_type)
+   )
+   
+   # Display the results
+   print(rideable_type_usage)
+   ```
 </details>
 
 |  Bike Type |  Total Rides  | Percentage distribution  |
@@ -270,24 +270,21 @@ Using Cyclistic's historical data on the distribution of bike ride types, the sh
 ### Counts and Percentage Distribution of Member and Casual Rides <br>
 <details>
 
-```
-%%R -i all_rides_df_clean
-
-# Count rides for 'Member' and 'Casual' in the 'member_casual' column
-count_member_casual <- table(all_rides_df_clean$member_casual)
-
-# Display counts of 'Member' and 'Casual'
-print("Counts of Member and Casual Rides:")
-print(count_member_casual)
-
-# Calculate the percentages for 'Member' and 'Casual'
-percentage_member_casual <- prop.table(count_member_casual) * 100
-
-# Display percentages of 'Member' and 'Casual'
-print("Percentage of Member and Casual Rides:")
-print(percentage_member_casual)
-```
-
+   ```
+   # Count rides for 'Member' and 'Casual' in the 'member_casual' column
+   count_member_casual <- table(all_rides_df_clean$member_casual)
+   
+   # Display counts of 'Member' and 'Casual'
+   print("Counts of Member and Casual Rides:")
+   print(count_member_casual)
+   
+   # Calculate the percentages for 'Member' and 'Casual'
+   percentage_member_casual <- prop.table(count_member_casual) * 100
+   
+   # Display percentages of 'Member' and 'Casual'
+   print("Percentage of Member and Casual Rides:")
+   print(percentage_member_casual)
+   ```
 </details>
 
 | Biker Status | Total Rides  |  Percentage distribution  |
@@ -344,120 +341,119 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 
 <details>
    
-```
-# Required library for time conversion
-library(lubridate)
+   ```
+   # Required library for time conversion
+   library(lubridate)
+   
+   # Direct calculation and formatting of the overall average ride length
+   mean_ride_length_seconds <- mean(all_rides_df_clean$ride_length_seconds, na.rm = TRUE)
+   mean_ride_length_hms <- seconds_to_period(mean_ride_length_seconds)
+   mean_ride_length_formatted <- sprintf("%02d:%02d:%02d", 
+                                         hour(mean_ride_length_hms), 
+                                         minute(mean_ride_length_hms), 
+                                         second(mean_ride_length_hms)
+                                        )
+   
+   # Display the overall average ride length
+   cat("The overall average length of rides:", mean_ride_length_formatted, "\n")
 
-# Direct calculation and formatting of the overall average ride length
-mean_ride_length_seconds <- mean(all_rides_df_clean$ride_length_seconds, na.rm = TRUE)
-mean_ride_length_hms <- seconds_to_period(mean_ride_length_seconds)
-mean_ride_length_formatted <- sprintf("%02d:%02d:%02d", 
-                                      hour(mean_ride_length_hms), 
-                                      minute(mean_ride_length_hms), 
-                                      second(mean_ride_length_hms)
-                                     )
+   # Calculation of the average ride length in seconds for members and casual users
+   average_ride_length_member_seconds <- mean(
+       all_rides_df_clean$ride_length_seconds[all_rides_df_clean$member_casual == "member"], na.rm = TRUE)
+   average_ride_length_casual_seconds <- mean(
+       all_rides_df_clean$ride_length_seconds[all_rides_df_clean$member_casual == "casual"], na.rm = TRUE)
+   
+   # Convert the averages to HH:MM:SS format
+   average_ride_length_member_hms <- seconds_to_period(average_ride_length_member_seconds)
+   average_ride_length_member_formatted <- sprintf("%02d:%02d:%02d", 
+                                                   hour(average_ride_length_member_hms), 
+                                                   minute(average_ride_length_member_hms), 
+                                                   second(average_ride_length_member_hms)
+                                                  )
 
-# Display the overall average ride length
-cat("The overall average length of rides:", mean_ride_length_formatted, "\n")
-
-# Calculation of the average ride length in seconds for members and casual users
-average_ride_length_member_seconds <- mean(
-    all_rides_df_clean$ride_length_seconds[all_rides_df_clean$member_casual == "member"], na.rm = TRUE)
-average_ride_length_casual_seconds <- mean(
-    all_rides_df_clean$ride_length_seconds[all_rides_df_clean$member_casual == "casual"], na.rm = TRUE)
-
-# Convert the averages to HH:MM:SS format
-average_ride_length_member_hms <- seconds_to_period(average_ride_length_member_seconds)
-average_ride_length_member_formatted <- sprintf("%02d:%02d:%02d", 
-                                                hour(average_ride_length_member_hms), 
-                                                minute(average_ride_length_member_hms), 
-                                                second(average_ride_length_member_hms)
-                                               )
-
-average_ride_length_casual_hms <- seconds_to_period(average_ride_length_casual_seconds)
-average_ride_length_casual_formatted <- sprintf("%02d:%02d:%02d", 
-                                                hour(average_ride_length_casual_hms), 
-                                                minute(average_ride_length_casual_hms), 
-                                                second(average_ride_length_casual_hms)
-                                               )
-
-# Display the formatted average ride lengths for member and casual riders
-cat("The average ride length for member riders:", average_ride_length_member_formatted, "\n")
-cat("The average ride length for casual riders:", average_ride_length_casual_formatted, "\n")
-```
+   average_ride_length_casual_hms <- seconds_to_period(average_ride_length_casual_seconds)
+   average_ride_length_casual_formatted <- sprintf("%02d:%02d:%02d", 
+                                                   hour(average_ride_length_casual_hms), 
+                                                   minute(average_ride_length_casual_hms), 
+                                                   second(average_ride_length_casual_hms)
+                                                  )
+   
+   # Display the formatted average ride lengths for member and casual riders
+   cat("The average ride length for member riders:", average_ride_length_member_formatted, "\n")
+   cat("The average ride length for casual riders:", average_ride_length_casual_formatted, "\n")
+   ```
 
 </details>
 
 ### The most frequent day of the week for rides 
 **Saturday** is the most popular day for rides **overall** and for **casual** users, while **members** ride most frequently on **Thursdays**.
-
 <details>
 
-```
-# Calculate the mode of the day of the week for all rides
-day_of_week_mode <- names(which.max(table(all_rides_df_clean$day_of_week)))
+   ```
+   # Calculate the mode of the day of the week for all rides
+   day_of_week_mode <- names(which.max(table(all_rides_df_clean$day_of_week)))
+   
+   # Display the most common day for all rides
+   cat("The most frequent day of the week for rides is: ", day_of_week_mode, "\n")
+   
+   # Calculate the mode of the day of the week specifically for member rides
+   member_day_of_week_mode <- names(
+     which.max(table(all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "member"]))
+   )
 
-# Display the most common day for all rides
-cat("The most frequent day of the week for rides is: ", day_of_week_mode, "\n")
-
-# Calculate the mode of the day of the week specifically for member rides
-member_day_of_week_mode <- names(
-  which.max(table(all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "member"]))
-)
-
-# Calculate the mode of the day of the week specifically for casual user rides
-casual_day_of_week_mode <- names(
-  which.max(table(all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "casual"]))
-)
-
-# Display the most common day of the week for member rides
-cat("The most frequent day of the week for rides for Members: ", member_day_of_week_mode, "\n")
-
-# Display the most common day of the week for casual user rides
-cat("The most frequent day of the week for rides for Casual users: ", casual_day_of_week_mode, "\n")
-```
+   # Calculate the mode of the day of the week specifically for casual user rides
+   casual_day_of_week_mode <- names(
+     which.max(table(all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "casual"]))
+   )
+   
+   # Display the most common day of the week for member rides
+   cat("The most frequent day of the week for rides for Members: ", member_day_of_week_mode, "\n")
+   
+   # Display the most common day of the week for casual user rides
+   cat("The most frequent day of the week for rides for Casual users: ", casual_day_of_week_mode, "\n")
+   ```
 
 </details>
 
 ### Calculation of the number of rides by users and bike type usage per day of the week 
 <details>
    
-```
-library(tidyverse)
-library(lubridate)
-library(hms)
+   ```
+   library(tidyverse)
+   library(lubridate)
+   library(hms)
+   
+   # Calculation of the number of rides for all users, members, and casual users by day of the week
+   num_rides_by_day_of_week <- table(all_rides_df_clean$day_of_week)
+   num_rides_member_by_day_of_week <- table(
+       all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "member"])
+   num_rides_casual_by_day_of_week <- table(
+       all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "casual"])
 
-# Calculation of the number of rides for all users, members, and casual users by day of the week
-num_rides_by_day_of_week <- table(all_rides_df_clean$day_of_week)
-num_rides_member_by_day_of_week <- table(
-    all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "member"])
-num_rides_casual_by_day_of_week <- table(
-    all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "casual"])
+   # Display results to the console
+   cat("Number of rides by day of the week for All users:\n")
+   print(num_rides_by_day_of_week)
+   cat("Number of rides by day of the week for Members:\n")
+   print(num_rides_member_by_day_of_week)
+   cat("Number of rides by day of the week for Casual users:\n")
+   print(num_rides_casual_by_day_of_week)
+   
+   # Creating a tibble with the appropriate number of rows (7 for each day of the week)
+   all_rides_day_week_tibble <- tibble(
+     day_of_week = factor(names(num_rides_by_day_of_week), levels = names(num_rides_by_day_of_week)),
+     num_rides_users = as.numeric(num_rides_by_day_of_week),
+     num_rides_casual = as.numeric(num_rides_casual_by_day_of_week),
+     num_rides_member = as.numeric(num_rides_member_by_day_of_week)
+   )
 
-# Display results to the console
-cat("Number of rides by day of the week for All users:\n")
-print(num_rides_by_day_of_week)
-cat("Number of rides by day of the week for Members:\n")
-print(num_rides_member_by_day_of_week)
-cat("Number of rides by day of the week for Casual users:\n")
-print(num_rides_casual_by_day_of_week)
-
-# Creating a tibble with the appropriate number of rows (7 for each day of the week)
-all_rides_day_week_tibble <- tibble(
-  day_of_week = factor(names(num_rides_by_day_of_week), levels = names(num_rides_by_day_of_week)),
-  num_rides_users = as.numeric(num_rides_by_day_of_week),
-  num_rides_casual = as.numeric(num_rides_casual_by_day_of_week),
-  num_rides_member = as.numeric(num_rides_member_by_day_of_week)
-)
-
-# Display the created tibble
-print(all_rides_day_week_tibble)
-
-# Count of the bike types by day of the week
-ride_type_usage_by_day <- table(all_rides_df_clean$day_of_week, all_rides_df_clean$rideable_type)
-cat("Ride type usage by Day of the Week:\n")
-print(ride_type_usage_by_day)
-```
+   # Display the created tibble
+   print(all_rides_day_week_tibble)
+   
+   # Count of the bike types by day of the week
+   ride_type_usage_by_day <- table(all_rides_df_clean$day_of_week, all_rides_df_clean$rideable_type)
+   cat("Ride type usage by Day of the Week:\n")
+   print(ride_type_usage_by_day)
+   ```
 
 </details>
 
@@ -494,48 +490,48 @@ The bar graph depicts the percentage distribution of bike rides by members and c
 ### Average Ride Length by Day of the Week for All Users, Members, and Casual Riders
 <details>
 
-```
-# Necessary libraries
-library(tidyverse)
-library(lubridate)
-library(hms)
+   ```
+   # Necessary libraries
+   library(tidyverse)
+   library(lubridate)
+   library(hms)
+   
+   # Calculate the average ride length for all users by day of the week
+   average_ride_length_by_day <- all_rides_df_clean %>%
+     group_by(day_of_week) %>%
+     summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
+   
+   # Calculate the average ride length for members by day of the week
+   average_ride_length_member_by_day <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     group_by(day_of_week) %>%
+     summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
 
-# Calculate the average ride length for all users by day of the week
-average_ride_length_by_day <- all_rides_df_clean %>%
-  group_by(day_of_week) %>%
-  summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
+   # Calculate the average ride length for casual users by day of the week
+   average_ride_length_casual_by_day <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     group_by(day_of_week) %>%
+     summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
+   
+   # Create a unified data frame for each user type with an additional column for user type
+   df_all_users <- average_ride_length_by_day %>% mutate(user_type = "All Users")
+   df_members <- average_ride_length_member_by_day %>% mutate(user_type = "Member")
+   df_casual <- average_ride_length_casual_by_day %>% mutate(user_type = "Casual")
+   
+   # Combine all data frames into one
+   all_rides_df_final_avg_ride_length_by_day <- bind_rows(df_all_users, df_members, df_casual)
 
-# Calculate the average ride length for members by day of the week
-average_ride_length_member_by_day <- all_rides_df_clean %>%
-  filter(member_casual == "member") %>%
-  group_by(day_of_week) %>%
-  summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
-
-# Calculate the average ride length for casual users by day of the week
-average_ride_length_casual_by_day <- all_rides_df_clean %>%
-  filter(member_casual == "casual") %>%
-  group_by(day_of_week) %>%
-  summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
-
-# Create a unified data frame for each user type with an additional column for user type
-df_all_users <- average_ride_length_by_day %>% mutate(user_type = "All Users")
-df_members <- average_ride_length_member_by_day %>% mutate(user_type = "Member")
-df_casual <- average_ride_length_casual_by_day %>% mutate(user_type = "Casual")
-
-# Combine all data frames into one
-all_rides_df_final_avg_ride_length_by_day <- bind_rows(df_all_users, df_members, df_casual)
-
-# Display the calculated averages to the console with clear separation
-cat("Average Ride Length for All Users by Day of the Week:\n")
-print(df_all_users)
-cat("Average Ride Length for Member Riders by Day of the Week:\n")
-print(df_members)
-cat("Average Ride Length for Casual Riders by Day of the Week:\n")
-print(df_casual)
-
-# Save the combined data frame as a CSV file
-write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_ride_length_by_day_users.csv")
-```
+   # Display the calculated averages to the console with clear separation
+   cat("Average Ride Length for All Users by Day of the Week:\n")
+   print(df_all_users)
+   cat("Average Ride Length for Member Riders by Day of the Week:\n")
+   print(df_members)
+   cat("Average Ride Length for Casual Riders by Day of the Week:\n")
+   print(df_casual)
+   
+   # Save the combined data frame as a CSV file
+   write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_ride_length_by_day_users.csv")
+   ```
 
 </details>
 
@@ -639,6 +635,199 @@ The chart shows that the afternoon is the most popular time for bike rides, with
    ```
 
 </details>
+
+|Hour of Day | Total rides: OVERALL | Hour of Day | Total rides: MEMBER | Hour of Day | Total rides: CASUAL |
+|------:|:----------|--------:|:--------|------:|:------|
+|	5 PM	|	564221	|	5 PM	|	371825	|	5 PM	|	192396	|
+|	4 PM	|	492214	|	4 PM	|	316178	|	4 PM	|	176036	|
+|	6 PM	|	461164	|	6 PM	|	295084	|	6 PM	|	166080	|
+|	3 PM	|	387929	|	3 PM	|	234498	|	3 PM	|	153431	|
+|	7 PM	|	331927	|	8 AM	|	234207	|	2 PM	|	137225	|
+|	2 PM	|	328500	|	7 PM	|	209074	|	1 PM	|	131486	|
+|	1 PM	|	319933	|	2 PM	|	191275	|	12 PM	|	126084	|
+|	12 PM	|	316237	|	12 PM	|	190153	|	7 PM	|	122853	|
+|	8 AM	|	302704	|	1 PM	|	188447	|	11 AM	|	106625	|
+|	11 AM	|	274612	|	7 AM	|	186859	|	8 PM	|	88592	   |
+
+<img src="/img_tableau/Top 10 Most Popular Riding Hours Overall.png" width="650" align="center">
+
+The data from the chart indicates that the late afternoon, specifically around 5 PM, is the most popular time for cycling, with 564,221 rides occurring during this time. Furthermore, the time span from 3 PM to 6 PM is the preferred window for cycling, accounting for 1,905,528 rides, which represents 34.7835% of total rides.
+
+<details>
+
+   ```
+   library(dplyr)
+   
+   # Calculate the popularity of rides between 3 PM and 6 PM to determine
+   # the number of rides in this time frame in both absolute and relative terms compared to all rides.
+   
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(hour_of_day = as.integer(substr(started_at_time, 1, 2))) 
+   
+   # Filter rides between 3 PM and 6 PM
+   hourly_usage_peak <- all_rides_df_clean %>%
+     filter(hour_of_day >= 15 & hour_of_day <= 18)
+   
+   # Calculate the total number of rides in this time period
+   total_rides_peak <- nrow(hourly_usage_peak)
+   
+   # Calculate the total number of rides in the entire dataset for comparison
+   total_rides_all <- nrow(all_rides_df_clean)
+   
+   # Calculate the share of rides in this time period compared to all rides
+   percentage_peak <- (total_rides_peak / total_rides_all) * 100
+   
+   # Display the results
+   cat("Total Rides between 3 PM and 6 PM:", total_rides_peak, "\n")
+   cat("Percentage of Total Rides:", format(percentage_peak, nsmall = 2), "%\n")
+   ```
+
+</details>
+In comparison with the previous graph, the following analysis is performed:
+
+- The peak cycling hours are between **3 PM** and **6 PM**, with **1,905,528** total rides, comprising 34.78% of all rides.
+- Evening rides, from **6 PM** to **11 PM**, total **1,464,636**, making up 26.74% of rides, indicating a significant preference for post-work cycling.
+- Late-night to early morning hours, from **12 AM** to **5 AM**, have the fewest rides at **210,012**, accounting for only 3.83% of the total, reflecting the least popular time for cycling.
+- Early to mid-morning rides, from **5 AM** to **8 AM**, total **714,303**, which is 13.04% of rides, showing a moderate uptake for early risers or commuters.
+- Late morning to midday, from **8 AM** to **12 PM**, sees **1,342,721** rides, comprising 24.51% of the total, indicating a preference for mid-morning cycling.
+- Combining early and late morning periods, from **5 AM** to **12 PM**, yields a total of 1,754,320 rides, or 32.02% of total rides, suggesting morning hours are fairly popular for cycling.
+- From noon to **3 PM**, there are **1,352,599** total rides, amounting to 24.69% of the total, which suggests a steady use of bikes into the early afternoon.
+- Extending from early morning through to the afternoon, from **5 AM** to **3 PM**, there are a total of **2,790,682** rides, representing a substantial 50.94% of all rides, indicating that the daytime hours up until mid-afternoon are the most popular for cycling.
+
+### Calculation of the Number of Rides During Different Times of the Day
+<details>
+
+   ```
+   # Load necessary libraries
+   library(dplyr)
+   library(lubridate) # Required for the hour() function
+   
+   # Calculate the hour from the timestamp
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(hour_of_day = hour(hms::as_hms(started_at_time))) 
+   
+   # Calculate the number of rides per hour for all users
+   hour_of_day_usage_all <- all_rides_df_clean %>%
+     group_by(hour_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop')
+
+   # Calculate the number of rides per hour for members
+   hour_of_day_usage_member <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     group_by(hour_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') 
+   
+   # Calculate the number of rides per hour for casual riders
+   hour_of_day_usage_casual <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     group_by(hour_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') 
+   
+   # Display the results
+   cat("Hourly Usage for All Riders:\n")
+   print(hour_of_day_usage_all)
+   cat("Hourly Usage for Members:\n")
+   print(hour_of_day_usage_member)
+   cat("Hourly Usage for Casual Riders:\n")
+   print(hour_of_day_usage_casual)
+   ```
+
+</details>
+| Hour of Day | Total trips: Overall | Total trips: Member | Total trips: Casual |
+|------:|----------:|--------:|--------:|
+|	12 AM	|	68815	|	33708	|	35107	|
+|	1 AM	|	42852	|	20062	|	22790	|
+|	2 AM	|	25454	|	11692	|	13762	|
+|	3 AM	|	15230	|	7585	|	7645	|
+|	4 AM	|	14149	|	8355	|	5794	|
+|	5 AM	|	43512	|	32529	|	10983	|
+|	6 AM	|	129879	|	100650	|	29229	|
+|	7 AM	|	238208	|	186859	|	51349	|
+|	8 AM	|	302704	|	234207	|	68497	|
+|	9 AM	|	224441	|	156985	|	67456	|
+|	10 AM	|	224727	|	141289	|	83438	|
+|	11 AM	|	274612	|	167987	|	106625	|
+|	12 PM	|	316237	|	190153	|	126084	|
+|	1 PM	|	319933	|	188447	|	131486	|
+|	2 PM	|	328500	|	191275	|	137225	|
+|	3 PM	|	387929	|	234498	|	153431	|
+|	4 PM	|	492214	|	316178	|	176036	|
+|	5 PM	|	564221	|	371825	|	192396	|
+|	6 PM	|	461164	|	295084	|	166080	|
+|	7 PM	|	331927	|	209074	|	122853	|
+|	8 PM	|	233844	|	145252	|	88592	|
+|	9 PM	|	186929	|	112741	|	74188	|
+|	10 PM	|	149925	|	84147	|	65778	|
+|	11 PM	|	100847	|	53666	|	47181	|
+
+<img src="/img_tableau/Number of Rides During Different Times of the Day.png" width="750" align="center">
+The graph highlights that the period from afternoon to evening is the most favored for cycling, with the hours between 3 PM and 6 PM alone accounting for 34.78% of daily rides, signifying that over a third of the day's rides occur in this 3-hour window. Morning hours show the least activity, and there is a noticeable decline in rides from 6 PM to 11 PM, which constitutes 26.74% of the daily rides.
+
+### Percentage Distribution of Total Ride Counts by Hour of Day
+<img src="/img_tableau/Percentage Distribution of Total Ride Counts by Hour of Day.png" width="750" align="center">
+The graph's percentage distribution indicates that 5 PM is the peak time for rides, accounting for 10.30% of the total. There is a significant drop in activity from 11 PM to 5 AM, marking these as the least popular hours. Cyclistic users clearly favor the time span between 3 PM and 6 PM for their rides.
+
+<img src="/img_tableau/Total Ride Counts by Hour of Day for Casual Riders and Members.png" width="950" align="center">
+The graph compares the hourly ride counts of casual riders and members, showing that members tend to ride mostly during morning peak hours, with a significant spike around 8 AM, and again in the late afternoon, peaking at 5 PM. Casual riders, on the other hand, have their highest counts later in the day, with their peak also at 5 PM but sustaining higher ride counts into the evening compared to members.
+
+<img src="/img_tableau/Ride Counts by Hours Across Each Day for Casual Riders and Members.png" width="950" align="center">
+The graph displays the hourly ride counts for both members and casual riders across different days of the week. Consistent with previous findings, the peak usage for both groups is around 5 PM. During weekdays, the highest frequency of rides occurs between 3 PM and 6 PM, with 3 PM being particularly popular. On weekends, the peak shifts to between 1 PM and 3 PM. Casual riders start their trips frequently in the early afternoon on weekdays, while members tend to begin their journeys around 7 AM and 8 AM. This pattern suggests that members are likely commuting during rush hours on weekdays, whereas casual riders are more inclined to use bikes for leisure activities, especially in the afternoons and on weekends.
+
+## Number of Bike Rides and Percentage Distribution Across Seasons
+<details>
+   ```
+
+   library(dplyr)
+   
+   # Convert 'started_at_date' and 'ended_at_date' columns to date format
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(
+       started_at_date = as.Date(started_at_date),
+       ended_at_date = as.Date(ended_at_date)
+     )
+   
+   # Create a new 'season' column to label the seasons
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(
+       season = case_when(
+         between(started_at_date, as.Date("2023-03-21"), as.Date("2023-06-20")) ~ "Spring",
+         between(started_at_date, as.Date("2023-06-21"), as.Date("2023-09-22")) ~ "Summer",
+         between(started_at_date, as.Date("2023-09-23"), as.Date("2023-12-20")) ~ "Autumn",
+         TRUE ~ "Winter"  
+       )
+     )
+
+   # Calculate the number of rides for each season
+   rides_by_season <- all_rides_df_clean %>%
+     group_by(season) %>%
+     summarize(Count_of_ride_id = n(), .groups = 'drop') 
+   
+   # Print the results for rides by season
+   cat("Number of rides per season:\n")
+   print(rides_by_season)
+   
+   
+   # Calculate the number of rides for each season, segmented by 'member_casual' column
+   rides_by_season_member_casual <- all_rides_df_clean %>%
+     group_by(season, member_casual) %>%
+     summarize(Count_of_ride_id = n(), .groups = 'drop') 
+
+   # Print the results for rides by season and user type
+   cat("Number of rides per season and user type:\n")
+   print(rides_by_season_member_casual)
+   ```
+
+</details>
+
+| season | Count_of_ride_id  |  CASUAL  | MEMBER  |
+|:---------|-----------:|---------:|----------:|
+| Autumn   |  1048806   |  335170  |  713636   |
+| Spring   |  1547735   |  584526  |  963209   |
+| Summer   |  2192634   |  904759  |  1287875  |
+| Winter   |  689078    |  159550  |  529528   |
+
+
+<img src="/img_tableau/Number of Bike Rides per Season.png" width="750" align="center">
 
 
 ## :white_large_square: ACT
