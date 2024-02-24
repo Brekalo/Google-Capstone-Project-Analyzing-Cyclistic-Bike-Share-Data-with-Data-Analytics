@@ -86,6 +86,45 @@ The dataset is structured into 13 distinct columns, or variables, which include:
 |  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
 </sup>
 
+<sub>
+   
+| No. | Description                            | Column Name      | Type           |
+|----:|:----------------------------------------|:------------------|:-------------|
+|   1 | Unique identifier for each trip:        | `ride_id`         | String       |
+|   2 | Type of bicycle:                        | `rideable_type`   | String       |
+|   3 | Start timestamp of the ride:            | `started_at`      | Date & Time  |
+|   4 | End timestamp of the ride:              | `ended_at`        | Date & Time  |
+|   5 | Name of the starting station:           | `start_station_name` | String    |
+|   6 | Identifier for the starting station:    | `start_station_id`   | String    |
+|   7 | Name of the ending station:             | `end_station_name`   | String    |
+|   8 | Identifier for the ending station:      | `end_station_id`     | String    |
+|   9 | The latitude of the starting station:   | `start_lat`          | Numeric   |
+|  10 | The longitude of starting station:      | `start_lng`          | Numeric   |
+|  11 | The end station's latitude:             | `end_lat`            | Numeric   |
+|  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
+|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
+</sub>
+
+<small>
+   
+| No. | Description                            | Column Name      | Type           |
+|----:|:----------------------------------------|:------------------|:-------------|
+|   1 | Unique identifier for each trip:        | `ride_id`         | String       |
+|   2 | Type of bicycle:                        | `rideable_type`   | String       |
+|   3 | Start timestamp of the ride:            | `started_at`      | Date & Time  |
+|   4 | End timestamp of the ride:              | `ended_at`        | Date & Time  |
+|   5 | Name of the starting station:           | `start_station_name` | String    |
+|   6 | Identifier for the starting station:    | `start_station_id`   | String    |
+|   7 | Name of the ending station:             | `end_station_name`   | String    |
+|   8 | Identifier for the ending station:      | `end_station_id`     | String    |
+|   9 | The latitude of the starting station:   | `start_lat`          | Numeric   |
+|  10 | The longitude of starting station:      | `start_lng`          | Numeric   |
+|  11 | The end station's latitude:             | `end_lat`            | Numeric   |
+|  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
+|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
+</small>
+
+
 While the dataset did not come with an accompanying metadata file, the variables are intuitively named and can be understood without additional context.
 
 The data categorizes riders into two main groups: 
