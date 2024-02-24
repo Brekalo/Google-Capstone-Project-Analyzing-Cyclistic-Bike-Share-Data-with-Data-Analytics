@@ -11,7 +11,7 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 
 > **Table of Contents:**
 > * **INTRODUCTION**
-> * [**INTRODUCTION**](#:white_large_square: INTRODUCTION)
+> * [**INTRODUCTION**](#INTRODUCTION)
 >   * Project Overview and Context 
 > * **ASK**
 >   * Business Goals and Objectives 
