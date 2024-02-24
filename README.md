@@ -10,10 +10,9 @@ There are several phases to the project, from data analysis to data visualizatio
 I completed a case study on **Cyclistic** bike-share for my Google Data Analytics certification, inspired by my passion for cycling. This project, my first in analytics, explores the differences between casual and member riders following Google's framework: **Ask**, **Prepare**, **Process**, **Analyze**, **Share**, **Act**. Check out [my data visualizations here](https://www.linkedin.com/in/vesna-marija-brekalo).
 
 > **Table of Contents:**
-> * **INTRODUCTION**
 > * [**INTRODUCTION**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-introduction)
 >   * Project Overview and Context 
-> * **ASK**
+> * [**ASK**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-ask)
 >   * Business Goals and Objectives 
 >   * Defining the Analytical Task 
 >   * Identifying Key Stakeholders 
