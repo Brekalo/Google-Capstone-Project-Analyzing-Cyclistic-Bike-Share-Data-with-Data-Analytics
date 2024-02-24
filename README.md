@@ -99,6 +99,8 @@ This categorization is pivotal for understanding different usage patterns and gu
 </div>
 <br>
 
+<img src="img_divvy/divvy_plans.jpg" width="550" align="center">
+
 - **Single Ride**: \$3.30 for up to 30 minutes, with a \$0.15 per minute overage charge.
 - **Daily Pass**: \$15 for 24-hour access with unlimited classic bike rides up to 3 hours each; overage cost is \$0.15 per minute for rides over 3 hours.
 - **E-Bike Single Ride**: \$3.30 with an additional \$0.20 per minute while in use.
@@ -237,7 +239,6 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
    <img src="img_details/duplicate_rows.png" width="450" align="center">
 </div>
 </details>
-<br>
 
 *By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.*
 
