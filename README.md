@@ -174,57 +174,43 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 1. **Overview of `all_rides_df_clean.csv`**:
 - Obtain an overview of the data frame, including the total number of rows, columns, and cells.
 <details>
-<div>
    <img src="img_details/overview_of_all_rides_df_clean.png" width="500" align="center">
-</div>
 </details>
 
 2. **Previewing Data**:
 - Use the `head()` function to display the first few rows of the data frame, providing an initial glimpse into the dataset.
 <details>
-<div>
    <img src="img_details/previewing_data.png" width="900" align="center">
-</div>
 </details>
 
 3. **Understanding Data Structure**:
 - Examine the data structure and its characteristics, including data types of each column.
 <details>
-<div>
    <img src="img_details/data_structure.png" width="900" align="center">
-</div>
 </details>
 
 4. **Identifying Outliers**:
 - Apply the `summary()` function to summarize each column, aiding in the identification of unusual or outlier values.
 <details>
-<div>
    <img src="img_details/identifying_outliers.png" width="900" align="center">
-</div>
 </details>
 
 5. **Missing Values in Data Frame**:
 - Check the entire data frame for any missing values to ensure data completeness.
 <details>
-<div>
    <img src="img_details/missing_values.png" width="500" align="center">
-</div>
 </details>
 
 6. **Column-wise Missing Values**:
 - Investigate missing values by each column to pinpoint areas requiring data imputation or removal.
 <details>
-<div>
    <img src="img_details/column_wise_missing _values.png" width="380" align="center">
-</div>
 </details>
 
 7. **Duplicate Rows Check**:
 - Verify the presence of duplicate rows within the data frame to maintain data integrity.
 <details>
-<div>
    <img src="img_details/duplicate_rows.png" width="450" align="center">
-</div>
 </details>
 
 *By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.*
@@ -242,7 +228,9 @@ At this phase of our study, we seek to explore the dynamics of bike usage among 
 
 Through this detailed analysis, we aim to provide insights into the differing behaviors and preferences between annual members and casual riders, contributing to targeted strategy development for Cyclistic.
 
-### Counts and Percentages of Bike Types Used <br>
+### Counts and Percentages of Bike Types Used
+<details>
+   
 ```
 # Calculate the number of rides by bike type
 ride_counts_by_rideable_type <- table(all_rides_df_clean$rideable_type)
@@ -263,6 +251,7 @@ rideable_type_usage <- data.frame(
 # Display the results
 print(rideable_type_usage)
 ```
+</details>
 
 |  Bike Type |  Total Rides  | Percentage distribution  |
 |:----------------|---------------:|---------------:|
@@ -270,19 +259,17 @@ print(rideable_type_usage)
 |   docked_bike      |  79284   | 1.44725 %  |
 | electric_bike      |  2793959 | 51.00091 % |  
 
-<div>
-   <img src="/img_tableau/Number of bike types used.png" width="950" align="center">
-</div>
+<img src="/img_tableau/Number of bike types used.png" width="950" align="center">
 
 The number of rides on electric bikes is the highest among the categories, with electric bikes accounting for 2,793,959 rides. Classic bikes are slightly less popular with 2,605,010 rides, while docked bikes have been used significantly less, with only 79,284 rides. This distribution highlights the growing trend towards electric and classic bikes for urban mobility solutions, possibly due to their convenience, ease of access, and efficiency compared to the more stationary docked bikes.
 
-<div>
-   <img src="/img_tableau/Percentage distribution of bike rides.png" width="950" align="center">
-</div>
+<img src="/img_tableau/Percentage distribution of bike rides.png" width="950" align="center">
 
 Using Cyclistic's historical data on the distribution of bike ride types, the share of electric bikes, classic bikes, and docked bikes is divided into 51.00% for electric bikes, 47.55% for classic bikes, and 1.45% for docked bikes. This data indicates that electric bikes are marginally more popular than classic bikes, with over half of the riders opting for electric bikes.
 
 ### Counts and Percentage Distribution of Member and Casual Rides <br>
+<details>
+
 ```
 %%R -i all_rides_df_clean
 
@@ -301,21 +288,19 @@ print("Percentage of Member and Casual Rides:")
 print(percentage_member_casual)
 ```
 
+</details>
+
 | Biker Status | Total Rides  |  Percentage distribution  |
 |:---------------|--------------:|--------------:|
 | member    |  3494248   |  63.78398  |    
 | casual    |  1984005   |  36.21602  | 
 
-<div>
-   <img src="/img_tableau/Number of Member and Casual Rides.png" width="950" align="center">
-</div>
+<img src="/img_tableau/Number of Member and Casual Rides.png" width="950" align="center">
 
 The dataset reveals a significant distinction in usage patterns between annual members and occasional riders within the Cyclistic bike share system.
 Members make up the majority of bike rides according to the dataset, with approximately 3,494,248 rides taken by annual members, compared to casual riders who have taken nearly 1,984,005 rides. This suggests that annual members tend to cycle more frequently than casual riders.
 
-<div>
-   <img src="/img_tableau/Percentage distribution of Member and Casual Rides.png" width="950" align="center">
-</div>
+<img src="/img_tableau/Percentage distribution of Member and Casual Rides.png" width="950" align="center">
 
 Cyclistic's historical data reveals a clear pattern in rider types' usage. Annual members account for the majority of rides at 63.78%, equating to 3,494,248 rides. Casual riders, on the other hand, represent 36.22% of rides, totaling 1,984,005. This data indicates a strong preference for membership-based usage within the Cyclistic bike-sharing community.
 
@@ -340,9 +325,7 @@ print(usage_by_type_casual)
 |   docked_bike      |  79284   | 0 |
 | electric_bike      |  1052504 | 1741455 | 
 
-<div>
-   <img src="/img_tableau/Number of Bike Types Usage by Members and Casual Riders.png" width="950" align="center">
-</div>
+<img src="/img_tableau/Number of Bike Types Usage by Members and Casual Riders.png" width="950" align="center">
 
 The graph shows that Cyclistic members predominantly use classic bikes (1,752,793 rides) and electric bikes (1,741,455 rides). Casual riders prefer electric bikes (1,052,504 rides) over classic bikes (852,217 rides) and docked bikes (79,284 rides). Docked bikes are the least utilized type, and their use is exclusive to casual riders within this dataset. Members do not use docked bikes at all. <br>
 ```
@@ -352,10 +335,7 @@ most_common_ride_type <- names(sort(table(all_rides_df_clean$rideable_type), dec
 # Display the most popular ride type
 cat("The most popular ride type is:", most_common_ride_type, "\n")
 ```
-
-<div>
-   <img src="/img_divvy/Bike_DARK_BAYWHEELMASTER.png" width="150" align="center">
-</div>
+<img src="/img_divvy/Bike_DARK_BAYWHEELMASTER.png" width="150" align="center">
 
 The **unique** rideable types include electric bikes, classic bikes, docked bikes, and **electric bikes** are the most **popular**.
 
@@ -487,37 +467,29 @@ print(ride_type_usage_by_day)
 | 6 Friday    |  801693   |  299248  |  502445   |    369367   |    11651    |    420675
 | 7 Saturday  |  844074   |  394780  |  449294   |    410519   |    17481    |    416074 
 
-<div>
-   <img src="/img_tableau/Number of User Rides per Day of the Week.png" width="750" align="center">
-</div>
+<img src="/img_tableau/Number of User Rides per Day of the Week.png" width="750" align="center">
 
 The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users.
 
-<div>
-   <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
-</div>
+<img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
 
 Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users.
 
-<div>
-   <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
-</div>
+<img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
 
 The graph demonstrates that casual riders primarily use bikes during weekends with a noticeable dip in usage at the start of the week, whereas members' bike usage is more evenly distributed throughout the week with a slight decrease on weekends. Members tend to favor classic and electric bikes consistently across weekdays, while casual riders show a preference for electric bikes.
 
-<div>
-   <img src="/img_tableau/Number of rides in percentage by bike type by day of the week.png" width="900" align="center">
-</div>
+<img src="/img_tableau/Number of rides in percentage by bike type by day of the week.png" width="900" align="center">
 
 Saturday leads as the most popular day for bike rides with 15.41% of the weekly total, with Thursday trailing closely behind at 15.13%, underscoring a trend towards increased cycling activity towards the end of the week.
 
-<div>
-   <img src="/img_tableau/Count Bike type - Members and casual riders' total percentage of rides each weekday.png" width="750" align="center">
-</div>
+<img src="/img_tableau/Count Bike type - Members and casual riders' total percentage of rides each weekday.png" width="750" align="center">
 
 The bar graph depicts the percentage distribution of bike rides by members and casual riders across each day of the week, differentiated by bike type. Classic bikes are predominantly used by members, especially mid-week, while casual riders show a marked preference for electric bikes, particularly on weekends. Docked bikes, represented by the smallest proportion, are used the least by both groups.
 
-### Average Ride Length by Day of the Week for All Users, Members, and Casual Riders <br>
+### Average Ride Length by Day of the Week for All Users, Members, and Casual Riders
+<details>
+
 ```
 # Necessary libraries
 library(tidyverse)
@@ -561,6 +533,8 @@ print(df_casual)
 write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_ride_length_by_day_users.csv")
 ```
 
+</details>
+
 | Day of Week | ALL USERS  |  MEMBER  | CASUAL  | 
 |:---------------|--------------:|--------------:|--------------:|
 | 1 Sunday    |  00:19:13   |  00:13:57  |  00:25:34   |   
@@ -571,9 +545,7 @@ write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_rid
 | 6 Friday    |  00:15:45   |  00:12:27  |  00:21:18   |    
 | 7 Saturday  |  00:19:01   |  00:13:56  |  00:24:49   | 
 
-<div>
-   <img src="/img_tableau/Average Ride Length by Day of the Week for Members and Casual Riders.png" width="750" align="center">
-</div>
+<img src="/img_tableau/Average Ride Length by Day of the Week for Members and Casual Riders.png" width="750" align="center">
 
 The graph illustrates that while members consistently ride for shorter durations across the week, casual riders take longer rides, especially on weekends, which may suggest leisure or tourist activities. Casual riders' trips peak on Sundays, averaging 25.57 minutes, in contrast to members, who average around 12 minutes daily.
 
@@ -613,7 +585,50 @@ print(total_usage_casual)
 |	Member	|	1020506	|	1120551	|	1021235	|	331956	|
 |	Casual	|	417577	|	724262	|	569921	|	272245	|
 
-   <img src="/img_tableau/Total Number of Trips during Different Parts of the Day.png" width="750" align="center">
+<img src="/img_tableau/Total Number of Trips during Different Parts of the Day.png" width="750" align="center">
+
+The chart shows that the afternoon is the most popular time for bike rides, with member trips evenly distributed throughout morning, afternoon, and evening, while casual riders exhibit a peak in the afternoon.
+
+### Top 10 Most Popular Riding Hours
+<details>
+   ```
+# Load the dplyr package for data manipulation
+library(dplyr)
+
+# Calculate the hour from the 'started_at_time' column, which is in the HH:MM:SS string format
+all_rides_df_clean <- all_rides_df_clean %>%
+  mutate(hour_of_day = as.integer(substr(started_at_time, 1, 2))) # Extract the hour as an integer
+
+# Calculate the number of rides per hour for all users
+hour_of_day_usage_all <- all_rides_df_clean %>%
+  group_by(hour_of_day) %>%
+  summarize(total_rides = n(), .groups = 'drop') # Prevent grouping in the result
+
+# Calculate the number of rides per hour for members
+hour_of_day_usage_member <- all_rides_df_clean %>%
+  filter(member_casual == "member") %>%
+  group_by(hour_of_day) %>%
+  summarize(total_rides = n(), .groups = 'drop') # Filter for members and prevent grouping in the result
+
+# Calculate the number of rides per hour for casual riders
+hour_of_day_usage_casual <- all_rides_df_clean %>%
+  filter(member_casual == "casual") %>%
+  group_by(hour_of_day) %>%
+  summarize(total_rides = n(), .groups = 'drop') # Filter for casual riders and prevent grouping in the result
+
+# Print the top 10 most popular riding hours for all users
+cat("Top 10 Most Popular Riding Hours for All Users:\n")
+print(hour_of_day_usage_all %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
+
+# Print the top 10 most popular riding hours for members
+cat("Top 10 Most Popular Riding Hours for Members:\n")
+print(hour_of_day_usage_member %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
+
+# Print the top 10 most popular riding hours for casual riders
+cat("Top 10 Most Popular Riding Hours for Casual Riders:\n")
+print(hour_of_day_usage_casual %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
+```
+</details>
 
 
 ## :white_large_square: ACT
