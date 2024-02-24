@@ -26,8 +26,8 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Bike Type Preferences 
 >   * Temporal Usage Patterns 
 >   * Station Popularity Metrics 
-> * **ACT**
->   * Strategic Recommendations for Action
+> [**ACT**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-act)
+> * Strategic Recommendations for Action
 
 ## :white_large_square: INTRODUCTION
 **Cyclistic**, founded in 2016, operates a vast fleet of over 16,500 bicycles covering 190 square miles in Chicago. The bikes, strategically located across 800 stations in the city, cater to urban riders with diverse heights and abilities, boasting a design focused on comfort and stability. Users can unlock bikes at any station and return them to any other station at their convenience.
