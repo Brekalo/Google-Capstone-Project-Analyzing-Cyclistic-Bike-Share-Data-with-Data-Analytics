@@ -59,7 +59,7 @@ These datasets are publicly available through Motivate International Inc. [under
 The data is released monthly and is characterized by being anonymized, reliable, original, comprehensive, up-to-date, and properly cited.
 
 <details>
-   <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="600" align="center">
+   <img src="img_divvy/Screenshot 2024-01-04 at 12.17.27.png" width="750" align="center">
 </details>
 
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
@@ -198,7 +198,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 5. **Missing Values in Data Frame**:
 - Check the entire data frame for any missing values to ensure data completeness.
 <details>
-   <img src="img_details/missing_values.png" width="500" align="center">
+   <img src="img_details/missing_values.png" width="480" align="center">
 </details>
 
 6. **Column-wise Missing Values**:
@@ -419,7 +419,9 @@ cat("The most frequent day of the week for rides for Casual users: ", casual_day
 
 </details>
 
-### Calculation of the number of rides by users and bike type usage per day of the week <br>
+### Calculation of the number of rides by users and bike type usage per day of the week 
+<details>
+   
 ```
 library(tidyverse)
 library(lubridate)
@@ -456,6 +458,8 @@ ride_type_usage_by_day <- table(all_rides_df_clean$day_of_week, all_rides_df_cle
 cat("Ride type usage by Day of the Week:\n")
 print(ride_type_usage_by_day)
 ```
+
+</details>
 
 | Day of Week | Number of Ride ID  |  CASUAL  | MEMBER  | Number of Bike Types: classic_bike | docked_bike | electric_bike  |
 |:---------------|:--------------|:--------------|:--------------|--------------:|--------------:|--------------:|
@@ -549,36 +553,40 @@ write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_rid
 
 The graph illustrates that while members consistently ride for shorter durations across the week, casual riders take longer rides, especially on weekends, which may suggest leisure or tourist activities. Casual riders' trips peak on Sundays, averaging 25.57 minutes, in contrast to members, who average around 12 minutes daily.
 
-### Total Number of Trips for Each User Group during Different Parts of the Day <br>
-```
-# Load the dplyr package for data manipulation
-library(dplyr)
+### Total Number of Trips for Each User Group during Different Parts of the Day 
+<details>
+   
+   ```
+   # Load the dplyr package for data manipulation
+   library(dplyr)
+   
+   # Calculate the total number of rides for each part of the day for all users
+   total_usage_all <- all_rides_df_clean %>%
+     group_by(part_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') 
+   
+   # Calculate the total number of rides for each part of the day for members
+   total_usage_member <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     group_by(part_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop')
+   
+   # Calculate the total number of rides for each part of the day for casual riders
+   total_usage_casual <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     group_by(part_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') 
+   
+   # Display the results
+   cat("Total Usage by Part of the Day for All Riders:\n")
+   print(total_usage_all)
+   cat("Total Usage by Part of the Day for Members:\n")
+   print(total_usage_member)
+   cat("Total Usage by Part of the Day for Casual Riders:\n")
+   print(total_usage_casual)
+   ```
+</details>
 
-# Calculate the total number of rides for each part of the day for all users
-total_usage_all <- all_rides_df_clean %>%
-  group_by(part_of_day) %>%
-  summarize(total_rides = n(), .groups = 'drop') 
-
-# Calculate the total number of rides for each part of the day for members
-total_usage_member <- all_rides_df_clean %>%
-  filter(member_casual == "member") %>%
-  group_by(part_of_day) %>%
-  summarize(total_rides = n(), .groups = 'drop')
-
-# Calculate the total number of rides for each part of the day for casual riders
-total_usage_casual <- all_rides_df_clean %>%
-  filter(member_casual == "casual") %>%
-  group_by(part_of_day) %>%
-  summarize(total_rides = n(), .groups = 'drop') 
-
-# Display the results
-cat("Total Usage by Part of the Day for All Riders:\n")
-print(total_usage_all)
-cat("Total Usage by Part of the Day for Members:\n")
-print(total_usage_member)
-cat("Total Usage by Part of the Day for Casual Riders:\n")
-print(total_usage_casual)
-```
 | Users | Morning | Afternoon | Evening | Night |
 |:------|----------:|--------:|--------:|------:|
 |	Overall	|	1438083	|	1844813	|	1591156	|	604201	|
@@ -591,43 +599,45 @@ The chart shows that the afternoon is the most popular time for bike rides, with
 
 ### Top 10 Most Popular Riding Hours
 <details>
+   
    ```
-# Load the dplyr package for data manipulation
-library(dplyr)
+   # Load the dplyr package for data manipulation
+   library(dplyr)
+   
+   # Calculate the hour from the 'started_at_time' column, which is in the HH:MM:SS string format
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(hour_of_day = as.integer(substr(started_at_time, 1, 2))) # Extract the hour as an integer
+   
+   # Calculate the number of rides per hour for all users
+   hour_of_day_usage_all <- all_rides_df_clean %>%
+     group_by(hour_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') # Prevent grouping in the result
+   
+   # Calculate the number of rides per hour for members
+   hour_of_day_usage_member <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     group_by(hour_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') # Filter for members and prevent grouping in the result
+   
+   # Calculate the number of rides per hour for casual riders
+   hour_of_day_usage_casual <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     group_by(hour_of_day) %>%
+     summarize(total_rides = n(), .groups = 'drop') # Filter for casual riders and prevent grouping in the result
 
-# Calculate the hour from the 'started_at_time' column, which is in the HH:MM:SS string format
-all_rides_df_clean <- all_rides_df_clean %>%
-  mutate(hour_of_day = as.integer(substr(started_at_time, 1, 2))) # Extract the hour as an integer
+   # Print the top 10 most popular riding hours for all users
+   cat("Top 10 Most Popular Riding Hours for All Users:\n")
+   print(hour_of_day_usage_all %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
+   
+   # Print the top 10 most popular riding hours for members
+   cat("Top 10 Most Popular Riding Hours for Members:\n")
+   print(hour_of_day_usage_member %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
+   
+   # Print the top 10 most popular riding hours for casual riders
+   cat("Top 10 Most Popular Riding Hours for Casual Riders:\n")
+   print(hour_of_day_usage_casual %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
+   ```
 
-# Calculate the number of rides per hour for all users
-hour_of_day_usage_all <- all_rides_df_clean %>%
-  group_by(hour_of_day) %>%
-  summarize(total_rides = n(), .groups = 'drop') # Prevent grouping in the result
-
-# Calculate the number of rides per hour for members
-hour_of_day_usage_member <- all_rides_df_clean %>%
-  filter(member_casual == "member") %>%
-  group_by(hour_of_day) %>%
-  summarize(total_rides = n(), .groups = 'drop') # Filter for members and prevent grouping in the result
-
-# Calculate the number of rides per hour for casual riders
-hour_of_day_usage_casual <- all_rides_df_clean %>%
-  filter(member_casual == "casual") %>%
-  group_by(hour_of_day) %>%
-  summarize(total_rides = n(), .groups = 'drop') # Filter for casual riders and prevent grouping in the result
-
-# Print the top 10 most popular riding hours for all users
-cat("Top 10 Most Popular Riding Hours for All Users:\n")
-print(hour_of_day_usage_all %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
-
-# Print the top 10 most popular riding hours for members
-cat("Top 10 Most Popular Riding Hours for Members:\n")
-print(hour_of_day_usage_member %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
-
-# Print the top 10 most popular riding hours for casual riders
-cat("Top 10 Most Popular Riding Hours for Casual Riders:\n")
-print(hour_of_day_usage_casual %>% arrange(desc(total_rides)) %>% slice_head(n = 10))
-```
 </details>
 
 
