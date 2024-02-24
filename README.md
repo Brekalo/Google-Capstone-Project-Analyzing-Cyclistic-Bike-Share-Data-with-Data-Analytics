@@ -107,7 +107,7 @@ This categorization is pivotal for understanding different usage patterns and gu
 - **Cycling for Everyone (C4E)**: A program for eligible residents offering a \$5 annual membership with specific rates and credits for e-bike use.
 - **Miscellaneous Fees**: E-bikes can be parked at public racks within the service area for \$1, with a \$25 fine for parking violations or if parked outside the service area.
 
-#### Tools Utilized for Defining Objectives and Analysis:
+### Tools Utilized for Defining Objectives and Analysis:
 - Excel: Employed for the initial data cleaning and review process.
 - RStudio Desktop: Used for in-depth data analysis and scripting in R.
 - Tableau: Leveraged for creating interactive and informative data visualizations.
@@ -131,9 +131,9 @@ The data preparation phase was crucial for ensuring the integrity of the subsequ
 
 The comprehensive analysis revealed that **5.2533%** of the dataset was incomplete, with **3.5113%** necessitating removal to ensure analytical accuracy.
 
-#### Setting up the programming environment
+### Setting up the programming environment
 
-Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded:
+Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded (details given below).
 
 <details>
    
@@ -590,6 +590,42 @@ write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_rid
 The graph illustrates that while members consistently ride for shorter durations across the week, casual riders take longer rides, especially on weekends, which may suggest leisure or tourist activities. Casual riders' trips peak on Sundays, averaging 25.57 minutes, in contrast to members, who average around 12 minutes daily.
 
 ### Total Number of Trips for Each User Group during Different Parts of the Day <br>
+```
+# Load the dplyr package for data manipulation
+library(dplyr)
+
+# Calculate the total number of rides for each part of the day for all users
+total_usage_all <- all_rides_df_clean %>%
+  group_by(part_of_day) %>%
+  summarize(total_rides = n(), .groups = 'drop') 
+
+# Calculate the total number of rides for each part of the day for members
+total_usage_member <- all_rides_df_clean %>%
+  filter(member_casual == "member") %>%
+  group_by(part_of_day) %>%
+  summarize(total_rides = n(), .groups = 'drop')
+
+# Calculate the total number of rides for each part of the day for casual riders
+total_usage_casual <- all_rides_df_clean %>%
+  filter(member_casual == "casual") %>%
+  group_by(part_of_day) %>%
+  summarize(total_rides = n(), .groups = 'drop') 
+
+# Display the results
+cat("Total Usage by Part of the Day for All Riders:\n")
+print(total_usage_all)
+cat("Total Usage by Part of the Day for Members:\n")
+print(total_usage_member)
+cat("Total Usage by Part of the Day for Casual Riders:\n")
+print(total_usage_casual)
+```
+| Users | Morning | Afternoon | Evening | Night |
+|:------|----------:|--------:|--------:|------:|
+|	Overall	|	1438083	|	1844813	|	1591156	|	604201	|
+|	Member	|	1020506	|	1120551	|	1021235	|	331956	|
+|	Casual	|	417577	|	724262	|	569921	|	272245	|
+
+   <img src="/img_tableau/Total Number of Trips during Different Parts of the Day.png" width="750" align="center">
 
 
 ## :white_large_square: ACT
