@@ -66,8 +66,6 @@ The data is released monthly and is characterized by being anonymized, reliable,
 In this study, we have analyzed historical travel data from 12 separate CSV files, each corresponding to a month within the period from December 2022 to November 2023. The collective dataset encompasses a total of 5,676,710 recorded trips.<br>
 
 The dataset is structured into 13 distinct columns, or variables, which include:
-
-<tiny>
    
 | No. | Description                            | Column Name      | Type           |
 |----:|:----------------------------------------|:------------------|:-------------|
@@ -84,46 +82,6 @@ The dataset is structured into 13 distinct columns, or variables, which include:
 |  11 | The end station's latitude:             | `end_lat`            | Numeric   |
 |  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
 |  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
-</tiny>
-
-<sub>
-   
-| No. | Description                            | Column Name      | Type           |
-|----:|:----------------------------------------|:------------------|:-------------|
-|   1 | Unique identifier for each trip:        | `ride_id`         | String       |
-|   2 | Type of bicycle:                        | `rideable_type`   | String       |
-|   3 | Start timestamp of the ride:            | `started_at`      | Date & Time  |
-|   4 | End timestamp of the ride:              | `ended_at`        | Date & Time  |
-|   5 | Name of the starting station:           | `start_station_name` | String    |
-|   6 | Identifier for the starting station:    | `start_station_id`   | String    |
-|   7 | Name of the ending station:             | `end_station_name`   | String    |
-|   8 | Identifier for the ending station:      | `end_station_id`     | String    |
-|   9 | The latitude of the starting station:   | `start_lat`          | Numeric   |
-|  10 | The longitude of starting station:      | `start_lng`          | Numeric   |
-|  11 | The end station's latitude:             | `end_lat`            | Numeric   |
-|  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
-|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
-</sub>
-
-<small>
-   
-| No. | Description                            | Column Name      | Type           |
-|----:|:----------------------------------------|:------------------|:-------------|
-|   1 | Unique identifier for each trip:        | `ride_id`         | String       |
-|   2 | Type of bicycle:                        | `rideable_type`   | String       |
-|   3 | Start timestamp of the ride:            | `started_at`      | Date & Time  |
-|   4 | End timestamp of the ride:              | `ended_at`        | Date & Time  |
-|   5 | Name of the starting station:           | `start_station_name` | String    |
-|   6 | Identifier for the starting station:    | `start_station_id`   | String    |
-|   7 | Name of the ending station:             | `end_station_name`   | String    |
-|   8 | Identifier for the ending station:      | `end_station_id`     | String    |
-|   9 | The latitude of the starting station:   | `start_lat`          | Numeric   |
-|  10 | The longitude of starting station:      | `start_lng`          | Numeric   |
-|  11 | The end station's latitude:             | `end_lat`            | Numeric   |
-|  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
-|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
-</small>
-
 
 While the dataset did not come with an accompanying metadata file, the variables are intuitively named and can be understood without additional context.
 
@@ -303,7 +261,7 @@ The number of rides on electric bikes is the highest among the categories, with 
 
 Using Cyclistic's historical data on the distribution of bike ride types, the share of electric bikes, classic bikes, and docked bikes is divided into 51.00% for electric bikes, 47.55% for classic bikes, and 1.45% for docked bikes. This data indicates that electric bikes are marginally more popular than classic bikes, with over half of the riders opting for electric bikes.
 
-### Counts and Percentage Distribution of Member and Casual Rides <br>
+### Counts and Percentage Distribution of Member and Casual Rides
 <details><summary>View Code</summary>
 
    ```
@@ -510,17 +468,17 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 | 7 Saturday  |  844074   |  394780  |  449294   |    410519   |    17481    |    416074     |
 
 <img src="/img_tableau/Number of User Rides per Day of the Week.png" width="750" align="center">
-The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users.
-
+The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users. 
+<br>
 <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
-Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users.
-
+Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users. 
+<br>
 <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
 The graph demonstrates that casual riders primarily use bikes during weekends with a noticeable dip in usage at the start of the week, whereas members' bike usage is more evenly distributed throughout the week with a slight decrease on weekends. Members tend to favor classic and electric bikes consistently across weekdays, while casual riders show a preference for electric bikes.
-
+<br>
 <img src="/img_tableau/Number of rides in percentage by bike type by day of the week.png" width="900" align="center">
 Saturday leads as the most popular day for bike rides with 15.41% of the weekly total, with Thursday trailing closely behind at 15.13%, underscoring a trend towards increased cycling activity towards the end of the week.
-
+<br>
 <img src="/img_tableau/Count Bike type - Members and casual riders' total percentage of rides each weekday.png" width="750" align="center">
 The bar graph depicts the percentage distribution of bike rides by members and casual riders across each day of the week, differentiated by bike type. Classic bikes are predominantly used by members, especially mid-week, while casual riders show a marked preference for electric bikes, particularly on weekends. Docked bikes, represented by the smallest proportion, are used the least by both groups.
 
@@ -803,13 +761,13 @@ In comparison with the previous graph, the following analysis is performed:
 <img src="/img_tableau/Number of Rides During Different Times of the Day.png" width="750" align="center">
 The graph highlights that the period from afternoon to evening is the most favored for cycling, with the hours between 3 PM and 6 PM alone accounting for 34.78% of daily rides, signifying that over a third of the day's rides occur in this 3-hour window. Morning hours show the least activity, and there is a noticeable decline in rides from 6 PM to 11 PM, which constitutes 26.74% of the daily rides.
 
-### Percentage Distribution of Total Ride Counts by Hour of Day <br>
+### Percentage Distribution of Total Ride Counts by Hour of Day 
 <img src="/img_tableau/Percentage Distribution of Total Ride Counts by Hour of Day.png" width="750" align="center">
 The graph's percentage distribution indicates that 5 PM is the peak time for rides, accounting for 10.30% of the total. There is a significant drop in activity from 11 PM to 5 AM, marking these as the least popular hours. Cyclistic users clearly favor the time span between 3 PM and 6 PM for their rides.
-
+<br>
 <img src="/img_tableau/Total Ride Counts by Hour of Day for Casual Riders and Members.png" width="950" align="center">
 The graph compares the hourly ride counts of casual riders and members, showing that members tend to ride mostly during morning peak hours, with a significant spike around 8 AM, and again in the late afternoon, peaking at 5 PM. Casual riders, on the other hand, have their highest counts later in the day, with their peak also at 5 PM but sustaining higher ride counts into the evening compared to members.
-
+<br>
 <img src="/img_tableau/Ride Counts by Hours Across Each Day for Casual Riders and Members.png" width="950" align="center">
 The graph displays the hourly ride counts for both members and casual riders across different days of the week. Consistent with previous findings, the peak usage for both groups is around 5 PM. During weekdays, the highest frequency of rides occurs between 3 PM and 6 PM, with 3 PM being particularly popular. On weekends, the peak shifts to between 1 PM and 3 PM. Casual riders start their trips frequently in the early afternoon on weekdays, while members tend to begin their journeys around 7 AM and 8 AM. This pattern suggests that members are likely commuting during rush hours on weekdays, whereas casual riders are more inclined to use bikes for leisure activities, especially in the afternoons and on weekends.
 
@@ -868,7 +826,7 @@ The graph displays the hourly ride counts for both members and casual riders acr
 
 <img src="/img_tableau/Number of Bike Rides per Season.png" width="750" align="center">
 The bar chart shows the number of bike rides per season, indicating that summer is the most popular season for biking with a total of 2,192,634 rides. Spring follows with 1,547,735 rides, then autumn with 1,048,806 rides, and winter has the least with 689,078 rides. This suggests that warmer weather significantly increases the frequency of bike usage.
-
+<br>
 <img src="/img_tableau/Percentage Distribution of Bike Rides Across Seasons.png" width="750" align="center">
 The pie chart clearly demonstrates that summer is the most popular season for cycling, with a total of 2,192,634 rides, accounting for 40.02% of the season's total rides. Following summer, spring is the next favored season with 1,547,735 rides, making up 28.25% of the rides. These figures indicate a strong seasonal trend in cycling habits, with riders significantly preferring the warmer months, which can be clearly seen in the calculation below.
 
@@ -1005,12 +963,15 @@ Number of unique **starting** stations: **1542**
 
 ### "Old Hastings Charging Station" and the rest of the stations
 The map visualization indicates that 'Old Hastings Charging Stx' appears as the most common starting station according to the R analysis, with this name associated with a vast number of distinct geographic coordinates across the city of Chicago. With 'Old Hastings Charging Stx' accounting for a total of 810,968 instances and corresponding to 731 unique station locations by latitude and longitude, it suggests a potential error in the dataset where multiple stations have been incorrectly labeled under this single name. Despite the apparent data inconsistency, there is no immediate requirement to remove these entries. Retaining them in the dataset will continue to show 'Old Hastings Charging Stx' as a widespread station due to the variety of geographic locations associated with this name throughout Chicago.
+
 <img src="/img_tableau/'Old Hastings Charging Station' and the rest of the stations.png" width="750" align="center">
 
 ### The Count of Bikes Taken by Members and Casual Riders from Starting Stations
-<img src="/img_tableau/Count of Bikes Taken by Members from Start Stations.png" width="950" align="center">
-<img src="/img_tableau/Count of Bikes Taken by Casual Riders from Start Stations.png" width="950" align="center">
 The visual data presented in the previous two maps clearly shows a pattern of bike usage among both casual riders and members within the city of Chicago. For casual riders, there is a high concentration of bikes taken from what appears to be the central downtown area, indicating a preference for starting rides in the heart of the city. Similarly, the second map shows that members also frequently start their rides in central Chicago, with the highest density of rides originating from this area. These patterns highlight the city center as a hub for bike-sharing activity, reflecting its likely role as a focal point for both commuting and leisure trips.
+
+<img src="/img_tableau/Count of Bikes Taken by Members from Start Stations.png" width="950" align="center">
+
+<img src="/img_tableau/Count of Bikes Taken by Casual Riders from Start Stations.png" width="950" align="center">
 
 ### Top 20 Start Stations for Members, Casual Riders, and All Users
 <details><summary>View Code</summary>
