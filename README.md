@@ -477,14 +477,13 @@ Based on the graph, Thursday is the peak day for member rides, while Saturday is
 
 \
 <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
-
 The graph demonstrates that casual riders primarily use bikes during weekends with a noticeable dip in usage at the start of the week, whereas members' bike usage is more evenly distributed throughout the week with a slight decrease on weekends. Members tend to favor classic and electric bikes consistently across weekdays, while casual riders show a preference for electric bikes.
 
 \
 <img src="/img_tableau/Number of rides in percentage by bike type by day of the week.png" width="900" align="center">
-
 Saturday leads as the most popular day for bike rides with 15.41% of the weekly total, with Thursday trailing closely behind at 15.13%, underscoring a trend towards increased cycling activity towards the end of the week.
-&nbsp;<br>
+
+\
 <img src="/img_tableau/Count Bike type - Members and casual riders' total percentage of rides each weekday.png" width="750" align="center">
 The bar graph depicts the percentage distribution of bike rides by members and casual riders across each day of the week, differentiated by bike type. Classic bikes are predominantly used by members, especially mid-week, while casual riders show a marked preference for electric bikes, particularly on weekends. Docked bikes, represented by the smallest proportion, are used the least by both groups.
 
