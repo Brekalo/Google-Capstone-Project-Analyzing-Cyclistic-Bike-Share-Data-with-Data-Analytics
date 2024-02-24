@@ -20,7 +20,7 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Data Sourcing and Initial Exploration 
 > * [**PROCESS**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-process)
 >   * Data Cleaning and Preprocessin 
-> * **ANALYZE & SHARE**
+> * [**ANALYZE & SHARE**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-analyze--share)
 >   * Ride Volume Analysis 
 >   * Average Ride Duration Insights 
 >   * Bike Type Preferences 
