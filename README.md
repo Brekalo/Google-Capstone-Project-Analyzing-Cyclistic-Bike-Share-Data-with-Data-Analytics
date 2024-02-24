@@ -177,38 +177,32 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
    <img src="img_details/overview_of_all_rides_df_clean.png" width="500" align="center">
 </details>
 
-2. **Previewing Data**:
-- Use the `head()` function to display the first few rows of the data frame, providing an initial glimpse into the dataset.
+2. **Previewing Data**: Use the `head()` function to display the first few rows of the data frame, providing an initial glimpse into the dataset.
 <details>
    <img src="img_details/previewing_data.png" width="900" align="center">
 </details>
 
-3. **Understanding Data Structure**:
-- Examine the data structure and its characteristics, including data types of each column.
+3. **Understanding Data Structure**: Examine the data structure and its characteristics, including data types of each column.
 <details>
    <img src="img_details/data_structure.png" width="900" align="center">
 </details>
 
-4. **Identifying Outliers**:
-- Apply the `summary()` function to summarize each column, aiding in the identification of unusual or outlier values.
+4. **Identifying Outliers**: Apply the `summary()` function to summarize each column, aiding in the identification of unusual or outlier values.
 <details>
    <img src="img_details/identifying_outliers.png" width="900" align="center">
 </details>
 
-5. **Missing Values in Data Frame**:
-- Check the entire data frame for any missing values to ensure data completeness.
+5. **Missing Values in Data Frame**: Check the entire data frame for any missing values to ensure data completeness.
 <details>
    <img src="img_details/missing_values.png" width="470" align="center">
 </details>
 
-6. **Column-wise Missing Values**:
-- Investigate missing values by each column to pinpoint areas requiring data imputation or removal.
+6. **Column-wise Missing Values**: Investigate missing values by each column to pinpoint areas requiring data imputation or removal.
 <details>
    <img src="img_details/column_wise_missing _values.png" width="380" align="center">
 </details>
 
-7. **Duplicate Rows Check**:
-- Verify the presence of duplicate rows within the data frame to maintain data integrity.
+7. **Duplicate Rows Check**: Verify the presence of duplicate rows within the data frame to maintain data integrity.
 <details>
    <img src="img_details/duplicate_rows.png" width="460" align="center">
 </details>
