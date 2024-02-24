@@ -764,7 +764,7 @@ In comparison with the previous graph, the following analysis is performed:
 <img src="/img_tableau/Number of Rides During Different Times of the Day.png" width="750" align="center">
 The graph highlights that the period from afternoon to evening is the most favored for cycling, with the hours between 3 PM and 6 PM alone accounting for 34.78% of daily rides, signifying that over a third of the day's rides occur in this 3-hour window. Morning hours show the least activity, and there is a noticeable decline in rides from 6 PM to 11 PM, which constitutes 26.74% of the daily rides.
 
-### Percentage Distribution of Total Ride Counts by Hour of Day
+### Percentage Distribution of Total Ride Counts by Hour of Day <br>
 <img src="/img_tableau/Percentage Distribution of Total Ride Counts by Hour of Day.png" width="750" align="center">
 The graph's percentage distribution indicates that 5 PM is the peak time for rides, accounting for 10.30% of the total. There is a significant drop in activity from 11 PM to 5 AM, marking these as the least popular hours. Cyclistic users clearly favor the time span between 3 PM and 6 PM for their rides.
 
@@ -777,8 +777,8 @@ The graph displays the hourly ride counts for both members and casual riders acr
 ## Number of Bike Rides and Percentage Distribution Across Seasons
 
 <details>
+   
    ```
-
    library(dplyr)
    
    # Convert 'started_at_date' and 'ended_at_date' columns to date format
@@ -807,7 +807,6 @@ The graph displays the hourly ride counts for both members and casual riders acr
    # Print the results for rides by season
    cat("Number of rides per season:\n")
    print(rides_by_season)
-   
    
    # Calculate the number of rides for each season, segmented by 'member_casual' column
    rides_by_season_member_casual <- all_rides_df_clean %>%
