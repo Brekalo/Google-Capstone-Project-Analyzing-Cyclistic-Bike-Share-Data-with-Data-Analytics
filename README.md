@@ -147,9 +147,7 @@ Installing essential packages and libraries for data cleaning and analysis inclu
 </details>
 
 ### Combined all 12 spreadsheets (months) into a single file, all_rides_df_clean.csv
-<div>
-   <img src="img_details/tidyverse.png" width="850" align="center">
-</div><br>
+<img src="img_details/tidyverse.png" width="850" align="center">
 
 ```
 # Load necessary libraries
@@ -169,11 +167,7 @@ all_rides_df_clean <- map_df(all_cleaned_files, read_csv)
 write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 
 ```
-
-<div>
-   <img src="img_details/specificationa.png" width="850" align="center">
-</div>
-<br>
+<img src="img_details/specificationa.png" width="850" align="center">
 
 **An essential step in data analysis is ensuring the data's cleanliness and readiness for further analysis. The following procedures are applied to the `all_rides_df_clean.csv` data frame, each accompanied by a screenshot for visual reference:**
 
