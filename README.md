@@ -827,10 +827,430 @@ The graph displays the hourly ride counts for both members and casual riders acr
 | Summer   |  2192634   |  904759  |  1287875  |
 | Winter   |  689078    |  159550  |  529528   |
 
-
 <img src="/img_tableau/Number of Bike Rides per Season.png" width="750" align="center">
+The bar chart shows the number of bike rides per season, indicating that summer is the most popular season for biking with a total of 2,192,634 rides. Spring follows with 1,547,735 rides, then autumn with 1,048,806 rides, and winter has the least with 689,078 rides. This suggests that warmer weather significantly increases the frequency of bike usage.
 
+<img src="/img_tableau/Percentage Distribution of Bike Rides Across Seasons.png" width="750" align="center">
+The pie chart clearly demonstrates that summer is the most popular season for cycling, with a total of 2,192,634 rides, accounting for 40.02% of the season's total rides. Following summer, spring is the next favored season with 1,547,735 rides, making up 28.25% of the rides. These figures indicate a strong seasonal trend in cycling habits, with riders significantly preferring the warmer months, which can be clearly seen in the calculation below.
+
+### Bike Ride Count and Percentage Distribution per Month for Member and Casual Riders
+<details>
+   
+```
+   library(dplyr)
+   library(lubridate)
+   
+   # The `month()` function was used for extract the month from a date or datetime column
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(month = month(started_at, label = TRUE))
+
+   # Calculate the number of rides per month for all users
+   ride_counts_by_month_all <- all_rides_df_clean %>%
+     group_by(month) %>%
+     summarize(total_rides = n(), .groups = 'drop') # Drop the grouping for cleaner output
+   
+   # Calculate the number of rides per month for members
+   ride_counts_by_month_member <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     group_by(month) %>%
+     summarize(total_rides = n(), .groups = 'drop') # Ensuring clean output
+   
+   # Calculate the number of rides per month for casual riders
+   ride_counts_by_month_casual <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     group_by(month) %>%
+     summarize(total_rides = n(), .groups = 'drop') # Consistent formatting
+   
+   # Display the results
+   cat("Ride Counts by Month for All Riders:\n")
+   print(ride_counts_by_month_all)
+   cat("Ride Counts by Month for Members:\n")
+   print(ride_counts_by_month_member)
+   cat("Ride Counts by Month for Casual Riders:\n")
+   print(ride_counts_by_month_casual)
+   ```
+
+</details>
+
+|	Month  | Overall | Total Rides: Member | Total Rides: Casual |
+|---------:|-----------:|---------:|----------:|
+|	Jan	|	181981	|	143470	|	38511	|
+|	Feb	|	182350	|	140825	|	41525	|
+|	Mar	|	246775	|	186953	|	59822	|
+|	Apr	|	407549	|	266138	|	141411	|
+|	May	|	581526	|	356001	|	225525	|
+|	Jun	|	694898	|	404043	|	290855	|
+|	Jul	|	741043	|	420948	|	320095	|
+|	Aug	|	747151	|	445628	|	301523	|
+|	Sep	|	647030	|	393015	|	254015	|
+|	Oct	|	521006	|	349276	|	171730	|
+|	Nov	|	351760	|	256144	|	95616	|
+|	Dec	|	175184	|	131807	|	43377	|
+
+<img src="/img_tableau/Number of Bike Rides by Month for Member and Casual Riders.png" width="750" align="center">
+The bar chart confirms that August is the month with the highest number of bike rides, followed closely by July, and then June, indicating a peak in cycling activity during the summer months. Conversely, the winter months of December, January, and February have the fewest recorded rides, reflecting a seasonal decline in cycling frequency.
+
+### Percentage Distribution of Bike Rides by Month for Member and Casual Riders
+<img src="/img_tableau/Percentage Distribution of Bike Rides by Month for Member and Casual Riders.png" width="750" align="center">
+The bar chart visualizes the percentage distribution of bike rides by month for both members and casual riders. It aligns with the inference that summer is the peak season for cycling, potentially influenced by seasonality, which is a common factor affecting such trends. From December to March, only 14.35% of rides are recorded, while a significant 39.85% occur from June through August.<br>
+This pattern suggests that Cyclistic experiences a low season in winter and peak activity in summer. Marketing strategies could be developed to boost ride numbers in the colder months, possibly through promotions or events tailored to winter cycling.
+
+### Average Monthly Ride Durations in Minutes for Members and Casual Riders
+The line chart corroborates earlier observations, showing that casual riders consistently have longer ride durations throughout the year compared to members. The trend peaks during the warmer months, aligning with the seasonal increase in ride counts previously noted.
+
+<img src="/img_tableau/Average Monthly Ride Durations in Minutes.png" width="800" align="center">
+
+### Number of Unique Starting and End Stations
+<details>
+   
+   ```
+   # Load the tidyverse package for potential extended data manipulation
+   library(tidyverse)
+   
+   # Calculate the number of unique starting stations in the dataset
+   num_start_stations <- length(unique(all_rides_df_clean$start_station_name))
+   # Print the result for the number of unique starting stations
+   cat("Number of unique starting stations:", num_start_stations, "\n")
+   ```
+
+</details>
+
+Number of unique **starting** stations: **1542**
+
+### Most common used Start station by day of the week
+<details>
+
+   ```
+   library(tidyverse)
+   
+   # Identifying the most commonly used starting station
+   most_common_start_station <- names(sort(table(all_rides_df_clean$start_station_name), decreasing = TRUE)[1])
+   cat("Most common Start station:", most_common_start_station, "\n")
+   
+   # Filtering data for stations named "Old Hastings Charging Stx"
+   old_hastings_stations_all <- all_rides_df_clean %>%
+     filter(start_station_name == "Old Hastings Charging Stx") %>%
+     select(start_lng, start_lat)
+   
+   # Selecting unique combinations of geographical latitudes and longitudes for stations named "Old Hastings Charging Stx"
+   old_hastings_stations_unique <- all_rides_df_clean %>%
+     filter(start_station_name == "Old Hastings Charging Stx") %>%
+     distinct(start_lng, start_lat)
+
+   # Counting all occurrences of "Old Hastings Charging Stx" stations
+   total_all_old_hastings_stations <- nrow(old_hastings_stations_all)
+   
+   # Counting all unique "Old Hastings Charging Stx" stations based on their latitudes and longitudes
+   total_unique_old_hastings_stations <- nrow(old_hastings_stations_unique)
+   
+   # Displaying the total number of all and unique "Old Hastings Charging Stx" stations
+   cat("Total number of all entries for 'Old Hastings Charging Stx' stations:", total_all_old_hastings_stations, "\n")
+   cat("Number of unique entries for 'Old Hastings Charging Stx' stations based on latitudes and longitudes:", total_unique_old_hastings_stations, "\n")
+   
+   # Displaying the first few rows of both datasets
+   cat("First few entries of all 'Old Hastings Charging Stx' stations:\n")
+   print(old_hastings_stations_all)
+   cat("Unique latitude and longitude entries for 'Old Hastings Charging Stx' stations:\n")
+   print(old_hastings_stations_unique)
+   
+   # Exporting to CSV files
+   write_csv(old_hastings_stations_all, "old_hastings_stations_all.csv")
+   write_csv(old_hastings_stations_unique, "old_hastings_stations_unique.csv")
+   ```
+
+</details>
+
+* The most common Start station: **Old Hastings Charging Stx**
+* The **total** number of all latitudes and longitudes for **'Old Hastings Charging Stx'** stations: **810968**
+* The **total** number of **unique** latitudes and longitudes for 'Old Hastings Charging Stx' stations: **731**
+
+### "Old Hastings Charging Station" and the rest of the stations
+The map visualization indicates that 'Old Hastings Charging Stx' appears as the most common starting station according to the R analysis, with this name associated with a vast number of distinct geographic coordinates across the city of Chicago. With 'Old Hastings Charging Stx' accounting for a total of 810,968 instances and corresponding to 731 unique station locations by latitude and longitude, it suggests a potential error in the dataset where multiple stations have been incorrectly labeled under this single name. Despite the apparent data inconsistency, there is no immediate requirement to remove these entries. Retaining them in the dataset will continue to show 'Old Hastings Charging Stx' as a widespread station due to the variety of geographic locations associated with this name throughout Chicago.
+<img src="/img_tableau/'Old Hastings Charging Station' and the rest of the stations.png" width="750" align="center">
+
+### The Count of Bikes Taken by Members and Casual Riders from Starting Stations
+<img src="/img_tableau/Count of Bikes Taken by Members from Start Stations.png" width="950" align="center">
+<img src="/img_tableau/Count of Bikes Taken by Casual Riders from Start Stations.png" width="950" align="center">
+The visual data presented in the previous two maps clearly shows a pattern of bike usage among both casual riders and members within the city of Chicago. For casual riders, there is a high concentration of bikes taken from what appears to be the central downtown area, indicating a preference for starting rides in the heart of the city. Similarly, the second map shows that members also frequently start their rides in central Chicago, with the highest density of rides originating from this area. These patterns highlight the city center as a hub for bike-sharing activity, reflecting its likely role as a focal point for both commuting and leisure trips.
+
+### Top 20 Start Stations for Members, Casual Riders, and All Users
+<details>
+
+   ```
+   library(tidyverse)
+   
+   # Identify the top 20 most frequently used start stations for members
+   top_stations_member <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     group_by(start_station_name) %>%
+     summarise(count = n()) %>%
+     arrange(desc(count)) %>%
+     slice_head(n = 20)
+
+   # Display the top 20 start stations for members
+   cat("Top 20 Start Stations for Members:\n")
+   print(top_stations_member)
+   
+   # Identify the top 20 most frequently used start stations for casual riders
+   top_stations_casual <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     group_by(start_station_name) %>%
+     summarise(count = n()) %>%
+     arrange(desc(count)) %>%
+     slice_head(n = 20)
+   
+   # Display the top 20 start stations for casual riders
+   cat("Top 20 Start Stations for Casual Riders:\n")
+   print(top_stations_casual)
+   
+   # Identify the top 20 most frequently used start stations regardless of user type
+   top_stations_all <- all_rides_df_clean %>%
+     group_by(start_station_name) %>%
+     summarise(count = n()) %>%
+     arrange(desc(count)) %>%
+     slice_head(n = 20)
+   
+   # Display the top 20 start stations overall
+   cat("Top 20 Start Stations Overall:\n")
+   print(top_stations_all)
+```
+
+</details>
+
+| No. | Start Stations Used by All Users | Total | Start Stations Used by MEMBER Riders | Total | Start Stations Used by CASUAL Riders | Total |
+|-----:|------:|------:|------:|------:|------:|------:|
+| 1 | Old Hastings Charging Stx | 810968 | Old Hastings Charging Stx | 511202 | Old Hastings Charging Stx | 299766 |
+| 2 | Streeter Dr & Grand Ave | 61243 |	Kingsbury St & Kinzie St | 25098 | Streeter Dr & Grand Ave | 44685 |
+| 3 | DuSable Lake Shore Dr & Monroe St | 38893 | Clinton St & Washington Blvd | 24866 | DuSable Lake Shore Dr & Monroe St | 29515 |
+| 4 | Michigan Ave & Oak St | 36152 | Clark St & Elm St | 24091 | Michigan Ave & Oak St | 21980 |
+| 5 | DuSable Lake Shore Dr & North Blvd | 34816 | Wells St & Concord Ln | 20651 | DuSable Lake Shore Dr & North Blvd | 19745 |
+| 6 | Clark St & Elm St	| 34688 | Wells St & Elm St | 19648	| Millennium Park |	19550 |
+| 7 | Kingsbury St & Kinzie St | 33655 | Clinton St & Madison St | 19384 | Shedd Aquarium | 17259 |
+| 8 | Wells St & Concord Ln | 32543 | University Ave & 57th St | 19300 | Theater on the Lake | 15915 |
+| 9 | Clinton St & Washington Blvd | 31157 | Broadway & Barry Ave | 18380 | Dusable Harbor | 14897 |
+| 10 | Wells St & Elm St | 29383 | Loomis St & Lexington St | 18215 | Wells St & Concord Ln	| 11892	|
+| 11 | Theater on the Lake | 29165 | Ellis Ave & 60th St | 17759 | Adler Planetarium | 11540 |
+| 12 | Millennium Park | 29091 | State St & Chicago Ave	| 17377	| Montrose Harbor |	11474 |
+| 13 | Broadway & Barry Ave | 27733	| Canal St & Adams St |	16845 | Indiana Ave & Roosevelt Rd	| 11322	|
+| 14 | Wilton Ave & Belmont Ave | 26609	| Streeter Dr & Grand Ave | 16558 |	Clark St & Armitage Ave	| 10852	|
+| 15 | Clark St & Armitage Ave | 25756 | Wells St & Huron St | 16424 | Clark St & Lincoln Ave | 10630 |
+| 16 | University Ave & 57th St	| 25722	| Clinton St & Jackson Blvd | 16271	| Michigan Ave & 8th St	| 10607	|
+| 17 | Clinton St & Madison St | 25395 | Wilton Ave & Belmont Ave | 16227 |	Clark St & Elm St |	10597 |
+| 18 | Indiana Ave & Roosevelt Rd |	25298 |	Morgan St & Polk St	| 16208	| Wilton Ave & Belmont Ave | 10382 |
+| 19 | Ellis Ave & 60th St | 24646 | Dearborn St & Erie St | 16138 | Wells St & Elm St | 9735 |
+| 20 | Clark St & Lincoln Ave | 24558 | Larrabee St & Kingsbury St | 16137 | Wabash Ave & Grand Ave | 9543 |
+
+<img src="/img_tableau/Top 20 Starting Stations for All Users.png" width="950" align="center">
+The map highlights the top 20 most popular starting stations for bike rides, marked in red, showcasing that these high-traffic locations are primarily concentrated in specific areas. This clustering could inform strategic decisions for bike station placement, maintenance, and potential promotional activities to enhance user engagement.
+
+<img src="/img_tableau/Top 20 Starting Stations.png" width="950" align="center">
+The chart showcases the top 20 starting stations for bike rides, with Old Hastings Charging Stx standing out due to its exceptionally high number of rides, totaling 810,968. This station appears to be an outlier, as its usage significantly exceeds that of other stations. However, this may be due to the station's name being associated with multiple locations across the city. Therefore, while it appears prominently in the dataset, its data might be misleading and should be interpreted with caution when considering station popularity and usage patterns.
+
+### Most Popular Stations by Time of Day: Members, Casual Riders, and All Users
+<details>
+
+   ```
+   library(tidyverse)
+   library(lubridate)
+   
+   # Function to determine the part of the day
+   part_of_day <- function(time) {
+     hour <- hour(as.POSIXct(time, format = "%H:%M:%S"))
+     if (hour >= 5 & hour < 12) {
+       return("Morning")
+     } else if (hour >= 12 & hour < 17) {
+       return("Afternoon")
+     } else if (hour >= 17 & hour < 21) {
+       return("Evening")
+     } else {
+       return("Night")
+     }
+   }
+
+   # Calculate the part of the day for each ride using sapply
+   all_rides_df_clean <- all_rides_df_clean %>%
+     mutate(part_of_day = sapply(started_at_time, part_of_day))
+
+   # Function for analysis by part of the day
+   analyse_usage <- function(data, top_stations) {
+     data %>%
+       filter(start_station_name %in% top_stations) %>%
+       count(start_station_name, part_of_day) %>%
+       arrange(start_station_name, part_of_day)
+   }
+   
+   # Identify the top 20 stations for all users
+   top_stations_all <- all_rides_df_clean %>%
+     count(start_station_name) %>%
+     arrange(desc(n)) %>%
+     slice_head(n = 20) %>%
+     pull(start_station_name)
+   
+   # Identify the top 20 stations for members
+   top_stations_member <- all_rides_df_clean %>%
+     filter(member_casual == "member") %>%
+     count(start_station_name) %>%
+     arrange(desc(n)) %>%
+     slice_head(n = 20) %>%
+     pull(start_station_name)
+   
+   # Identify the top 20 stations for casual riders
+   top_stations_casual <- all_rides_df_clean %>%
+     filter(member_casual == "casual") %>%
+     count(start_station_name) %>%
+     arrange(desc(n)) %>%
+     slice_head(n = 20) %>%
+     pull(start_station_name)
+   
+   # Use the analyse_usage function for each user group
+   hourly_usage_all <- analyse_usage(all_rides_df_clean, top_stations_all)
+   hourly_usage_member <- analyse_usage(all_rides_df_clean %>% filter(member_casual == "member"), top_stations_member)
+   hourly_usage_casual <- analyse_usage(all_rides_df_clean %>% filter(member_casual == "casual"), top_stations_casual)
+   
+   # Display and save the data
+   cat("Usage by Part of the Day for Top 20 Stations for All Users:\n")
+   print(hourly_usage_all)
+   cat("Usage by Part of the Day for Top 20 Stations for Members:\n")
+   print(hourly_usage_member)
+   cat("Usage by Part of the Day for Top 20 Stations for Casual Riders:\n")
+   print(hourly_usage_casual)
+   ```
+
+</details>
+
+| Riders | Start Station Name | Morning | Afternoon | Evening | Night |
+|:------|:-------------------|----------:|--------:|--------:|------:|
+|	All Users	|	Broadway & Barry Ave	|	7404	|	8008	|	8967	|	3354	|
+|		|	Clark St & Armitage Ave	|	6513	|	8699	|	7696	|	2848	|
+|		|	Clark St & Elm St	|	11124	|	8871	|	10506	|	4187	|
+|		|	Clark St & Lincoln Ave	|	7071	|	7399	|	7325	|	2763	|
+|		|	Clinton St & Madison St	|	10242	|	6849	|	7051	|	1253	|
+|		|	Clinton St & Washington Blvd	|	12282	|	8436	|	9771	|	668	|
+|		|	DuSable Lake Shore Dr & Monroe St	|	7265	|	18263	|	11051	|	2314	|
+|		|	DuSable Lake Shore Dr & North Blvd	|	6105	|	13555	|	13079	|	2077	|
+|		|	Ellis Ave & 60th St	|	6819	|	8856	|	6891	|	2080	|
+|		|	Indiana Ave & Roosevelt Rd	|	8435	|	7619	|	7026	|	2218	|
+|		|	Kingsbury St & Kinzie St	|	11411	|	11231	|	9398	|	1615	|
+|		|	Michigan Ave & Oak St	|	7883	|	15423	|	10886	|	1960	|
+|		|	Millennium Park	|	4698	|	11736	|	9516	|	3141	|
+|		|	Old Hastings Charging Stx	|	193148	|	268964	|	230850	|	118006	|
+|		|	Streeter Dr & Grand Ave	|	10229	|	29397	|	18029	|	3588	|
+|		|	Theater on the Lake	|	4896	|	13369	|	9539	|	1361	|
+|		|	University Ave & 57th St	|	3280	|	12150	|	8065	|	2227	|
+|		|	Wells St & Concord Ln	|	7506	|	9452	|	10437	|	5148	|
+|		|	Wells St & Elm St	|	8526	|	8202	|	9534	|	3121	|
+|		|	Wilton Ave & Belmont Ave	|	4396	|	7893	|	9245	|	5075	|
+
+<details>    
+   | Riders | Start Station Name | Morning | Afternoon | Evening | Night |
+   |:------|:-------------------|----------:|--------:|--------:|------:|
+   |	Members	|	Broadway & Barry Ave	|	5281	|	5097	|	5882	|	2120	|
+   |		|	Canal St & Adams St	|	6046	|	4204	|	5985	|	610	|
+   |		|	Clark St & Elm St	|	8440	|	5891	|	7271	|	2489	|
+   |		|	Clinton St & Jackson Blvd	|	6417	|	3742	|	5510	|	602	|
+   |		|	Clinton St & Madison St	|	8375	|	4904	|	5324	|	781	|
+   |		|	Clinton St & Washington Blvd	|	10532	|	6358	|	7604	|	372	|
+   |		|	Dearborn St & Erie St	|	5248	|	4639	|	4483	|	1768	|
+   |		|	Ellis Ave & 60th St	|	5076	|	6304	|	4857	|	1522	|
+   |		|	Kingsbury St & Kinzie St	|	8767	|	8198	|	7150	|	983	|
+   |		|	Larrabee St & Kingsbury St	|	4685	|	6937	|	3904	|	611	|
+   |		|	Loomis St & Lexington St	|	5664	|	6002	|	5267	|	1282	|
+   |		|	Morgan St & Polk St	|	3356	|	7187	|	4370	|	1295	|
+   |		|	Old Hastings Charging Stx	|	134834	|	165115	|	145315	|	65938	|
+   |		|	State St & Chicago Ave	|	4617	|	5391	|	5675	|	1694	|
+   |		|	Streeter Dr & Grand Ave	|	3881	|	6325	|	5374	|	978	|
+   |		|	University Ave & 57th St	|	2362	|	8799	|	6404	|	1735	|
+   |		|	Wells St & Concord Ln	|	5521	|	5770	|	6527	|	2833	|
+   |		|	Wells St & Elm St	|	6304	|	5289	|	6253	|	1802	|
+   |		|	Wells St & Huron St	|	5418	|	4507	|	4846	|	1653	|
+   |		|	Wilton Ave & Belmont Ave	|	2725	|	4702	|	5990	|	2810	|
+   |	Casuals	|	Adler Planetarium	|	1214	|	6412	|	2759	|	1155	|
+   |		|	Clark St & Armitage Ave	|	1823	|	4286	|	3308	|	1435	|
+   |		|	Clark St & Elm St	|	2684	|	2980	|	3235	|	1698	|
+   |		|	Clark St & Lincoln Ave	|	2434	|	3695	|	3154	|	1347	|
+   |		|	Dusable Harbor	|	2677	|	7407	|	3890	|	923	|
+   |		|	DuSable Lake Shore Dr & Monroe St	|	5420	|	15050	|	7465	|	1580	|
+   |		|	DuSable Lake Shore Dr & North Blvd	|	2646	|	8936	|	7039	|	1124	|
+   |		|	Indiana Ave & Roosevelt Rd	|	2320	|	4134	|	3544	|	1324	|
+   |		|	Michigan Ave & 8th St	|	2883	|	3471	|	2735	|	1518	|
+   |		|	Michigan Ave & Oak St	|	4522	|	10281	|	5939	|	1238	|
+   |		|	Millennium Park	|	3183	|	8630	|	5513	|	2224	|
+   |		|	Montrose Harbor	|	1758	|	5285	|	3911	|	520	|
+   |		|	Old Hastings Charging Stx	|	58314	|	103849	|	85535	|	52068	|
+   |		|	Shedd Aquarium	|	2066	|	11704	|	2329	|	1160	|
+   |		|	Streeter Dr & Grand Ave	|	6348	|	23072	|	12655	|	2610	|
+   |		|	Theater on the Lake	|	2084	|	8198	|	4845	|	788	|
+   |		|	Wabash Ave & Grand Ave	|	2230	|	3426	|	2442	|	1445	|
+   |		|	Wells St & Concord Ln	|	1985	|	3682	|	3910	|	2315	|
+   |		|	Wells St & Elm St	|	2222	|	2913	|	3281	|	1319	|
+   |		|	Wilton Ave & Belmont Ave	|	1671	|	3191	|	3255	|	2265	|
+</details>
+
+<img src="/img_tableau/Most Popular Stations by Time of Day.png" width="950" align="center">
+The graph presents the most popular bike rental stations segmented by time of day and user type. It reveals that Old Hastings Charging Stx is the top station across all times of day for both casual riders and members, indicating its central role in the network. Notably, there's a trend showing that certain stations are favored during specific times, such as Streeter Dr & Grand Ave during both morning and night, suggesting these locations may be hubs of activity at the beginning and end of the day. This data can inform decisions on station maintenance, bike supply allocation, and targeted marketing strategies to balance demand throughout the day.
+
+### Summary Revision:
+
+**Members:**
+- Members' cycling peaks during commuting hours on weekdays, with a surge from 7 am to 9 am and another from 3 pm to 6 pm, aligning with work-related travel patterns. This trend is most pronounced during the warmer seasons of summer and early fall, as well as spring.
+- The data shows members have a higher frequency of rides but with shorter average durations, typically half that of casual riders' journeys.
+- Common starting and ending points for members are closely linked to universities, residential neighborhoods, and business districts, suggesting a correlation with daily routines and work or academic commitments.
+
+**Casual Riders:**
+- Casual riders demonstrate a preference for midday to early evening rides, peaking from 11 am to 7 pm, with weekends being particularly popular. This pattern is prevalent during leisure-friendly warmer months, such as summer and early fall.
+- Their rides are generally longer in duration, about twice as long as those of members, indicating a leisurely or exploratory approach to cycling.
+- Preferred locations for casual riders to pick up and drop off bikes include scenic parks, tourist hotspots, museums, waterfront areas, and other places of leisure, underscoring their recreational use of the bike-share system.
 
 ## :white_large_square: ACT
+### Revised Recommendations
 
-#### It is not yet finished, the rest will be added soon :)
+Based on data insights, here are refined strategies for Cyclistic to convert casual riders into annual members:
+
+#### Understanding User Dynamics:
+
+1. **Usage Pattern Analysis**:
+   - Investigate the duration, frequency, and timing of bike usage by casual riders compared to members, focusing on peak usage times for targeted promotions.
+
+2. **Membership Value Proposition**:
+   - Research what drives casual riders to rent bikes and craft a compelling value proposition for the annual membership that addresses their specific needs and motivations.
+
+3. **Digital Engagement**:
+   - Analyze the digital touchpoints where casual riders interact with Cyclistic and develop a digital engagement strategy to nurture their journey towards membership.
+
+### Tactical Steps for Membership Growth:
+
+1. **Tailored Promotions**:
+   - Launch special weekday pricing and loyalty rewards aimed at casual riders to incentivize regular usage and familiarity with the service.
+
+2. **Subscription Flexibility**:
+   - Offer a range of subscription plans including weekly or monthly passes to serve as stepping stones to full annual membership.
+
+3. **Focused Marketing Efforts**:
+   - Target marketing efforts in areas with high casual rider traffic and on platforms popular with tourists, emphasizing the benefits of membership over single-use passes.
+
+### Engagement and Pricing Strategies:
+
+1. **Incentive-Based Pricing**:
+   - Introduce a tiered pricing model that encourages longer-term commitments, with clear cost benefits over casual usage.
+
+2. **Membership Perks**:
+   - Provide exclusive benefits for members, such as priority bike access during high demand periods or flexible pass options for varying rider needs.
+
+3. **Smart Ad Placement**:
+   - Deploy targeted ads in high-traffic locations and during peak seasonal periods to maximize exposure to potential members.
+
+4. **Cost-Savings Messaging**:
+   - Highlight the long-term savings and convenience of an annual membership, particularly in comparison to the cumulative cost of multiple casual rentals.
+
+### Strategic Analysis and Market Adaptation:
+
+- **Early Data Utilization**:
+  - Prioritize the analysis of emerging trends and the exploration of new data analysis tools to capture nuanced user behaviors.
+
+- **Data-Driven Model Adaptation**:
+  - Collect more granular data to understand the preferences of local, occasional riders and adapt the membership model accordingly.
+
+- **Membership Model Innovation**:
+  - Re-evaluate the membership offerings to align with the lifestyle and cycling patterns of Chicago's occasional riders, ensuring the model remains competitive and appealing.
+  
+*Thank you for your attention, and I look forward to your feedback, critiques, or suggestions.*
