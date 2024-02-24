@@ -25,7 +25,8 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Average Ride Duration Insights 
 >   * Bike Type Preferences 
 >   * Temporal Usage Patterns 
->   * Station Popularity Metrics 
+>   * Station Popularity Metrics
+>     
 > [**ACT**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-act)
 > * Strategic Recommendations for Action
 
