@@ -94,7 +94,7 @@ This categorization is pivotal for understanding different usage patterns and gu
 #### Divvy [Pricing](https://divvybikes.com/pricing) Summary:
 
 <div>
-   <img src="img_divvy/divvy_plans.jpg" width="600" align="center">
+   <img src="img_divvy/divvy_plans.jpg" width="550" align="center">
 </div>
 <br>
 
@@ -274,6 +274,7 @@ rideable_type_usage <- data.frame(
 # Display the results
 print(rideable_type_usage)
 ```
+
 |  Bike Type |  Total Rides  | Percentage distribution  |
 |:----------------|---------------:|---------------:|
 |  classic_bike      | 2605010  | 47.55184 % | 
@@ -310,6 +311,7 @@ percentage_member_casual <- prop.table(count_member_casual) * 100
 print("Percentage of Member and Casual Rides:")
 print(percentage_member_casual)
 ```
+
 | Biker Status | Total Rides  |  Percentage distribution  |
 |:---------------|--------------:|--------------:|
 | member    |  3494248   |  63.78398  |    
@@ -342,6 +344,7 @@ print(usage_by_type_member)
 cat("Rideable type usage by Casual riders:\n")
 print(usage_by_type_casual)
 ```
+
 |  Bike Type |  Usage by CASUAL riders  | Usage by MAMBER riders  |
 |:----------------|---------------:|---------------:|
 |  classic_bike      | 852217   | 1752793 |
@@ -360,6 +363,7 @@ most_common_ride_type <- names(sort(table(all_rides_df_clean$rideable_type), dec
 # Display the most popular ride type
 cat("The most popular ride type is:", most_common_ride_type, "\n")
 ```
+
 <div>
    <img src="/img_divvy/Bike_DARK_BAYWHEELMASTER.png" width="150" align="center">
 </div>
@@ -415,7 +419,176 @@ cat("The average ride length for casual riders:", average_ride_length_casual_for
 
 </details>
 
+### The most frequent day of the week for rides 
+**Saturday** is the most popular day for rides **overall** and for **casual** users, while **members** ride most frequently on **Thursdays**.
 
+<details>
+
+```
+# Calculate the mode of the day of the week for all rides
+day_of_week_mode <- names(which.max(table(all_rides_df_clean$day_of_week)))
+
+# Display the most common day for all rides
+cat("The most frequent day of the week for rides is: ", day_of_week_mode, "\n")
+
+# Calculate the mode of the day of the week specifically for member rides
+member_day_of_week_mode <- names(
+  which.max(table(all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "member"]))
+)
+
+# Calculate the mode of the day of the week specifically for casual user rides
+casual_day_of_week_mode <- names(
+  which.max(table(all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "casual"]))
+)
+
+# Display the most common day of the week for member rides
+cat("The most frequent day of the week for rides for Members: ", member_day_of_week_mode, "\n")
+
+# Display the most common day of the week for casual user rides
+cat("The most frequent day of the week for rides for Casual users: ", casual_day_of_week_mode, "\n")
+```
+
+</details>
+
+### Calculation of the number of rides by users and bike type usage per day of the week <br>
+```
+library(tidyverse)
+library(lubridate)
+library(hms)
+
+# Calculation of the number of rides for all users, members, and casual users by day of the week
+num_rides_by_day_of_week <- table(all_rides_df_clean$day_of_week)
+num_rides_member_by_day_of_week <- table(
+    all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "member"])
+num_rides_casual_by_day_of_week <- table(
+    all_rides_df_clean$day_of_week[all_rides_df_clean$member_casual == "casual"])
+
+# Display results to the console
+cat("Number of rides by day of the week for All users:\n")
+print(num_rides_by_day_of_week)
+cat("Number of rides by day of the week for Members:\n")
+print(num_rides_member_by_day_of_week)
+cat("Number of rides by day of the week for Casual users:\n")
+print(num_rides_casual_by_day_of_week)
+
+# Creating a tibble with the appropriate number of rows (7 for each day of the week)
+all_rides_day_week_tibble <- tibble(
+  day_of_week = factor(names(num_rides_by_day_of_week), levels = names(num_rides_by_day_of_week)),
+  num_rides_users = as.numeric(num_rides_by_day_of_week),
+  num_rides_casual = as.numeric(num_rides_casual_by_day_of_week),
+  num_rides_member = as.numeric(num_rides_member_by_day_of_week)
+)
+
+# Display the created tibble
+print(all_rides_day_week_tibble)
+
+# Count of the bike types by day of the week
+ride_type_usage_by_day <- table(all_rides_df_clean$day_of_week, all_rides_df_clean$rideable_type)
+cat("Ride type usage by Day of the Week:\n")
+print(ride_type_usage_by_day)
+```
+
+| Day of Week | Number of Ride ID  |  CASUAL  | MEMBER  | Number of Bike Types: classic_bike | docked_bike | electric_bike  |
+|:---------------|:--------------|:--------------|:--------------|--------------:|--------------:|--------------:|
+| 1 Sunday    |  710157   |  322216  |  387941   |    349490   |    15109    |    345558
+| 2 Monday    |  701348   |  227078  |  474270   |    337358   |     9163    |    354827
+| 3 Tuesday   |  793759   |  238690  |  555069   |   379416    |     8755    |    40558
+| 4 Wednesday |  798350   |  239727  |  558623   |    373575   |     7985    |    416790
+| 5 Thursday  |  828872   |  262266  |  566606   |    385285   |     9140    |    434447
+| 6 Friday    |  801693   |  299248  |  502445   |    369367   |    11651    |    420675
+| 7 Saturday  |  844074   |  394780  |  449294   |    410519   |    17481    |    416074 
+
+<div>
+   <img src="/img_tableau/Number of User Rides per Day of the Week.png" width="750" align="center">
+</div>
+
+The graph indicates that Saturday is the most popular day for Cyclistic bike rides, with Thursday being a close second. Conversely, Monday has the lowest number of rides, suggesting it is the least favored day for cycling among Cyclistic's users.
+
+<div>
+   <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
+</div>
+
+Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users.
+
+<div>
+   <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
+</div>
+
+The graph demonstrates that casual riders primarily use bikes during weekends with a noticeable dip in usage at the start of the week, whereas members' bike usage is more evenly distributed throughout the week with a slight decrease on weekends. Members tend to favor classic and electric bikes consistently across weekdays, while casual riders show a preference for electric bikes.
+
+<div>
+   <img src="/img_tableau/Number of rides in percentage by bike type by day of the week.png" width="900" align="center">
+</div>
+
+Saturday leads as the most popular day for bike rides with 15.41% of the weekly total, with Thursday trailing closely behind at 15.13%, underscoring a trend towards increased cycling activity towards the end of the week.
+
+<div>
+   <img src="/img_tableau/Count Bike type - Members and casual riders' total percentage of rides each weekday.png" width="750" align="center">
+</div>
+
+The bar graph depicts the percentage distribution of bike rides by members and casual riders across each day of the week, differentiated by bike type. Classic bikes are predominantly used by members, especially mid-week, while casual riders show a marked preference for electric bikes, particularly on weekends. Docked bikes, represented by the smallest proportion, are used the least by both groups.
+
+### Average Ride Length by Day of the Week for All Users, Members, and Casual Riders <br>
+```
+# Necessary libraries
+library(tidyverse)
+library(lubridate)
+library(hms)
+
+# Calculate the average ride length for all users by day of the week
+average_ride_length_by_day <- all_rides_df_clean %>%
+  group_by(day_of_week) %>%
+  summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
+
+# Calculate the average ride length for members by day of the week
+average_ride_length_member_by_day <- all_rides_df_clean %>%
+  filter(member_casual == "member") %>%
+  group_by(day_of_week) %>%
+  summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
+
+# Calculate the average ride length for casual users by day of the week
+average_ride_length_casual_by_day <- all_rides_df_clean %>%
+  filter(member_casual == "casual") %>%
+  group_by(day_of_week) %>%
+  summarise(ride_length_minutes = mean(ride_length_minutes, na.rm = TRUE))
+
+# Create a unified data frame for each user type with an additional column for user type
+df_all_users <- average_ride_length_by_day %>% mutate(user_type = "All Users")
+df_members <- average_ride_length_member_by_day %>% mutate(user_type = "Member")
+df_casual <- average_ride_length_casual_by_day %>% mutate(user_type = "Casual")
+
+# Combine all data frames into one
+all_rides_df_final_avg_ride_length_by_day <- bind_rows(df_all_users, df_members, df_casual)
+
+# Display the calculated averages to the console with clear separation
+cat("Average Ride Length for All Users by Day of the Week:\n")
+print(df_all_users)
+cat("Average Ride Length for Member Riders by Day of the Week:\n")
+print(df_members)
+cat("Average Ride Length for Casual Riders by Day of the Week:\n")
+print(df_casual)
+
+# Save the combined data frame as a CSV file
+write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_ride_length_by_day_users.csv")
+```
+
+| Day of Week | ALL USERS  |  MEMBER  | CASUAL  | 
+|:---------------|--------------:|--------------:|--------------:|
+| 1 Sunday    |  00:19:13   |  00:13:57  |  00:25:34   |   
+| 2 Monday    |  00:14:58   |  00:11:52  |  00:21:28   |  
+| 3 Tuesday   |  00:14:16   |  00:11:50  |  00:19:32   |   
+| 4 Wednesday |  00:13:57   |  00:11:56  |  00:18:39   |   
+| 5 Thursday  |  00:14:13   |  00:11:58  |  00:19:05   |    
+| 6 Friday    |  00:15:45   |  00:12:27  |  00:21:18   |    
+| 7 Saturday  |  00:19:01   |  00:13:56  |  00:24:49   | 
+
+<div>
+   <img src="/img_tableau/Average Ride Length by Day of the Week for Members and Casual Riders.png" width="750" align="center">
+</div>
+
+The graph illustrates that while members consistently ride for shorter durations across the week, casual riders take longer rides, especially on weekends, which may suggest leisure or tourist activities. Casual riders' trips peak on Sundays, averaging 25.57 minutes, in contrast to members, who average around 12 minutes daily.
+
+### Total Number of Trips for Each User Group during Different Parts of the Day <br>
 
 
 ## :white_large_square: ACT
