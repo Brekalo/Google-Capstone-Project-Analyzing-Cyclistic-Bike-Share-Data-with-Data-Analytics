@@ -67,9 +67,7 @@ In this study, we have analyzed historical travel data from 12 separate CSV file
 
 The dataset is structured into 13 distinct columns, or variables, which include:
 
-<small>
-   
-| No. | Description                            | Column Name      | Type           |
+</small>| No. | Description                            | Column Name      | Type           |
 |----:|:----------------------------------------|:------------------|:-------------|
 |   1 | Unique identifier for each trip:        | `ride_id`         | String       |
 |   2 | Type of bicycle:                        | `rideable_type`   | String       |
@@ -83,8 +81,7 @@ The dataset is structured into 13 distinct columns, or variables, which include:
 |  10 | The longitude of starting station:      | `start_lng`          | Numeric   |
 |  11 | The end station's latitude:             | `end_lat`            | Numeric   |
 |  12 | The longitude of the end station:       | `end_lng`            | Numeric   |
-|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |
-</small>
+|  13 | Indicates whether the rider is a casual or a member: | `member_casual` | String   |</small>
 
 While the dataset did not come with an accompanying metadata file, the variables are intuitively named and can be understood without additional context.
 
