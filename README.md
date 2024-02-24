@@ -266,6 +266,9 @@ rideable_type_usage <- data.frame(
   Ride_Count = as.vector(ride_counts_by_rideable_type),
   Percentage = as.vector(ride_percentages_rideable_type)
 )
+
+# Display the results
+print(rideable_type_usage)
 ```
 |  Bike Type |  Total Rides  | Percentage distribution  |
 |:----------------|---------------:|---------------:|
@@ -278,6 +281,130 @@ rideable_type_usage <- data.frame(
 </div>
 
 The number of rides on electric bikes is the highest among the categories, with electric bikes accounting for 2,793,959 rides. Classic bikes are slightly less popular with 2,605,010 rides, while docked bikes have been used significantly less, with only 79,284 rides. This distribution highlights the growing trend towards electric and classic bikes for urban mobility solutions, possibly due to their convenience, ease of access, and efficiency compared to the more stationary docked bikes.
+
+<div>
+   <img src="/img_tableau/Percentage distribution of bike rides.png" width="950" align="center">
+</div>
+
+Using Cyclistic's historical data on the distribution of bike ride types, the share of electric bikes, classic bikes, and docked bikes is divided into 51.00% for electric bikes, 47.55% for classic bikes, and 1.45% for docked bikes. This data indicates that electric bikes are marginally more popular than classic bikes, with over half of the riders opting for electric bikes.
+
+### Counts and Percentage Distribution of Member and Casual Rides <br>
+```
+%%R -i all_rides_df_clean
+
+# Count rides for 'Member' and 'Casual' in the 'member_casual' column
+count_member_casual <- table(all_rides_df_clean$member_casual)
+
+# Display counts of 'Member' and 'Casual'
+print("Counts of Member and Casual Rides:")
+print(count_member_casual)
+
+# Calculate the percentages for 'Member' and 'Casual'
+percentage_member_casual <- prop.table(count_member_casual) * 100
+
+# Display percentages of 'Member' and 'Casual'
+print("Percentage of Member and Casual Rides:")
+print(percentage_member_casual)
+```
+| Biker Status | Total Rides  |  Percentage distribution  |
+|:---------------|--------------:|--------------:|
+| member    |  3494248   |  63.78398  |    
+| casual    |  1984005   |  36.21602  | 
+
+<div>
+   <img src="/img_tableau/Number of Member and Casual Rides.png" width="950" align="center">
+</div>
+
+The dataset reveals a significant distinction in usage patterns between annual members and occasional riders within the Cyclistic bike share system.
+Members make up the majority of bike rides according to the dataset, with approximately 3,494,248 rides taken by annual members, compared to casual riders who have taken nearly 1,984,005 rides. This suggests that annual members tend to cycle more frequently than casual riders.
+
+<div>
+   <img src="/img_tableau/Percentage distribution of Member and Casual Rides.png" width="950" align="center">
+</div>
+
+Cyclistic's historical data reveals a clear pattern in rider types' usage. Annual members account for the majority of rides at 63.78%, equating to 3,494,248 rides. Casual riders, on the other hand, represent 36.22% of rides, totaling 1,984,005. This data indicates a strong preference for membership-based usage within the Cyclistic bike-sharing community.
+
+### Count of Bike Types Usage by Members and Casual Riders <br>
+```
+# Analyze the use of bike types between members and casual users
+usage_by_type_member <- table(all_rides_df_clean$rideable_type[all_rides_df_clean$member_casual == "member"])
+usage_by_type_casual <- table(all_rides_df_clean$rideable_type[all_rides_df_clean$member_casual == "casual"])
+
+# Display usage of rideable type by Members
+cat("Rideable type usage by Members:\n")
+print(usage_by_type_member)
+
+# Display usage of rideable type by Casual riders
+cat("Rideable type usage by Casual riders:\n")
+print(usage_by_type_casual)
+```
+|  Bike Type |  Usage by CASUAL riders  | Usage by MAMBER riders  |
+|:----------------|---------------:|---------------:|
+|  classic_bike      | 852217   | 1752793 |
+|   docked_bike      |  79284   | 0 |
+| electric_bike      |  1052504 | 1741455 | 
+
+<div>
+   <img src="/img_tableau/Number of Bike Types Usage by Members and Casual Riders.png" width="950" align="center">
+</div>
+
+The graph shows that Cyclistic members predominantly use classic bikes (1,752,793 rides) and electric bikes (1,741,455 rides). Casual riders prefer electric bikes (1,052,504 rides) over classic bikes (852,217 rides) and docked bikes (79,284 rides). Docked bikes are the least utilized type, and their use is exclusive to casual riders within this dataset. Members do not use docked bikes at all. <br>
+```
+# Determine the most commonly used type of bike
+most_common_ride_type <- names(sort(table(all_rides_df_clean$rideable_type), decreasing = TRUE)[1])
+
+# Display the most popular ride type
+cat("The most popular ride type is:", most_common_ride_type, "\n")
+```
+<div>
+   <img src="/img_divvy/Bike_DARK_BAYWHEELMASTER.png" width="150" align="center">
+</div>
+The **unique** rideable types include electric bikes, classic bikes, docked bikes, and **electric bikes** are the most **popular**.
+
+### Average Ride Length by Users <br>
+```
+# Required library for time conversion
+library(lubridate)
+
+# Direct calculation and formatting of the overall average ride length
+mean_ride_length_seconds <- mean(all_rides_df_clean$ride_length_seconds, na.rm = TRUE)
+mean_ride_length_hms <- seconds_to_period(mean_ride_length_seconds)
+mean_ride_length_formatted <- sprintf("%02d:%02d:%02d", 
+                                      hour(mean_ride_length_hms), 
+                                      minute(mean_ride_length_hms), 
+                                      second(mean_ride_length_hms)
+                                     )
+
+# Display the overall average ride length
+cat("The overall average length of rides:", mean_ride_length_formatted, "\n")
+
+# Calculation of the average ride length in seconds for members and casual users
+average_ride_length_member_seconds <- mean(
+    all_rides_df_clean$ride_length_seconds[all_rides_df_clean$member_casual == "member"], na.rm = TRUE)
+average_ride_length_casual_seconds <- mean(
+    all_rides_df_clean$ride_length_seconds[all_rides_df_clean$member_casual == "casual"], na.rm = TRUE)
+
+# Convert the averages to HH:MM:SS format
+average_ride_length_member_hms <- seconds_to_period(average_ride_length_member_seconds)
+average_ride_length_member_formatted <- sprintf("%02d:%02d:%02d", 
+                                                hour(average_ride_length_member_hms), 
+                                                minute(average_ride_length_member_hms), 
+                                                second(average_ride_length_member_hms)
+                                               )
+
+average_ride_length_casual_hms <- seconds_to_period(average_ride_length_casual_seconds)
+average_ride_length_casual_formatted <- sprintf("%02d:%02d:%02d", 
+                                                hour(average_ride_length_casual_hms), 
+                                                minute(average_ride_length_casual_hms), 
+                                                second(average_ride_length_casual_hms)
+                                               )
+
+# Display the formatted average ride lengths for member and casual riders
+cat("The average ride length for member riders:", average_ride_length_member_formatted, "\n")
+cat("The average ride length for casual riders:", average_ride_length_casual_formatted, "\n")
+```
+
+
 
 ## :white_large_square: ACT
 
