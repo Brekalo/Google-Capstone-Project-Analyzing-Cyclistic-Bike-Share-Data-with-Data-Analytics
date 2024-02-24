@@ -18,7 +18,7 @@ I completed a case study on **Cyclistic** bike-share for my Google Data Analytic
 >   * Identifying Key Stakeholders 
 > * [**PREPARE**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-prepare)
 >   * Data Sourcing and Initial Exploration 
-> * **PROCESS**
+> * [**PROCESS**](https://github.com/Brekalo/Google-Capstone-Project-Analyzing-Cyclistic-Bike-Share-Data-with-Data-Analytics/blob/main/README.md#white_large_square-process)
 >   * Data Cleaning and Preprocessin 
 > * **ANALYZE & SHARE**
 >   * Ride Volume Analysis 
