@@ -459,13 +459,13 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 
 | Day of Week | Number of Ride ID  |  CASUAL  | MEMBER  | Number of Bike Types: classic_bike | docked_bike | electric_bike  |
 |:---------------|:--------------|:--------------|:--------------|--------------:|--------------:|--------------:|
-| 1 Sunday    |  710157   |  322216  |  387941   |    349490   |    15109    |    345558
-| 2 Monday    |  701348   |  227078  |  474270   |    337358   |     9163    |    354827
-| 3 Tuesday   |  793759   |  238690  |  555069   |   379416    |     8755    |    40558
-| 4 Wednesday |  798350   |  239727  |  558623   |    373575   |     7985    |    416790
-| 5 Thursday  |  828872   |  262266  |  566606   |    385285   |     9140    |    434447
-| 6 Friday    |  801693   |  299248  |  502445   |    369367   |    11651    |    420675
-| 7 Saturday  |  844074   |  394780  |  449294   |    410519   |    17481    |    416074 
+| 1 Sunday    |  710157   |  322216  |  387941   |    349490   |    15109    |    345558    |
+| 2 Monday    |  701348   |  227078  |  474270   |    337358   |     9163    |    354827    |
+| 3 Tuesday   |  793759   |  238690  |  555069   |   379416    |     8755    |    40558     |
+| 4 Wednesday |  798350   |  239727  |  558623   |    373575   |     7985    |    416790    |
+| 5 Thursday  |  828872   |  262266  |  566606   |    385285   |     9140    |    434447    |
+| 6 Friday    |  801693   |  299248  |  502445   |    369367   |    11651    |    420675    |
+| 7 Saturday  |  844074   |  394780  |  449294   |    410519   |    17481    |    416074     |
 
 <img src="/img_tableau/Number of User Rides per Day of the Week.png" width="750" align="center">
 
@@ -581,6 +581,7 @@ The graph illustrates that while members consistently ride for shorter durations
    cat("Total Usage by Part of the Day for Casual Riders:\n")
    print(total_usage_casual)
    ```
+
 </details>
 
 | Users | Morning | Afternoon | Evening | Night |
@@ -590,7 +591,6 @@ The graph illustrates that while members consistently ride for shorter durations
 |	Casual	|	417577	|	724262	|	569921	|	272245	|
 
 <img src="/img_tableau/Total Number of Trips during Different Parts of the Day.png" width="750" align="center">
-
 The chart shows that the afternoon is the most popular time for bike rides, with member trips evenly distributed throughout morning, afternoon, and evening, while casual riders exhibit a peak in the afternoon.
 
 ### Top 10 Most Popular Riding Hours
@@ -650,7 +650,6 @@ The chart shows that the afternoon is the most popular time for bike rides, with
 |	11 AM	|	274612	|	7 AM	|	186859	|	8 PM	|	88592	   |
 
 <img src="/img_tableau/Top 10 Most Popular Riding Hours Overall.png" width="650" align="center">
-
 The data from the chart indicates that the late afternoon, specifically around 5 PM, is the most popular time for cycling, with 564,221 rides occurring during this time. Furthermore, the time span from 3 PM to 6 PM is the preferred window for cycling, accounting for 1,905,528 rides, which represents 34.7835% of total rides.
 
 <details>
@@ -683,6 +682,7 @@ The data from the chart indicates that the late afternoon, specifically around 5
    ```
 
 </details>
+
 In comparison with the previous graph, the following analysis is performed:
 
 - The peak cycling hours are between **3 PM** and **6 PM**, with **1,905,528** total rides, comprising 34.78% of all rides.
@@ -733,6 +733,7 @@ In comparison with the previous graph, the following analysis is performed:
    ```
 
 </details>
+
 | Hour of Day | Total trips: Overall | Total trips: Member | Total trips: Casual |
 |------:|----------:|--------:|--------:|
 |	12 AM	|	68815	|	33708	|	35107	|
@@ -774,6 +775,7 @@ The graph compares the hourly ride counts of casual riders and members, showing 
 The graph displays the hourly ride counts for both members and casual riders across different days of the week. Consistent with previous findings, the peak usage for both groups is around 5 PM. During weekdays, the highest frequency of rides occurs between 3 PM and 6 PM, with 3 PM being particularly popular. On weekends, the peak shifts to between 1 PM and 3 PM. Casual riders start their trips frequently in the early afternoon on weekdays, while members tend to begin their journeys around 7 AM and 8 AM. This pattern suggests that members are likely commuting during rush hours on weekdays, whereas casual riders are more inclined to use bikes for leisure activities, especially in the afternoons and on weekends.
 
 ## Number of Bike Rides and Percentage Distribution Across Seasons
+
 <details>
    ```
 
