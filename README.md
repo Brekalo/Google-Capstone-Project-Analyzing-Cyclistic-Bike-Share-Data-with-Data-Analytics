@@ -173,9 +173,9 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 **An essential step in data analysis is ensuring the data's cleanliness and readiness for further analysis. The following procedures are applied to the `all_rides_df_clean.csv` data frame, each accompanied by a screenshot for visual reference:**
 
 1. **Overview of `all_rides_df_clean.csv`**: Obtain an overview of the data frame, including the total number of rows, columns, and cells.
-<details>
-   <img src="img_details/overview_of_all_rides_df_clean.png" width="500" align="center">
-</details>
+   <details>
+      <img src="img_details/overview_of_all_rides_df_clean.png" width="500" align="center">
+   </details>
 
 2. **Previewing Data**: Use the `head()` function to display the first few rows of the data frame, providing an initial glimpse into the dataset.
 <details>
