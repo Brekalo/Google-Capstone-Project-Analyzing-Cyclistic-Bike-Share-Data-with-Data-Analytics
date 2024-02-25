@@ -844,7 +844,7 @@ The bar chart shows the number of bike rides per season, indicating that summer 
    <img src="/img_tableau/Percentage Distribution of Bike Rides Across Seasons.png" width="750" align="left">
 </div>
 <div style="clear: both;"></div>
-The pie chart clearly demonstrates that summer is the most popular season for cycling, with a total of 2,192,634 rides, accounting for 40.02% of the season's total rides. Following summer, spring is the next favored season with 1,547,735 rides, making up 28.25% of the rides. These figures indicate a strong seasonal trend in cycling habits, with riders significantly preferring the warmer months, which can be clearly seen in the calculation below.
+<p>The pie chart clearly demonstrates that summer is the most popular season for cycling, with a total of 2,192,634 rides, accounting for 40.02% of the season's total rides. Following summer, spring is the next favored season with 1,547,735 rides, making up 28.25% of the rides. These figures indicate a strong seasonal trend in cycling habits, with riders significantly preferring the warmer months, which can be clearly seen in the calculation below.</p>
 
 ### Bike Ride Count and Percentage Distribution per Month for Member and Casual Riders
 <details><summary>View Code</summary>
@@ -903,7 +903,7 @@ The pie chart clearly demonstrates that summer is the most popular season for cy
    <img src="/img_tableau/Number of Bike Rides by Month for Member and Casual Riders.png" width="750" align="left">
 </div>
 <div style="clear: both;"></div>
-The bar chart confirms that August is the month with the highest number of bike rides, followed closely by July, and then June, indicating a peak in cycling activity during the summer months. Conversely, the winter months of December, January, and February have the fewest recorded rides, reflecting a seasonal decline in cycling frequency.
+<p>The bar chart confirms that August is the month with the highest number of bike rides, followed closely by July, and then June, indicating a peak in cycling activity during the summer months. Conversely, the winter months of December, January, and February have the fewest recorded rides, reflecting a seasonal decline in cycling frequency.</p>
 
 ### Percentage Distribution of Bike Rides by Month for Member and Casual Riders
 The bar chart visualizes the percentage distribution of bike rides by month for both members and casual riders. It aligns with the inference that summer is the peak season for cycling, potentially influenced by seasonality, which is a common factor affecting such trends. From December to March, only 14.35% of rides are recorded, while a significant 39.85% occur from June through August.<br>
