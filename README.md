@@ -474,17 +474,17 @@ The graph indicates that Saturday is the most popular day for Cyclistic bike rid
 <div>
 <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
 </div>
-Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users. <br />
+Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users.
 
 <div>
 <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
 </div>
-The graph demonstrates that casual riders primarily use bikes during weekends with a noticeable dip in usage at the start of the week, whereas members' bike usage is more evenly distributed throughout the week with a slight decrease on weekends. Members tend to favor classic and electric bikes consistently across weekdays, while casual riders show a preference for electric bikes. <br />
+The graph demonstrates that casual riders primarily use bikes during weekends with a noticeable dip in usage at the start of the week, whereas members' bike usage is more evenly distributed throughout the week with a slight decrease on weekends. Members tend to favor classic and electric bikes consistently across weekdays, while casual riders show a preference for electric bikes. 
 
 <div>
 <img src="/img_tableau/Number of rides in percentage by bike type by day of the week.png" width="900" align="center">
 </div>
-Saturday leads as the most popular day for bike rides with 15.41% of the weekly total, with Thursday trailing closely behind at 15.13%, underscoring a trend towards increased cycling activity towards the end of the week. <br />
+Saturday leads as the most popular day for bike rides with 15.41% of the weekly total, with Thursday trailing closely behind at 15.13%, underscoring a trend towards increased cycling activity towards the end of the week. 
 
 <div>
 <img src="/img_tableau/Count Bike type - Members and casual riders' total percentage of rides each weekday.png" width="750" align="center">
@@ -656,8 +656,7 @@ The chart shows that the afternoon is the most popular time for bike rides, with
 |	11 AM	|	274612	|	7 AM	|	186859	|	8 PM	|	88592	   |
 
 <img src="/img_tableau/Top 10 Most Popular Riding Hours Overall.png" width="650" align="center">
-The data from the chart indicates that the late afternoon, specifically around 5 PM, is the most popular time for cycling, with 564,221 rides occurring during this time. Furthermore, the time span from 3 PM to 6 PM is the preferred window for cycling, accounting for 1,905,528 rides, which represents 34.7835% of total rides. <br>
-
+The data from the chart indicates that the late afternoon, specifically around 5 PM, is the most popular time for cycling, with 564,221 rides occurring during this time. Furthermore, the time span from 3 PM to 6 PM is the preferred window for cycling, accounting for 1,905,528 rides, which represents 34.7835% of total rides. 
 <p>&nbsp;</p>
 <details><summary>View Code</summary>
 
@@ -1280,4 +1279,4 @@ Based on data insights, here are refined strategies for Cyclistic to convert cas
 - **Membership Model Innovation**:
   - Re-evaluate the membership offerings to align with the lifestyle and cycling patterns of Chicago's occasional riders, ensuring the model remains competitive and appealing.
   
-*Thank you for your attention, and I look forward to your feedback, critiques, or suggestions.*
+*Thank you for taking the time to review my project. I sincerely appreciate your attention and am eagerly looking forward to your feedback, critiques, or suggestions.*
