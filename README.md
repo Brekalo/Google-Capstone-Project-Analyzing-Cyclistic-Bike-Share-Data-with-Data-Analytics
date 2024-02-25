@@ -1057,8 +1057,10 @@ The visual data presented in the previous two maps clearly shows a pattern of bi
 <img src="/img_tableau/Top 20 Starting Stations for All Users.png" width="950" align="center">
 The map highlights the top 20 most popular starting stations for bike rides, marked in red, showcasing that these high-traffic locations are primarily concentrated in specific areas. This clustering could inform strategic decisions for bike station placement, maintenance, and potential promotional activities to enhance user engagement. <br />
 
-
+<div>
 <img src="/img_tableau/Top 20 Starting Stations.png" width="950" align="center">
+</div>
+<div style="clear: both;"></div>
 The chart showcases the top 20 starting stations for bike rides, with Old Hastings Charging Stx standing out due to its exceptionally high number of rides, totaling 810,968. This station appears to be an outlier, as its usage significantly exceeds that of other stations. However, this may be due to the station's name being associated with multiple locations across the city. Therefore, while it appears prominently in the dataset, its data might be misleading and should be interpreted with caution when considering station popularity and usage patterns.
 
 ### Most Popular Stations by Time of Day: Members, Casual Riders, and All Users
@@ -1157,6 +1159,7 @@ The chart showcases the top 20 starting stations for bike rides, with Old Hastin
 |		|	Wilton Ave & Belmont Ave	|	4396	|	7893	|	9245	|	5075	|
 
 <details><summary>Continue Viewing the Table</summary>   
+   
    | Riders | Start Station Name | Morning | Afternoon | Evening | Night |
    |:------|:-------------------|----------:|--------:|--------:|------:|
    |	Members	|	Broadway & Barry Ave	|	5281	|	5097	|	5882	|	2120	|
