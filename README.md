@@ -3,7 +3,7 @@ There are several phases to the project, from data analysis to data visualizatio
 
 # Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
 **Case Study: How Does a Bike-Share Navigate Speedy Success?** <br>
-<sup>*by Vesna M. Brekalo*</sup> <br>
+<sub>*by Vesna M. Brekalo*</sub> <br>
 <sub>*February, 23 2024*</sub>
 
 ## :white_large_square: FOREWORD
