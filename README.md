@@ -1,5 +1,7 @@
 <sup>*Data analysis code and documentation for Cyclistic's bike share data is contained in this repository.
 There are several phases to the project, from data analysis to data visualization to recommendations, and this README summarizes each phase.*</sup>
+<sub>*Data analysis code and documentation for Cyclistic's bike share data is contained in this repository.
+There are several phases to the project, from data analysis to data visualization to recommendations, and this README summarizes each phase.*</sub>
 
 # Data Analytics Capstone Project: Cyclistic Bike Sharing Analysis
 **Case Study: How Does a Bike-Share Navigate Speedy Success?** <br>
