@@ -474,7 +474,7 @@ The graph indicates that Saturday is the most popular day for Cyclistic bike rid
 <div>
 <img src="/img_tableau/Percentage Distribution of User Rides per Day of the Week.png" width="750" align="center">
 </div>
-Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users.
+Based on the graph, Thursday is the peak day for member rides, while Saturday is the most popular for casual users, with these days accounting for 15.13% and 15.41% of weekly rides respectively. Conversely, the least favored days are Sunday for members and Monday for casual users. <br />
 
 <div>
 <img src="/img_tableau/Number of Bike Type Usages per Day of the Week.png" width="750" align="center">
