@@ -1283,5 +1283,5 @@ Based on data insights, here are refined strategies for Cyclistic to convert cas
 
 <p>&nbsp;</p>
 
-> *Thank you for taking the time to review my project.
+> *Thank you for taking the time to review my project. <br>
 > I sincerely appreciate your attention and am eagerly looking forward to your feedback, critiques, or suggestions.*
