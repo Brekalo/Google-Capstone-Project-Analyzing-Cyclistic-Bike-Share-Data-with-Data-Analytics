@@ -785,7 +785,7 @@ The graph compares the hourly ride counts of casual riders and members, showing 
 <p>&nbsp;</p>
 The graph displays the hourly ride counts for both members and casual riders across different days of the week. Consistent with previous findings, the peak usage for both groups is around 5 PM. During weekdays, the highest frequency of rides occurs between 3 PM and 6 PM, with 3 PM being particularly popular. On weekends, the peak shifts to between 1 PM and 3 PM. Casual riders start their trips frequently in the early afternoon on weekdays, while members tend to begin their journeys around 7 AM and 8 AM. This pattern suggests that members are likely commuting during rush hours on weekdays, whereas casual riders are more inclined to use bikes for leisure activities, especially in the afternoons and on weekends.
 
-<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
 <img src="/img_tableau/Ride Counts by Hours Across Each Day for Casual Riders and Members.png" width="950" align="center">
 
 ### Number of Bike Rides and Percentage Distribution Across Seasons
@@ -843,7 +843,6 @@ The graph displays the hourly ride counts for both members and casual riders acr
 
 <img src="/img_tableau/Number of Bike Rides per Season.png" width="750" align="center">
 The bar chart shows the number of bike rides per season, indicating that summer is the most popular season for biking with a total of 2,192,634 rides. Spring follows with 1,547,735 rides, then autumn with 1,048,806 rides, and winter has the least with 689,078 rides. This suggests that warmer weather significantly increases the frequency of bike usage.
-
 <p>&nbsp;</p>
 <div>
    <img src="/img_tableau/Percentage Distribution of Bike Rides Across Seasons.png" width="750" align="center">
@@ -1043,6 +1042,8 @@ The visual data presented in the previous two maps clearly shows a pattern of bi
 
 </details>
 
+<details><summary>View Table: Top 20 Start Stations</summary>
+
 | No. | Start Stations Used by All Users | Total | Start Stations Used by MEMBER Riders | Total | Start Stations Used by CASUAL Riders | Total |
 |-----:|------:|------:|------:|------:|------:|------:|
 | 1 | Old Hastings Charging Stx | 810968 | Old Hastings Charging Stx | 511202 | Old Hastings Charging Stx | 299766 |
@@ -1065,6 +1066,8 @@ The visual data presented in the previous two maps clearly shows a pattern of bi
 | 18 | Indiana Ave & Roosevelt Rd |	25298 |	Morgan St & Polk St	| 16208	| Wilton Ave & Belmont Ave | 10382 |
 | 19 | Ellis Ave & 60th St | 24646 | Dearborn St & Erie St | 16138 | Wells St & Elm St | 9735 |
 | 20 | Clark St & Lincoln Ave | 24558 | Larrabee St & Kingsbury St | 16137 | Wabash Ave & Grand Ave | 9543 |
+
+</details>
 
 <img src="/img_tableau/Top 20 Starting Stations for All Users.png" width="950" align="center">
 The map highlights the top 20 most popular starting stations for bike rides, marked in red, showcasing that these high-traffic locations are primarily concentrated in specific areas. This clustering could inform strategic decisions for bike station placement, maintenance, and potential promotional activities to enhance user engagement. <br />
