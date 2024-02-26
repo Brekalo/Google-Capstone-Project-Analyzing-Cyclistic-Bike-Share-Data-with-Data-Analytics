@@ -776,12 +776,10 @@ The graph highlights that the period from afternoon to evening is the most favor
 
 ### Percentage Distribution of Total Ride Counts by Hour of Day 
 The graph's percentage distribution indicates that 5 PM is the peak time for rides, accounting for 10.30% of the total. There is a significant drop in activity from 11 PM to 5 AM, marking these as the least popular hours. Cyclistic users clearly favor the time span between 3 PM and 6 PM for their rides.
-
 <p>&nbsp;</p>
 <img src="/img_tableau/Percentage Distribution of Total Ride Counts by Hour of Day.png" width="750" align="center">
 <p>&nbsp;</p>
 The graph compares the hourly ride counts of casual riders and members, showing that members tend to ride mostly during morning peak hours, with a significant spike around 8 AM, and again in the late afternoon, peaking at 5 PM. Casual riders, on the other hand, have their highest counts later in the day, with their peak also at 5 PM but sustaining higher ride counts into the evening compared to members.
-
 <p>&nbsp;</p>
 <img src="/img_tableau/Total Ride Counts by Hour of Day for Casual Riders and Members.png" width="950" align="center">
 <p>&nbsp;</p>
