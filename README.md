@@ -740,6 +740,7 @@ In comparison with the previous graph, the following analysis is performed:
 
 </details>
 
+<details><summary>View Table: Number of Rides During Different Times of the Day</summary>
 | Hour of Day | Total trips: Overall | Total trips: Member | Total trips: Casual |
 |------:|----------:|--------:|--------:|
 |	12 AM	|	68815	|	33708	|	35107	|
@@ -766,6 +767,8 @@ In comparison with the previous graph, the following analysis is performed:
 |	9 PM	|	186929	|	112741	|	74188	|
 |	10 PM	|	149925	|	84147	|	65778	|
 |	11 PM	|	100847	|	53666	|	47181	|
+   
+</details>
 
 <img src="/img_tableau/Number of Rides During Different Times of the Day.png" width="750" align="center">
 The graph highlights that the period from afternoon to evening is the most favored for cycling, with the hours between 3 PM and 6 PM alone accounting for 34.78% of daily rides, signifying that over a third of the day's rides occur in this 3-hour window. Morning hours show the least activity, and there is a noticeable decline in rides from 6 PM to 11 PM, which constitutes 26.74% of the daily rides.
