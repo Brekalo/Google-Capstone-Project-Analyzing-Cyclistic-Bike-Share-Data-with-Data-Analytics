@@ -741,6 +741,7 @@ In comparison with the previous graph, the following analysis is performed:
 </details>
 
 <details><summary>View Table: Number of Rides During Different Times of the Day</summary>
+   
 | Hour of Day | Total trips: Overall | Total trips: Member | Total trips: Casual |
 |------:|----------:|--------:|--------:|
 |	12 AM	|	68815	|	33708	|	35107	|
@@ -781,7 +782,7 @@ The graph's percentage distribution indicates that 5 PM is the peak time for rid
 <p>&nbsp;</p>
 The graph compares the hourly ride counts of casual riders and members, showing that members tend to ride mostly during morning peak hours, with a significant spike around 8 AM, and again in the late afternoon, peaking at 5 PM. Casual riders, on the other hand, have their highest counts later in the day, with their peak also at 5 PM but sustaining higher ride counts into the evening compared to members.
 
-<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
 <img src="/img_tableau/Total Ride Counts by Hour of Day for Casual Riders and Members.png" width="950" align="center">
 <p>&nbsp;</p>
 The graph displays the hourly ride counts for both members and casual riders across different days of the week. Consistent with previous findings, the peak usage for both groups is around 5 PM. During weekdays, the highest frequency of rides occurs between 3 PM and 6 PM, with 3 PM being particularly popular. On weekends, the peak shifts to between 1 PM and 3 PM. Casual riders start their trips frequently in the early afternoon on weekdays, while members tend to begin their journeys around 7 AM and 8 AM. This pattern suggests that members are likely commuting during rush hours on weekdays, whereas casual riders are more inclined to use bikes for leisure activities, especially in the afternoons and on weekends.
