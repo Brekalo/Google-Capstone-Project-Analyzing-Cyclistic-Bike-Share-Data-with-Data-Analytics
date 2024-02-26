@@ -210,7 +210,7 @@ write.csv(all_rides_df_clean, "all_rides_df_clean.csv", row.names = FALSE)
 *By systematically addressing each of these points, we can assure the data's quality and prepare it for insightful analysis.*
 
 ## :white_large_square: ANALYZE & SHARE
-**Guiding Questions for Enhanced Data Analysis:**
+**Guiding Questions for Enhanced Data Analysis**
 
 At this phase of our study, we seek to explore the dynamics of bike usage among Cyclistic's annual members versus casual riders. Our analysis will dissect the following key dimensions to uncover distinct patterns of utilization:
 
@@ -608,24 +608,24 @@ The chart shows that the afternoon is the most popular time for bike rides, with
    
    # Calculate the hour from the 'started_at_time' column, which is in the HH:MM:SS string format
    all_rides_df_clean <- all_rides_df_clean %>%
-     mutate(hour_of_day = as.integer(substr(started_at_time, 1, 2))) # Extract the hour as an integer
+     mutate(hour_of_day = as.integer(substr(started_at_time, 1, 2))) 
    
    # Calculate the number of rides per hour for all users
    hour_of_day_usage_all <- all_rides_df_clean %>%
      group_by(hour_of_day) %>%
-     summarize(total_rides = n(), .groups = 'drop') # Prevent grouping in the result
+     summarize(total_rides = n(), .groups = 'drop') 
    
    # Calculate the number of rides per hour for members
    hour_of_day_usage_member <- all_rides_df_clean %>%
      filter(member_casual == "member") %>%
      group_by(hour_of_day) %>%
-     summarize(total_rides = n(), .groups = 'drop') # Filter for members and prevent grouping in the result
+     summarize(total_rides = n(), .groups = 'drop') 
    
    # Calculate the number of rides per hour for casual riders
    hour_of_day_usage_casual <- all_rides_df_clean %>%
      filter(member_casual == "casual") %>%
      group_by(hour_of_day) %>%
-     summarize(total_rides = n(), .groups = 'drop') # Filter for casual riders and prevent grouping in the result
+     summarize(total_rides = n(), .groups = 'drop') 
 
    # Print the top 10 most popular riding hours for all users
    cat("Top 10 Most Popular Riding Hours for All Users:\n")
@@ -778,12 +778,12 @@ The graph's percentage distribution indicates that 5 PM is the peak time for rid
 <p>&nbsp;</p>
 The graph compares the hourly ride counts of casual riders and members, showing that members tend to ride mostly during morning peak hours, with a significant spike around 8 AM, and again in the late afternoon, peaking at 5 PM. Casual riders, on the other hand, have their highest counts later in the day, with their peak also at 5 PM but sustaining higher ride counts into the evening compared to members.
 
-<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
 <img src="/img_tableau/Total Ride Counts by Hour of Day for Casual Riders and Members.png" width="950" align="center">
 <p>&nbsp;</p>
 The graph displays the hourly ride counts for both members and casual riders across different days of the week. Consistent with previous findings, the peak usage for both groups is around 5 PM. During weekdays, the highest frequency of rides occurs between 3 PM and 6 PM, with 3 PM being particularly popular. On weekends, the peak shifts to between 1 PM and 3 PM. Casual riders start their trips frequently in the early afternoon on weekdays, while members tend to begin their journeys around 7 AM and 8 AM. This pattern suggests that members are likely commuting during rush hours on weekdays, whereas casual riders are more inclined to use bikes for leisure activities, especially in the afternoons and on weekends.
 
-<p>&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
 <img src="/img_tableau/Ride Counts by Hours Across Each Day for Casual Riders and Members.png" width="950" align="center">
 
 ### Number of Bike Rides and Percentage Distribution Across Seasons
@@ -863,19 +863,19 @@ The bar chart shows the number of bike rides per season, indicating that summer 
    # Calculate the number of rides per month for all users
    ride_counts_by_month_all <- all_rides_df_clean %>%
      group_by(month) %>%
-     summarize(total_rides = n(), .groups = 'drop') # Drop the grouping for cleaner output
+     summarize(total_rides = n(), .groups = 'drop') 
    
    # Calculate the number of rides per month for members
    ride_counts_by_month_member <- all_rides_df_clean %>%
      filter(member_casual == "member") %>%
      group_by(month) %>%
-     summarize(total_rides = n(), .groups = 'drop') # Ensuring clean output
+     summarize(total_rides = n(), .groups = 'drop') 
    
    # Calculate the number of rides per month for casual riders
    ride_counts_by_month_casual <- all_rides_df_clean %>%
      filter(member_casual == "casual") %>%
      group_by(month) %>%
-     summarize(total_rides = n(), .groups = 'drop') # Consistent formatting
+     summarize(total_rides = n(), .groups = 'drop') 
    
    # Display the results
    cat("Ride Counts by Month for All Riders:\n")
@@ -902,10 +902,12 @@ The bar chart shows the number of bike rides per season, indicating that summer 
 |	Oct	|	521006	|	349276	|	171730	|
 |	Nov	|	351760	|	256144	|	95616	|
 |	Dec	|	175184	|	131807	|	43377	|
+
 <div>
    <img src="/img_tableau/Number of Bike Rides by Month for Member and Casual Riders.png" width="750" align="center">
 </div>
 <div style="clear: both;"></div>
+
 <p>The bar chart confirms that August is the month with the highest number of bike rides, followed closely by July, and then June, indicating a peak in cycling activity during the summer months. Conversely, the winter months of December, January, and February have the fewest recorded rides, reflecting a seasonal decline in cycling frequency.</p>
 
 ### Percentage Distribution of Bike Rides by Month for Member and Casual Riders
@@ -934,7 +936,7 @@ The line chart corroborates earlier observations, showing that casual riders con
 
 </details>
 
-Number of unique **starting** stations: **1542**
+Number of unique starting stations: **1542**
 
 ### Most common used Start station by day of the week
 <details><summary>View Code</summary>
@@ -1278,5 +1280,7 @@ Based on data insights, here are refined strategies for Cyclistic to convert cas
 
 - **Membership Model Innovation**:
   - Re-evaluate the membership offerings to align with the lifestyle and cycling patterns of Chicago's occasional riders, ensuring the model remains competitive and appealing.
-  
-*Thank you for taking the time to review my project. I sincerely appreciate your attention and am eagerly looking forward to your feedback, critiques, or suggestions.*
+
+<p>&nbsp;</p>
+
+> *Thank you for taking the time to review my project. I sincerely appreciate your attention and am eagerly looking forward to your feedback, critiques, or suggestions.*
