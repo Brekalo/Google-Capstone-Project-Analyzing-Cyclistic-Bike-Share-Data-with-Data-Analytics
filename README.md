@@ -926,7 +926,7 @@ The line chart corroborates earlier observations, showing that casual riders con
 <details><summary>View Code</summary>
    
    ```
-   # Load the tidyverse package for potential extended data manipulation
+   # Load the tidyverse package
    library(tidyverse)
    
    # Calculate the number of unique starting stations in the dataset
