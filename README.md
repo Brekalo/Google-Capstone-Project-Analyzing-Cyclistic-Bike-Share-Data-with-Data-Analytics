@@ -533,9 +533,6 @@ The bar graph depicts the percentage distribution of bike rides by members and c
    print(df_members)
    cat("Average Ride Length for Casual Riders by Day of the Week:\n")
    print(df_casual)
-   
-   # Save the combined data frame as a CSV file
-   write_csv(all_rides_df_final_avg_ride_length_by_day, "all_rides_df_final_avg_ride_length_by_day_users.csv")
    ```
 
 </details>
