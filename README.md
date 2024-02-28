@@ -93,7 +93,7 @@ This categorization is pivotal for understanding different usage patterns and gu
 
 #### Divvy [Pricing](https://divvybikes.com/pricing) Summary
 
-<img src="img_divvy/divvy_plans.jpg" width="550" align="center">
+<img src="img_divvy/divvy_plans.jpg" width="500" align="center">
 
 - **Single Ride**: \$3.30 for up to 30 minutes, with a \$0.15 per minute overage charge.
 - **Daily Pass**: \$15 for 24-hour access with unlimited classic bike rides up to 3 hours each; overage cost is \$0.15 per minute for rides over 3 hours.
@@ -131,7 +131,7 @@ The comprehensive analysis revealed that **5.2533%** of the dataset was incomple
 
 Installing essential packages and libraries for data cleaning and analysis included installing the `tidyverse` package and the `data.table` package, and subsequently, their libraries were also loaded *(details given below)*.
 
-<details><summary>Check out the Loaded Libraries</summary>
+<details><summary><strong>Check out the Loaded Libraries</strong></summary>
    
 | Load Packages         | Description     |
 |:-----------------------|:-------------------------------------------------------------------------------------------------------------------|
@@ -223,7 +223,7 @@ At this phase of our study, we seek to explore the dynamics of bike usage among 
 Through this detailed analysis, we aim to provide insights into the differing behaviors and preferences between annual members and casual riders, contributing to targeted strategy development for Cyclistic.
 
 ### Counts and Percentages of Bike Types Used
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    # Calculate the number of rides by bike type
@@ -262,7 +262,7 @@ The number of rides on electric bikes is the highest among the categories, with 
 Using Cyclistic's historical data on the distribution of bike ride types, the share of electric bikes, classic bikes, and docked bikes is divided into 51.00% for electric bikes, 47.55% for classic bikes, and 1.45% for docked bikes. This data indicates that electric bikes are marginally more popular than classic bikes, with over half of the riders opting for electric bikes.
 
 ### Counts and Percentage Distribution of Member and Casual Rides
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    # Count rides for 'Member' and 'Casual' in the 'member_casual' column
@@ -296,7 +296,7 @@ Members make up the majority of bike rides according to the dataset, with approx
 Cyclistic's historical data reveals a clear pattern in rider types' usage. Annual members account for the majority of rides at 63.78%, equating to 3,494,248 rides. Casual riders, on the other hand, represent 36.22% of rides, totaling 1,984,005. This data indicates a strong preference for membership-based usage within the Cyclistic bike-sharing community.
 
 ### Count of Bike Types Usage by Members and Casual Riders
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
 ```
 # Analyze the use of bike types between members and casual users
@@ -337,7 +337,7 @@ The **unique** rideable types include electric bikes, classic bikes, docked bike
 ### Average Ride Length by Users 
 On average, **members** take shorter rides at **12 minutes** and **29 seconds**, while **casual** riders tend to ride longer, averaging **21 minutes** and **53 seconds**, against an **overall** average ride length of **15 minutes** and **54 seconds** for the year.
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    # Required library for time conversion
@@ -386,7 +386,7 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 ### The most frequent day of the week for rides 
 **Saturday** is the most popular day for rides **overall** and for **casual** users, while **members** ride most frequently on **Thursdays**.
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    # Calculate the mode of the day of the week for all rides
@@ -416,7 +416,7 @@ On average, **members** take shorter rides at **12 minutes** and **29 seconds**,
 
 ### Calculation of the number of rides by users and bike type usage per day of the week 
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    library(tidyverse)
@@ -493,7 +493,7 @@ The bar graph depicts the percentage distribution of bike rides by members and c
 
 ### Average Ride Length by Day of the Week for All Users, Members, and Casual Riders
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    # Necessary libraries
@@ -552,7 +552,7 @@ The graph illustrates that while members consistently ride for shorter durations
 
 ### Total Number of Trips for Each User Group during Different Parts of the Day 
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    # Load the dplyr package for data manipulation
@@ -597,7 +597,7 @@ The chart shows that the afternoon is the most popular time for bike rides, with
 
 ### Top 10 Most Popular Riding Hours
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    # Load the dplyr package for data manipulation
@@ -655,7 +655,7 @@ The chart shows that the afternoon is the most popular time for bike rides, with
 <img src="/img_tableau/Top 10 Most Popular Riding Hours Overall.png" width="650" align="center">
 The data from the chart indicates that the late afternoon, specifically around 5 PM, is the most popular time for cycling, with 564,221 rides occurring during this time. Furthermore, the time span from 3 PM to 6 PM is the preferred window for cycling, accounting for 1,905,528 rides, which represents 34.7835% of total rides. 
 <p>&nbsp;</p>
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    library(dplyr)
@@ -698,7 +698,7 @@ In comparison with the previous graph, the following analysis is performed:
 - Extending from early morning through to the afternoon, from **5 AM** to **3 PM**, there are a total of **2,790,682** rides, representing a substantial 50.94% of all rides, indicating that the daytime hours up until mid-afternoon are the most popular for cycling.
 
 ### Calculation of the Number of Rides During Different Times of the Day
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    # Load necessary libraries
@@ -737,7 +737,7 @@ In comparison with the previous graph, the following analysis is performed:
 
 </details>
 
-<details><summary>View Table: Number of Rides During Different Times of the Day</summary>
+<details><summary><strong>View Table: Number of Rides During Different Times of the Day</strong></summary>
    
 | Hour of Day | Total trips: Overall | Total trips: Member | Total trips: Casual |
 |------:|----------:|--------:|--------:|
@@ -787,7 +787,7 @@ The graph displays the hourly ride counts for both members and casual riders acr
 
 ### Number of Bike Rides and Percentage Distribution Across Seasons
 
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    library(dplyr)
@@ -848,7 +848,7 @@ The bar chart shows the number of bike rides per season, indicating that summer 
 <p>The pie chart clearly demonstrates that summer is the most popular season for cycling, with a total of 2,192,634 rides, accounting for 40.02% of the season's total rides. Following summer, spring is the next favored season with 1,547,735 rides, making up 28.25% of the rides. These figures indicate a strong seasonal trend in cycling habits, with riders significantly preferring the warmer months, which can be clearly seen in the calculation below.</p>
 
 ### Bike Ride Count and Percentage Distribution per Month for Member and Casual Riders
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
 ```
    library(dplyr)
@@ -920,7 +920,7 @@ The line chart corroborates earlier observations, showing that casual riders con
 <img src="/img_tableau/Average Monthly Ride Durations in Minutes.png" width="800" align="center">
 
 ### Number of Unique Starting and End Stations
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
    
    ```
    # Load the tidyverse package
@@ -937,7 +937,7 @@ The line chart corroborates earlier observations, showing that casual riders con
 Number of unique starting stations: **1542**
 
 ### Most common used Start station by day of the week
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    library(tidyverse)
@@ -996,7 +996,7 @@ The visual data presented in the previous two maps clearly shows a pattern of bi
 <img src="/img_tableau/Count of Bikes Taken by Casual Riders from Start Stations.png" width="950" align="center">
 
 ### Top 20 Start Stations for Members, Casual Riders, and All Users
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    library(tidyverse)
@@ -1039,7 +1039,7 @@ The visual data presented in the previous two maps clearly shows a pattern of bi
 
 </details>
 
-<details><summary>View Table: Top 20 Start Stations</summary>
+<details><summary><strong>View Table: Top 20 Start Stations</strong></summary>
 
 | No. | Start Stations Used by All Users | Total | Start Stations Used by MEMBER Riders | Total | Start Stations Used by CASUAL Riders | Total |
 |-----:|------:|------:|------:|------:|------:|------:|
@@ -1076,7 +1076,7 @@ The map highlights the top 20 most popular starting stations for bike rides, mar
 The chart showcases the top 20 starting stations for bike rides, with Old Hastings Charging Stx standing out due to its exceptionally high number of rides, totaling 810,968. This station appears to be an outlier, as its usage significantly exceeds that of other stations. However, this may be due to the station's name being associated with multiple locations across the city. Therefore, while it appears prominently in the dataset, its data might be misleading and should be interpreted with caution when considering station popularity and usage patterns.
 
 ### Most Popular Stations by Time of Day: Members, Casual Riders, and All Users
-<details><summary>View Code</summary>
+<details><summary><strong>View Code</strong></summary>
 
    ```
    library(tidyverse)
@@ -1170,7 +1170,7 @@ The chart showcases the top 20 starting stations for bike rides, with Old Hastin
 |		|	Wells St & Elm St	|	8526	|	8202	|	9534	|	3121	|
 |		|	Wilton Ave & Belmont Ave	|	4396	|	7893	|	9245	|	5075	|
 
-<details><summary>Continue Viewing the Table</summary>   
+<details><summary><strong>Continue Viewing the Table</strong></summary>   
    
    | Riders | Start Station Name | Morning | Afternoon | Evening | Night |
    |:------|:-------------------|----------:|--------:|--------:|------:|
